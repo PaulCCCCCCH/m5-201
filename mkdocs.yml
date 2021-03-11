@@ -1,0 +1,18 @@
+site_name: m5-201 
+site_url: https://paulcccccch.github.io/
+site_author: IceWould Training Team Led by Chonghan Chen
+site_description: IceWould Training Hub
+
+theme:
+  name: cinder
+
+nav:
+  - Home: index.md
+  - Schedule:
+    - Overview: content/schedule.md
+    - Week 1 - Introduction: content/week1.md
+    - Week 2 - Calculations: content/week2.md
+  - Notes:
+    - Introduction: 'content/introduction.md'
+
+repo_url: https://github.com/PaulCCCCCCH/m5-101
