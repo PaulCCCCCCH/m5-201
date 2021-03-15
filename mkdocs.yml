@@ -8,11 +8,8 @@ theme:
 
 nav:
   - Home: index.md
-  - Schedule:
-    - Overview: content/schedule.md
-    - Week 1 - Introduction: content/week1.md
-    - Week 2 - Calculations: content/week2.md
+  - Schedule: content/schedule.md
   - Notes:
     - Introduction: 'content/introduction.md'
 
-repo_url: https://github.com/PaulCCCCCCH/m5-101
+repo_url: https://github.com/PaulCCCCCCH/m5-201

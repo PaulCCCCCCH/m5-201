@@ -1,3 +1,7 @@
+# Announcements
+3/12: Best case scenario: we start on Wed 3/17.
+
+
 # Schedule
 
 <style type="text/css">
@@ -13,59 +17,87 @@
 <thead>
   <tr>
     <th class="tg-c3ow">Week</th>
-    <th class="tg-c3ow">Date</th>
+    <th class="tg-c3ow">Date/Time</th>
     <th class="tg-c3ow">Location</th>
     <th class="tg-c3ow">Notes</th>
     <th class="tg-c3ow">Project</th>
-    <th class="tg-c3ow">Announcements</th>
+    <th class="tg-c3ow">Resources</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td class="tg-svo0" rowspan="2">Week 1</td>
-    <td class="tg-svo0">Wed <br>3/17</td>
+    <td class="tg-svo0">Wed <br>3/17<br>20:00-22:00</td>
     <td class="tg-svo0">IAMET<br>406-1</td>
-    <td class="tg-svo0"><a href="../introduction">Introduction</a><br>Basics</td>
-    <td class="tg-svo0"></td>
+    <td class="tg-svo0">
+      <a href="../introduction">1. 前言 </a>
+      <br>
+      <a href="../dev-setup">2. 开发环境搭建 </a>
+      <br>
+      <a href="../web-basics">3. Web 基础</a>
+    </td>
+    <td class="tg-svo0" rowspan="6"> <a href="../tetris">Project 1: Tetris in JS</a></td>
     <td class="tg-svo0"></td>
   </tr>
   <tr>
-    <td class="tg-c3ow">Fri<br>3/19</td>
+    <td class="tg-c3ow">Fri<br>3/19<br>20:00-22:00</td>
     <td class="tg-c3ow">IAMET<br>406-1</td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">
+      <a href="../copying-a-website">1. 天下前端一大抄 </a>
+      <br>
+      <a href="../styles">2. Bootstrap 和 CSS </a>
+      <br>
+      <a href="../GOP">3. GOP-面向谷歌编程 </a>
+      <br>
+      <!-- <a href="../tetris">4. Tetris in JS </a> -->
+    </td>
     <td class="tg-c3ow"></td>
   </tr>
   <tr>
     <td class="tg-svo0" rowspan="2">Week 2</td>
     <td class="tg-svo0">TBA</td>
     <td class="tg-svo0">TBA</td>
-    <td class="tg-svo0"></td>
-    <td class="tg-svo0"></td>
+    <td class="tg-svo0" rowspan="2">
+      <a href="../git">1. Git 的使用</a>
+      <br>
+      <a href="../debugging">2. Debugging </a>
+      <br>
+      <a href="../gh-hosting">3. 公布你的网页</a>
+      <br>
+    </td>
     <td class="tg-svo0"></td>
   </tr>
   <tr>
     <td class="tg-c3ow">TBA</td>
     <td class="tg-c3ow">TBA</td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
   </tr>
   <tr>
     <td class="tg-svo0" rowspan="2">Week 3</td>
     <td class="tg-svo0">TBA</td>
     <td class="tg-svo0">TBA</td>
-    <td class="tg-svo0"></td>
-    <td class="tg-svo0"></td>
+    <td class="tg-svo0">
+      <a href="../frontend-frameworks">1. 前端框架</a>
+      <br>
+      <a href="../uni-app">2. Uni-app </a>
+      <br>
+    </td>
     <td class="tg-svo0"></td>
   </tr>
   <tr>
     <td class="tg-c3ow">TBA</td>
     <td class="tg-c3ow">TBA</td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">
+      <a href="../mvc">1. MVC 设计模式</a>
+      <br>
+      <a href="../client-server">2. 客户端-服务器通讯</a>
+      <br>
+    </td>
     <td class="tg-c3ow"></td>
   </tr>
+
+<tr><td class="tg-c3ow" colspan="6">后续内容陆续展示</td></tr>
+<!--
   <tr>
     <td class="tg-svo0" rowspan="2">Week 4</td>
     <td class="tg-svo0">TBA</td>
@@ -96,7 +128,7 @@
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
   </tr>
-  <!-- <tr>
+   <tr>
     <td class="tg-svo0" rowspan="2">Week 5</td>
     <td class="tg-svo0">Placeholder</td>
     <td class="tg-svo0">Placeholder</td>
