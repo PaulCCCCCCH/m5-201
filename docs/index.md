@@ -43,7 +43,7 @@ Week 3, 4, 5, 6
 - 前端框架介绍
 - `uni-app`介绍和开发环境搭建
 - `MVC` 设计模式
-- `Client-server`模型
+- `Client-Server`模型
 - 自动化测试
 
 ### 产出
