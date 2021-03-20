@@ -1,5 +1,5 @@
 # Announcements
-3/12: Best case scenario: we start on Wed 3/17.
+3/20: 第一次线下活动的时间是 3 月 24 日（周三），地点是 PMB 309。第一次活动比较重要，会牵扯到后续的淘汰筛选机制，请大家务必按时前来哦！
 
 
 # Schedule
@@ -27,7 +27,7 @@
 <tbody>
   <tr>
     <td class="tg-svo0" rowspan="2">Week 1</td>
-    <td class="tg-svo0">Wed <br>3/17<br>20:00-22:00</td>
+    <td class="tg-svo0">Wed<br>3/24<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
       <a href="../introduction">1. 前言 </a>
@@ -40,7 +40,7 @@
     <td class="tg-svo0"></td>
   </tr>
   <tr>
-    <td class="tg-c3ow">Fri<br>3/19<br>20:00-22:00</td>
+    <td class="tg-c3ow">Sun<br>3/28<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
       <span href="../copying-a-website">1. 天下前端一大抄 </a>
