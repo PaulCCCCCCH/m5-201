@@ -117,13 +117,52 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#_1">开发环境搭建</a></li>
+            <li class="second-level"><a href="#_2">关于代码提示</a></li>
+                
+            <li class="second-level"><a href="#_3">关于编辑器选择</a></li>
+                
+                <li class="third-level"><a href="#vscode">VSCode</a></li>
+                <li class="third-level"><a href="#webstorm">WebStorm</a></li>
+                <li class="third-level"><a href="#_4">其它</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="_1">开发环境搭建</h1>
-<p>我们强烈建议各位使用有代码提示的编辑器。</p>
-<p>在 vscode 下，我们可以</p></div>
+<p>在工程项目中，我们强烈建议各位使用<strong>基于语义的代码提示</strong>。我们推荐使用 <code>VSCode</code> 和 <code>WebStorm</code>。<br />
+<br></p>
+<h2 id="_2">关于代码提示</h2>
+<p>代码提示（或者叫自动补全）就是，当你输入一些关键字母，你的编辑器就会自己弹出几个对应选项，让你从中进行选择。这在工程中，尤其是在有一定复杂度的工程中至关重要。<br />
+<br></p>
+<p>比如，在一个 <code>SpringBoot</code> 搭建的项目中，一个 <code>Ship</code> 类有如下十几个方法：<br />
+- <code>addShipByShipMMSN</code><br />
+- <code>addShipByID</code><br />
+- <code>selectShipByShipMMSN</code><br />
+- <code>selectShipByShipID</code><br />
+- <code>deleteShipByShipMMSN</code><br />
+- <code>deleteShipByShipID</code><br />
+- ...</p>
+<p>当你想要调用一个 <code>Ship</code> 的方法时，在没有代码补全的情况下，你可能先找到 <code>Ship.java</code>，打开这个该死的文件，然后拿鼠标慢慢向下滑，一个一个看它有哪些方法可以用。当你找到了一个方法，你选中这个方法名，将它复制到你要用的地方，然后修改它的参数。要是少复制了一个字母，你还要等到编译的时候，查看报错信息才能发现。<br />
+<br></p>
+<p>当你完成这些工作的时候，你使用自动补全的同事已经完成所有工作准备下班了。<br />
+<br></p>
+<p>使用自动补全的话，假定你的 <code>Ship</code> 类型的变量是 <code>shipX</code>，当你输入 <code>shipX.</code> 的时候，<code>Ship</code> 类内所有可以用的方法都会跳出来，你只需要选择一个你需要的就可以了。<br />
+<br></p>
+<p>这是<strong>基于语义的代码提示</strong>，它会分析你写的代码结构，给出最完全的信息，并且一般会在编译之前就给出错误提示。<br />
+<br></p>
+<p>另外一种，是<strong>基于页面内容的代码提示</strong>。它是一些轻量级编辑器，如 <code>sublime</code> 和 <code>notepad++</code> 会搭载的。它们会抓取你在当前页面上输入过的单词，给出提示，但是并不能观察你在另一个文件里定义过的方法名，所以越等于没有用。
+<br></p>
+<h2 id="_3">关于编辑器选择</h2>
+<p>（你当然可以选择跳过下面的废话，各种都尝试一下。）</p>
+<h3 id="vscode">VSCode</h3>
+<p>如果你特别爱定制化，比如会精心布置你的房间， 那么 <code>VSCode</code> 可能是很好的选择。它提供了各种插件，让你可以自由配置外观、快捷键和各种功能，可以让你随心所欲，做到一款编辑器，写遍天下代码。</p>
+<h3 id="webstorm">WebStorm</h3>
+<p><code>WebStorm</code> 的好处在于 JetBrains 香到无法拒绝的全家桶。基本上，你想开发的语言，想用的开发工具，JetBrains 都帮你准备好了（JetBrain 之于我，好比 Adobe 之于设计师吧...）。它把所有功能都集成进去了，同时也提供许多定制化。缺点就是，如果你要同时开发 <code>Java</code>，<code>Python</code> 和 <code>Web</code>，那么你要安装他们家的三个不同产品：<code>IntelliJ</code>，<code>Python</code> 和 <code>WebStorm</code>（不过好像付费版本的 <code>IntelliJ</code> 啥都能开发...家里有矿的同学可以考虑一下）。</p>
+<h3 id="_4">其它</h3>
+<p><code>Sublime</code>，<code>Vim</code> 和 <code>Emacs</code> 都是很好用的编辑器，但是并不能通过简单的配置提供很好的体验。<br />
+<br></p>
+<p>不过，如果你是非常非常 Geeky 的人，推荐尝试学习一下 <code>Vim</code> 和 <code>Emacs</code>， 尤其是后者。</p>
+<p>（但是在这里夹带一波私货：快来学 <code>Vim</code>！自从学了 <code>Vim</code>，我再也不用鼠标了！打字太爽了！工作效率直接翻倍！）</p></div>
         
         
     </div>
