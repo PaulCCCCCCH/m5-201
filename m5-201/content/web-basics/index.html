@@ -117,19 +117,37 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#web">Web 基础</a></li>
-        <li class="first-level "><a href="#javascript">Javascript</a></li>
-        <li class="first-level "><a href="#html">HTML</a></li>
-        <li class="first-level "><a href="#css">CSS</a></li>
+            <li class="second-level"><a href="#_1">浏览网页的时候，到底发生了啥</a></li>
+                
+                <li class="third-level"><a href="#http">HTTP 请求</a></li>
+                <li class="third-level"><a href="#web_1">Web 三件套</a></li>
+                <li class="third-level"><a href="#_2">后台</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="web">Web 基础</h1>
-<p>首先，</p>
-<h1 id="javascript">Javascript</h1>
-<p>javascript</p>
-<h1 id="html">HTML</h1>
-<p><code>HTML</code> 的结构大概是下面这样。</p>
+<p>当我们用电子设备（手机、电脑或其它什么小玩意儿）打开一个网页、使用一个微信小程序，甚至是使用某些 App 的时候，我们就是在使用 <code>Web</code>。如果你想要知道尽可能多的细节，可以上 <code>Bing</code> 搜索 <code>浏览器原理 知乎</code>，这些万字长文会带你领略复杂的底层。我们只会形象地梳理一下目前需要知道的信息。当然，如果你已经全都知道了，那就直接上手做项目吧！<br />
+<br></p>
+<h2 id="_1">浏览网页的时候，到底发生了啥</h2>
+<p>当你进入浏览器，输入 <code>www.nottingham.edu.cn</code>，按下回车，稍等片刻后，看到了一个图文并茂的页面。这中间发生了什么呢？<br />
+<br></p>
+<h3 id="http">HTTP 请求</h3>
+<p>首先，你在浏览器输入地址，并按下回车，你的浏览器就会告诉你的电脑：请向 <code>www.nottingham.edu.cn</code> 对应的 IP 地址发送浏览器打包好的数据。<br />
+<br></p>
+<p>于是你的电脑通过网络，查到了这个网址的 IP 地址 <code>118.178.243.203</code>，并向它发送数据。这个数据包到底包含哪些数据？可以去搜一下 <code>HTTP 报文</code>。<br />
+<br></p>
+<p>在 <code>118.178.243.203</code> 这个地址，也住着一台电脑（可能和你的电脑没啥大区别）。出于礼貌，它会给你回信。这个回信的内容通过浏览器的解析，就是你看到的图文并茂的内容。<br />
+<br></p>
+<p>理论上，这个回信可以是任何东西（只要你事先声明好）。它可以是一个你做的 <code>word</code> 文档，一个 <code>PPT</code>，一堆图片，甚至是视频。只不过，大部分的网页都选择发回一系列文件（<code>HTML</code>，<code>JavaScript</code>以及 <code>CSS</code> 格式的文件)，你的浏览器也恰好擅长解析这些文件，并展示出来。<br />
+<br></p>
+<p>一个网页上，会有很多链接。当你点击一个链接的时候，你的浏览器可能会再次发送并接收数据，于是你就会收到另一系列文件。于是，你就开始冲起浪来。<br />
+<br></p>
+<p>你也可以自己写这样一系列文件，放在自己电脑上，让别人来访问自己。这个其实没啥难的，只要你把文件写好，剩下的事情，有一万种方式可以做到。</p>
+<h3 id="web_1">Web 三件套</h3>
+<h4 id="html">HTML</h4>
+<p><code>HTML</code> 文件定义了一个页面的排版。就好比你做一个 <code>PPT</code>，它会记住你所有的文本框、艺术字以及图片的位置，以及按钮要要去向哪里。</p>
+<p>一个 <code>HTML</code> 的结构大概是下面这样。</p>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -154,8 +172,31 @@
 <br></p>
 <p>笔者想说的是，除非你十足地确信未来会深耕原生网页制作，否则这些内容，可以每次用的时候现场查。其它很多东西也是如此，这一点我们会在 <code>GOP-面向谷歌编程</code> 中展开。<br />
 <br></p>
-<h1 id="css">CSS</h1>
-<p>css</p></div>
+<h4 id="javascript">JavaScript</h4>
+<p>和 <code>C</code> 啊 <code>Java</code> 啊 <code>Python</code> 啊这些相类似，<code>JavaScript</code> 也是用来书写逻辑的。它可以控制一个 <code>HTML</code> 页面，让它“活”起来。再次拿 <code>PPT</code> 做类比，你可以这样控制它：  </p>
+<pre><code>如果今天下雨：
+    翻页的时候播放雨水的声音
+不然：
+    翻页的时候播放鸟叫
+</code></pre>
+<p>然后，你可以把你的 <code>PPT</code> 发给别人，别人在不同天气打开，它翻页的时候会发出不同的声音。<br />
+<br></p>
+<p>当然，<code>PPT</code> 是不能这样控制的（或者控制起来相当麻烦）。但是网页可以，而且能做的事情更多！<br />
+<br></p>
+<p>要注意的是 <code>JavaScript</code> 就是一种普通的编程语言而已，只不过它跟浏览器的配合非常好。理论上，只要浏览器支持，你可以用任何一种语言编写逻辑。<br />
+<br></p>
+<h4 id="css">CSS</h4>
+<p><code>CSS</code> 定义了页面的<strong>样式</strong>。
+依然是拿 <code>PPT</code> 当作例子。<code>CSS</code> 文件定义了文本框、图片等东西的属性（边框大小啊，旋转角度啊，字体等等;当然，它也可以用来调整位置）。
+<br></p>
+<p>CSS 有很多属性，不常用的话，记不住是很正常的。要善用搜索引擎哦！<br />
+<br></p>
+<p>如果不想自己写的话，可以使用别人写的 <code>CSS</code> 文件。可以去尝试了解一下 <code>Bootstrap</code>，它提供了很多漂亮的样式！</p>
+<h3 id="_2">后台</h3>
+<p>当然，一个网站不能把一堆文件发给你之后，就啥也不管了。有时候，它想让不同的用户看到不同的东西。比如，当你来到 B 站并且登录，它得判断你是谁，然后决定给你发送怎么样的页面。<br />
+<br></p>
+<p>这些判断，发生在他的服务器（后台）上。它可能就住在你访问的 IP 地址那里，也可能不知道在哪儿。总之，他们怎么处理，是他们的事情，我们以后再考虑。<br />
+<br></p></div>
         
         
     </div>
