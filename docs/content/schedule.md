@@ -20,6 +20,7 @@
     <th class="tg-c3ow">Date/Time</th>
     <th class="tg-c3ow">Location</th>
     <th class="tg-c3ow">Notes</th>
+    <th class="tg-c3ow">Practice</th>
     <th class="tg-c3ow">Project</th>
     <th class="tg-c3ow">Resources</th>
   </tr>
@@ -36,6 +37,7 @@
       <br>
       <a href="../web-basics">3. Web 基础</a>
     </td>
+    <td class="tg-svo0"> <a href="../practice-web"> Web 练习</a></td>
     <td class="tg-svo0" rowspan="6"> <a href="../tetris-in-js">Project 1: Tetris in JS</a></td>
     <td class="tg-svo0">
       <a href="https://www.runoob.com/html/html5-intro.html">1. 菜鸟 HTML 教程</a>
@@ -58,6 +60,7 @@
       <!-- <span href="../tetris">4. Tetris in JS </a> -->
     </td>
     <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
   </tr>
   <tr>
     <td class="tg-svo0" rowspan="2">Week 2</td>
@@ -72,10 +75,12 @@
       <br>
     </td>
     <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
   </tr>
   <tr>
     <td class="tg-c3ow">TBA</td>
     <td class="tg-c3ow">TBA</td>
+    <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
   </tr>
   <tr>
@@ -89,6 +94,7 @@
       <br>
     </td>
     <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
   </tr>
   <tr>
     <td class="tg-c3ow">TBA</td>
@@ -99,6 +105,7 @@
       <span href="../client-server">2. 客户端-服务器通讯</a>
       <br>
     </td>
+    <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
   </tr>
 
