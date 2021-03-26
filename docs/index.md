@@ -5,6 +5,9 @@
 # 主办方
 本次创造营由 **零下五度（宁波）信息科技有限公司** 举办。
 
+# 联系方式
+各项事宜敬请联系我们的官方邮箱： icewould@outlook.com
+
 
 # 安排
 - 每周两次线下的 Live Coding Session，每次两小时，具体地点和时间请密切留意我们的[课表](https://paulcccccch.github.io/m5-201/content/schedule)。

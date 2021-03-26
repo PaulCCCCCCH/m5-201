@@ -37,7 +37,7 @@
       <br>
       <a href="../web-basics">3. Web 基础</a>
     </td>
-    <td class="tg-svo0"> <a href="../practice-web"> Web 练习</a></td>
+    <td class="tg-svo0"> <a href="../web-basics-practice"> Web 练习</a></td>
     <td class="tg-svo0" rowspan="6"> <a href="../tetris-in-js">Project 1: Tetris in JS</a></td>
     <td class="tg-svo0">
       <a href="https://www.runoob.com/html/html5-intro.html">1. 菜鸟 HTML 教程</a>
@@ -51,11 +51,9 @@
     <td class="tg-c3ow">Sun<br>3/28<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <span href="../copying-a-website">1. 天下前端一大抄 </a>
+      <a href="../GOP">1. GOP-面向谷歌编程 </a>
       <br>
-      <span href="../styles">2. Bootstrap 和 CSS </a>
-      <br>
-      <span href="../GOP">3. GOP-面向谷歌编程 </a>
+      <a href="../debugging">2. Debugging </a>
       <br>
       <!-- <span href="../tetris">4. Tetris in JS </a> -->
     </td>
@@ -66,12 +64,10 @@
     <td class="tg-svo0" rowspan="2">Week 2</td>
     <td class="tg-svo0">TBA</td>
     <td class="tg-svo0">TBA</td>
-    <td class="tg-svo0" rowspan="2">
-      <span href="../git">1. Git 的使用</a>
+    <td class="tg-svo0">
+      <a href="../copying-a-website">1. 天下前端一大抄 </a>
       <br>
-      <span href="../debugging">2. Debugging </a>
-      <br>
-      <span href="../gh-hosting">3. 公布你的网页</a>
+      <span href="../styles">2. Bootstrap 和 CSS </a>
       <br>
     </td>
     <td class="tg-svo0"></td>
@@ -80,6 +76,13 @@
   <tr>
     <td class="tg-c3ow">TBA</td>
     <td class="tg-c3ow">TBA</td>
+    <td class="tg-c3ow">
+          <span href="../git">1. Git 的使用</a>
+      <br>
+      <span href="../gh-hosting">2. 公布你的网页</a>
+      <br>
+
+    </td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
   </tr>
