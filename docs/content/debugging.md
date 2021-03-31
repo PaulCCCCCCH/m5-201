@@ -8,11 +8,11 @@ Debug 就是给程序查错，是非常重要的编程能力。鉴于大家都�
 
 要看到输出的内容，你可以用浏览器打开正在开发的网页，按下 `F12`，点击出现的面板上的 `Console（控制台）`，查看 `console.log()` 的输出。
 
-> 一个图片，展示浏览器的 console
+![](images/console.png)
 
 你也可以直接在 `console` 输入命令并运行。比方说你在 `JavaScript` 中定义了一个数组 `x`，你可以直接输入 `console.log(x[10])` 查看它的第 10 个元素。  
 
-> 一个图片（在 console 里输入命令）
+![](images/use-console.png)
 
 ## 关于 `undefined`
 在很多语言中，如果你使用了一个对象不存在的 attribute，你会得到一个明确的错误。但是，在 `JavaScript` 中，你会得到一个 `undefined` 的值，然后程序会正常运行，不会给出任何错误信息。比如以下片段，不会有任何问题：

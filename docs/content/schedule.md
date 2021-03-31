@@ -1,5 +1,5 @@
 # Announcements
-3/20: 第一次线下活动的时间是 3 月 24 日（周三），地点是 PMB 309。第一次活动比较重要，会牵扯到后续的淘汰筛选机制，请大家务必按时前来哦！
+3/2: 第一次线下活动的时间是 3 月 24 日（周三），地点是 PMB 309。第一次活动比较重要，会牵扯到后续的淘汰筛选机制，请大家务必按时前来哦！
 
 
 # Schedule
@@ -61,16 +61,19 @@
   </tr>
   <tr>
     <td class="tg-svo0" rowspan="2">Week 2</td>
-    <td class="tg-svo0">Wed<br>3/31<br>20:00-22:00</td>
-    <td class="tg-svo0">PMB<br>309</td>
+    <td class="tg-svo0">Wed<br>3/31<br>20:00-22:00</td> <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <span href="../copying-a-website">1. 天下前端一大抄 </a>
+      <a href="../copying-a-website">1. 天下前端一大抄 </a>
       <br>
-      <span href="../styles">2. Bootstrap 和 CSS </a>
+      <a href="../css-and-bootstrap">2. CSS 和 Bootstrap </a>
       <br>
     </td>
-    <td class="tg-svo0" rowspan="2"><span href="../cracking-a-website-practice">Web 逆向练习</span></td>
-    <td class="tg-svo0"></td>
+    <td class="tg-svo0" rowspan="2"><span href="../cracking-a-website-practice">Web 逆向练习（课上开放，有奖品）</span></td>
+    <td class="tg-svo0">
+      <a href="https://angrytools.com/css-generator/border/">1. CSS 特效生成器</a>
+      <br>
+      <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">2. Bootstrap 官方文档</a>
+    </td>
   </tr>
   <tr>
     <td class="tg-c3ow">Sun<br>4/4<br>20:00-22:00</td>

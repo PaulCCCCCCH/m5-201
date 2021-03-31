@@ -7,7 +7,7 @@ theme:
   name: cinder
 
 nav:
-  - Home: index.md
+  - Home: content/schedule.md
   - Schedule: content/schedule.md
   - Notes:
     - Introduction: 'content/introduction.md'
