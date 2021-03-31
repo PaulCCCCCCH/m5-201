@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="IceWould Training Hub">
     <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
-    <link rel="canonical" href="https://paulcccccch.github.io/content/GOP/">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/css-and-bootstrap/">
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>Google-Oriented Programming (GOP) - m5-201</title>
+    <title>CSS 和 Bootstrap - m5-201</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -104,7 +104,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/GOP.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/css-and-bootstrap.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -116,63 +116,97 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#google-oriented-programming-gop">Google-Oriented Programming (GOP)</a></li>
-            <li class="second-level"><a href="#gop">GOP 的核心思想</a></li>
+        <li class="first-level active"><a href="#css-bootstrap">CSS 和 Bootstrap</a></li>
+            <li class="second-level"><a href="#css">添加 CSS 的四种方式</a></li>
                 
-            <li class="second-level"><a href="#gop_1">为什么使用 GOP</a></li>
+                <li class="third-level"><a href="#head">一、在 &lt;head&gt; 标签中加入引用</a></li>
+                <li class="third-level"><a href="#style">二、在 &lt;style&gt; 标签中写</a></li>
+                <li class="third-level"><a href="#js-style">三、在 JS 中修改 style 属性</a></li>
+                <li class="third-level"><a href="#html-style">四、在 HTML 标签内部定义 style</a></li>
+            <li class="second-level"><a href="#bootstrap">Bootstrap</a></li>
                 
+                <li class="third-level"><a href="#_1">引入</a></li>
+                <li class="third-level"><a href="#_2">使用指南</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="google-oriented-programming-gop">Google-Oriented Programming (GOP)</h1>
-<p><code>GOP</code>，面向谷歌编程，意思是依赖搜索引擎进行编程（不一定是谷歌，但是一定不是百度）。<br />
+<h1 id="css-bootstrap">CSS 和 Bootstrap</h1>
+<blockquote>
+<p>对作品的颜值负责</p>
+</blockquote>
+<p>相信各位已经对 <code>CSS</code> 有了一定了解。它可以调节一个网页的外观。
+<code>CSS</code> 的工作原理是，指定一类 <code>HTML</code> 节点 （或 <code>DOM</code>），让它们具有某些特性。<br />
 <br></p>
-<p>可以说，<code>GOP</code> 是<strong>本次编程创造营最重要的内容，没有之一</strong>。<br />
+<h2 id="css">添加 <code>CSS</code> 的四种方式</h2>
+<p>再次回顾一下，我们有四种方式，为 <code>HTML</code> 元素添加样式：<br />
+<strong>如果记不住那么多，就先用第一种吧。</strong><br />
 <br></p>
-<p>正常情况下，你需要掌握概念以及语言的很多细节，甚至达到一定的熟练程度，才能去着手开发一个项目。但是，当你掌握 <code>GOP</code> 以后，对于任何开发任务，你只需要知道框架，就可以借助网络将它完整地实现出来。<br />
+<h3 id="head">一、在 <code>&lt;head&gt;</code> 标签中加入引用</h3>
+<p>你可以在一个 <code>HTML</code> 文件的 <code>&lt;head&gt;&lt;/head&gt;</code> 中加入 <code>&lt;link /&gt;</code> 标签，指向本地的 <code>CSS</code>，像这样：   </p>
+<pre><code class="language-html">&lt;link href=&quot;./myFolder/myCSS.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot;&gt;  
+</code></pre>
+<p>然后，在 <code>myCSS.css</code> 文件里，直接写 <code>CSS</code> 就好了。</p>
+<pre><code class="language-css">.myClass { /*对 class 名为 myClass 的东西生效*/
+    width: 10px;
+    height: 20px;
+}
+#myId { /*对 id 名为 myId 的东西生效*/
+    width: 10px;
+    height: 20px;
+}
+</code></pre>
+<h3 id="style">二、在 <code>&lt;style&gt;</code> 标签中写</h3>
+<p>你可以在一个 <code>HTML</code> 文件的 <code>&lt;head&gt;&lt;/head&gt;</code> 中加入 <code>&lt;style&gt;&lt;/style&gt;</code>，直接在其中书写 <code>CSS</code>。像这样：  </p>
+<pre><code class="language-html">&lt;style&gt;
+    .myClass { /*对 class 名为 myClass 的东西生效*/
+        width: 10px;
+        height: 20px;
+    }
+    #myId { /*对 id 名为 myId 的东西生效*/
+        width: 10px;
+        height: 20px;
+    }
+&lt;/style&gt;
+</code></pre>
+<h3 id="js-style">三、在 <code>JS</code> 中修改 <code>style</code> 属性</h3>
+<p>你可以这样:</p>
+<pre><code class="language-javascript">var elem = document.getElementById(&quot;myId&quot;);
+elem.style.height = &quot;20px&quot;
+elem.style.width = 15 + &quot;px&quot;;
+</code></pre>
+<p>这样做的好处是，你可以让一个东西的属性随着程序的运行不断改变。<br />
+缺点是稍微有点麻烦。感兴趣的同学可以去搜一下 <code>jQuery</code>，它可以让你不用每次都 <code>document.getElementById</code>，从而让 <code>JS</code> 更改属性更加方便。</p>
+<h3 id="html-style">四、在 <code>HTML</code> 标签内部定义 <code>style</code></h3>
+<p>你可以直接在写 <code>HTML</code> 标签的时候，给它单独加上 <code>style</code>，像这样：  </p>
+<pre><code class="language-html">&lt;div style=&quot;width: 50; background: black&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h2 id="bootstrap"><code>Bootstrap</code></h2>
+<p><a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">Bootstrap 官方文档</a><br />
+<code>Bootstrap</code> 的本质其实就是一些 <code>CSS</code> 和 <code>JS</code> 的代码（包含 <code>jQuery</code>）。<br />
 <br></p>
-<p>换句话说，<code>GOP</code> 的核心思想是将开发链条从 <code>掌握框架 - 掌握细节 - 进行开发</code>，缩短成为 <code>掌握框架 - 进行开发</code>。我们接下来具体阐述一下。</p>
-<h2 id="gop"><code>GOP</code> 的核心思想</h2>
-<p>让我们以一个例子，阐述一下 <code>GOP</code> 的核心思想。<br />
-假设，现在你需要使用原生 Web 做一个个人博客。
+<p>它使用上面提到的第一、第三种方法来美化你的页面（提供装满样式的 <code>CSS</code> 文件；用 <code>JS</code> 和 <code>jQuery</code> 动态改变样式）。这样，有些常用的漂亮样式、布局，你可以直接拿来用，很是方便。<br />
 <br></p>
-<p>普遍的做法是什么呢？<br />
+<h3 id="_1">引入</h3>
+<p>要使用 <code>Bootstrap</code> 的话，你无需下载任何东西，只需要在你的 <code>HTML</code> 文件里面声明一下就可以了。<br />
+官方文档下面，有一个 <code>Starter template</code>，把里面的东西全都复制过来，把最后两个 <code>&lt;script&gt;</code> 从注释里面拿出来，就好了。<br />
+当然，你可以在 <code>VS Code</code> 上下载一个 <code>bootstrap 4</code> 插件，可以方便地生成 <code>Bootstrap</code> 初始模板。<br />
 <br></p>
-<ol>
-<li>你要知道网页是如何实现的。你阅读各种材料，知道了以 <code>HTML</code> 和 <code>HTTP</code> 为核心的 Web 的框架。  </li>
-<li>你要学习 <code>HTML</code>，包括作为 <code>HTML</code> 的点缀的 <code>CSS</code>，以及操纵页面的 <code>JavaScript</code>。你打开菜鸟教程，开始阅读。  </li>
-<li>你一边阅读教程，一边把新看到的知识运用到一些小东西上。你尝试了大部分 <code>HTML</code> 标签，比如 <code>img</code>，<code>video</code> 等等；你练习了大部分 <code>JavaScript</code> 的特性，从判断、循环到 <code>JavaScript</code> 中的面向对象编程。</li>
-<li>最后，你把教程上看到的东西组合起来，搭出了自己的博客，并且成功入门原生 Web。<br />
-<br></li>
-</ol>
-<p>一个采取 <code>GOP</code> 策略的人会这样做：<br />
+<p>引入后，你就可以直接在 <code>HTML</code> 标签中写 <code>class=...</code> 来使用他们定义好的样式。<br />
 <br></p>
-<ol>
-<li>你会花更多的时间进行第一个步骤，了解 Web 的完整运行原理，并且定性地知道一下 <code>HTML</code>，<code>CSS</code> 和 <code>JavaScript</code> 到底是什么东西。你发现，<code>HTML</code> 就是用括号一样的语法在页面上写框框，<code>CSS</code> 定义了样式，<code>JavaScript</code> 就和其它编程语言一样，用逻辑操纵 <code>HTML</code> 和 <code>CSS</code>。你大致地浏览了一遍各种文件的语法，但是只是有个印象。  </li>
-<li>然后，你开始设计你的页面功能。首先，你想做一个像 <code>m5-201</code> 网站顶端的那种导航栏。你知道要用 <code>HTML</code> 写一些标签，然后用 <code>CSS</code> 修饰，但是你可能并不知道使用哪些标签、如何修饰。于是，你打开谷歌，搜索 <code>html navigation bar</code>，或者打开必应，搜索 <code>html 导航栏</code> 或者 <code>html 顶部目录</code>；然后，你想做一个像 b 站那样的轮播图，于是你搜索 <code>HTML 自动播放图片</code>。总之，你把你想实现的功能告诉搜索引擎，从他们那里把你想要的拿过来。</li>
-<li>最后，你做出了自己的博客，尝试了很多 fancy 的技巧。虽然很多技巧在用过之后就忘记了，但是，你确实能够将博客做出来了。<br />
-<br></li>
-</ol>
-<p>这就是 <code>GOP</code> 的核心思想：它以问题为导向，在自己对解决方法有一定理解的基础上，让搜索引擎帮你补充需要的细节。<br />
+<h3 id="_2">使用指南</h3>
+<p>绝大部分 <code>Bootstrap</code> 都是通过指定 <code>class=...</code> 来使用的。比如你想弄一个卡片的效果，你只需要：</p>
+<pre><code class="language-html">&lt;div class=&quot;card&quot;&gt;
+    卡片内容...
+&lt;div&gt;
+</code></pre>
+<p>你会发现，相比写原生 <code>HTML</code>，你的 <code>&lt;div&gt;</code> 标签使用频率直接拉高了十倍不止。可以这么理解：<code>Bootstrap</code> 给你提供了一套全新的、更漂亮的 <code>HTML</code> 标签。不过具体有哪些标签呢？<br />
 <br></p>
-<p>在 <code>GOP</code> 中，框架非常重要。你虽然不必知道语言的细节，但你必须知道，你在什么地方需要什么功能的代码片段。</p>
-<h2 id="gop_1">为什么使用 <code>GOP</code></h2>
-<p>除非你非常清楚，你今后必然深耕某一非常细分的领域，否则，我们不希望细节的学习占用太多时间。<br />
+<p>你可以先大概浏览一下<a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">文档</a>的内容，尤其是 <code>Layout</code>，<code>Content</code>，<code>Forms</code> 和 <code>Components</code> 这几个，大致有个印象（不用细读，看效果图就行）。<br />
 <br></p>
-<p>没有人可以学会使用所有的工具，更没有人可以记住所有接口的信息。<br />
+<p>在做页面的时候，你可以现用现查（文档左上角有个 <code>Search docs</code>，输入关键词就行，贼方便），不过前提是你要大概知道它提供哪些东西（无聊的时候翻翻文档，欣赏一下各种样式）。<br />
 <br></p>
-<p>那些写起程序来胸有成竹的人，只不过是手熟罢了。当你经常做一件事情，你就会自然而然地熟悉它。<br />
-<br></p>
-<p>很多人对 <code>GOP</code> 嗤之以鼻，认为使用 <code>GOP</code> 的人是不会写代码的。现在很多大厂的面试，也会要求你在不允许使用搜索引擎、查阅参考文档的情况下，实现一些功能。从某种程度上来说，这也是合理的。因为编程就是生产，而生产必然考虑到效率。使用 <code>GOP</code> 的策略会托慢你的开发速度。对于企业来说，效率低下的开发是不会被企业接受的，所以他们需要你尽可能多地把细节记在心里。<br />
-<br></p>
-<p>所以，为了通过面试并找到工作，很多人会投入大量时间，深挖一个领域中的所有细节。比如，你会将所有 Web 开发的技巧以及特性都熟记下来。这固然为企业生产提供了效率，但对于个人来说，你可能就与企业生产绑定了：由于你没有有时间去了解更多框架性的东西，你除了为企业开发 Web 之外，并不能做其它事情。比如，你可能没有时间阅读服务器后台是如何搭建的，于是，你只能依赖企业开发团队提供的服务器后台，而不能自己搭建一个完整的网站应用。<br />
-<br></p>
-<p>换句话说，由于过度的专精，一旦脱离了企业的环境，你可能就无法独立地进行生产。<br />
-<br></p>
-<p>当然，这样说可能有点过分夸大问题，但它一定是值得注意的。<br />
-<br></p>
-<p>这个社会当然需要专精一些领域的人，但是 <code>m5-201</code> 希望让大家有全方面的潜力，或者，在决定自己专精领域之前，能先广泛地了解各个领域。</p></div>
+<p>如果做完了 <code>Tetris</code>，不如尝试使用 <code>Bootstrap</code> 美化一下游戏界面吧！</p></div>
         
         
     </div>
