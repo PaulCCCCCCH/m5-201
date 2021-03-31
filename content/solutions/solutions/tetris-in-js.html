@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="tetris-in-js.css" media="screen">
+    <script type="text/javascript" src="./tetris-in-js.js"></script>
+</head>
+
+
+<body>
+
+    <!-- <button onclick="generatePiece()">test generate piece</button>
+	<button onclick="fall()"> test fall </button>
+	<button onclick="rotate()"> test rotate </button>
+	<button onclick="play()"> play </button> -->
+
+    <div class="position-relative mt-3">
+        <!-- <div class="container position-relative top-0 start-0 translate-middle-x"> -->
+        <div class="container mx-auto">
+
+            <!-- <button onclick="play()" style="width:50px;height:50px;margin-left:200px">New Game</button> -->
+            <div class="row">
+                <button id="startButton" class="btn btn-danger col-2 mb-3 position-relative start-50 translate-middle-x"
+                    onclick="play()">New Game</button>
+            </div>
+
+            <div>
+                <div class="start-50 position-relative translate-middle-x" id="playground">
+                    <div id="gameBoard">
+                        <!-- 游戏 piece 插到这里 -->
+                    </div>
+                </div>
+
+
+                <div class='container mt-3'>
+                    <div class="position-absolute start-50 translate-middle-x ">
+                        <button class='control' onclick="moveLeft(getElementById('currentPiece'))">《《《 </button>
+                        <button class='control' onclick="rotate(getElementById('currentPiece'))">rotate</button>
+                        <button class='control' onclick="fallToBottom(getElementById('currentPiece'))">drop</button>
+                        <button class='control' onclick="fall()">down</button>
+                        <button class='control' onclick="moveRight(getElementById('currentPiece'))">》》》</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="./tetris-in-js.js"></script>
+<!-- <script type="text/javascript" src="./js/block-manipulation.js"></script>
+<script type="text/javascript" src="./js/game-manipulation.js"></script> -->
+
+</html>
