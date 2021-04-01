@@ -68,7 +68,7 @@
       <a href="../css-and-bootstrap">2. CSS 和 Bootstrap </a>
       <br>
     </td>
-    <td class="tg-svo0" rowspan="2"><span href="../cracking-a-website-practice">Web 逆向练习（课上开放，有奖品）</span></td>
+    <td class="tg-svo0"><a href="../cracking-a-website-practice">Web 逆向练习</a></td>
     <td class="tg-svo0">
       <a href="https://angrytools.com/css-generator/border/">1. CSS 特效生成器</a>
       <br>
@@ -79,35 +79,35 @@
     <td class="tg-c3ow">Sun<br>4/4<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
+        <b>清明节，Lab 照常</b>
+        <br>
+        <b>但不安排新内容</b>
+    </td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr>
+    <td class="tg-svo0" rowspan="2">Week 3</td>
+    <td class="tg-svo0">Wed<br>4/7<br>20:00-22:00</td>
+    <td class="tg-svo0">PMB<br>309</td>
+    <td class="tg-svo0">
       <span href="../git">1. Git 的使用</a>
       <br>
       <span href="../gh-hosting">2. 公布你的网页</a>
       <br>
     </td>
-    <td class="tg-c3ow">
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0">
       <span href="https://blog.csdn.net/qq_26787115/article/details/52133008"> 1. 为开源项目贡献内容</span>
     </td>
   </tr>
   <tr>
-    <td class="tg-svo0" rowspan="2">Week 3</td>
-    <td class="tg-svo0">TBA</td>
-    <td class="tg-svo0">TBA</td>
-    <td class="tg-svo0">
+    <td class="tg-c3ow">Sun<br>4/11<br>20:00-22:00</td>
+    <td class="tg-c3ow">PMB<br>309</td>
+    <td class="tg-c3ow">
       <span href="../frontend-frameworks">1. 前端框架</a>
       <br>
       <span href="../uni-app">2. Uni-app </a>
-      <br>
-    </td>
-    <td class="tg-svo0"></td>
-    <td class="tg-svo0"></td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">TBA</td>
-    <td class="tg-c3ow">TBA</td>
-    <td class="tg-c3ow">
-      <span href="../mvc">1. MVC 设计模式</a>
-      <br>
-      <span href="../client-server">2. 客户端-服务器通讯</a>
       <br>
     </td>
     <td class="tg-c3ow"></td>
@@ -120,7 +120,13 @@
     <td class="tg-svo0" rowspan="2">Week 4</td>
     <td class="tg-svo0">TBA</td>
     <td class="tg-svo0">TBA</td>
-    <td class="tg-svo0"></td>
+    <td class="tg-svo0">
+      <span href="../mvc">1. MVC 设计模式</a>
+      <br>
+      <span href="../client-server">2. 客户端-服务器通讯</a>
+      <br>
+
+    </td>
     <td class="tg-svo0"></td>
     <td class="tg-svo0"></td>
   </tr>

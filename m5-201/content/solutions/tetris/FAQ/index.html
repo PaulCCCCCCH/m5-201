@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="IceWould Training Hub">
     <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
-    <link rel="canonical" href="https://paulcccccch.github.io/content/dev-setup/">
-    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/solutions/tetris/FAQ/">
+    <link rel="shortcut icon" href="../../../../img/favicon.ico">
 
     
-    <title>开发环境搭建 - m5-201</title>
+    <title>FAQ - m5-201</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
     <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="../../css/base.min.css" rel="stylesheet">
-    <link href="../../css/cinder.min.css" rel="stylesheet">
+    <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../../css/base.min.css" rel="stylesheet">
+    <link href="../../../../css/cinder.min.css" rel="stylesheet">
 
     
         
@@ -59,7 +59,7 @@
             <!-- Main title -->
 
             
-              <a class="navbar-brand" href="../..">m5-201</a>
+              <a class="navbar-brand" href="../../../..">m5-201</a>
             
         </div>
 
@@ -70,13 +70,13 @@
                 
                 
                     <li >
-                        <a href="../schedule/">Home</a>
+                        <a href="../../../schedule/">Home</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="../schedule/">Schedule</a>
+                        <a href="../../../schedule/">Schedule</a>
                     </li>
                 
                 
@@ -87,7 +87,7 @@
                         
                             
 <li >
-    <a href="../introduction/">Introduction</a>
+    <a href="../../../introduction/">Introduction</a>
 </li>
 
                         
@@ -104,7 +104,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/dev-setup.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/solutions/tetris/FAQ.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -116,53 +116,147 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#_1">开发环境搭建</a></li>
-            <li class="second-level"><a href="#_2">关于代码提示</a></li>
-                
-            <li class="second-level"><a href="#_3">关于编辑器选择</a></li>
-                
-                <li class="third-level"><a href="#vscode">VSCode</a></li>
-                <li class="third-level"><a href="#webstorm">WebStorm</a></li>
-                <li class="third-level"><a href="#_4">其它</a></li>
+        <li class="first-level active"><a href="#faq">FAQ</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="_1">开发环境搭建</h1>
-<p>在工程项目中，我们强烈建议各位使用<strong>基于语义的代码提示</strong>。我们推荐使用 <code>VSCode</code> 和 <code>WebStorm</code>。<br />
-<br></p>
-<h2 id="_2">关于代码提示</h2>
-<p>代码提示（或者叫自动补全）就是，当你输入一些关键字母，你的编辑器就会自己弹出几个对应选项，让你从中进行选择。这在工程中，尤其是在有一定复杂度的工程中至关重要。<br />
-<br></p>
-<p>比如，在一个 <code>SpringBoot</code> 搭建的项目中，一个 <code>Ship</code> 类有如下十几个方法：<br />
-- <code>addShipByShipMMSN</code><br />
-- <code>addShipByID</code><br />
-- <code>selectShipByShipMMSN</code><br />
-- <code>selectShipByShipID</code><br />
-- <code>deleteShipByShipMMSN</code><br />
-- <code>deleteShipByShipID</code><br />
-- ...</p>
-<p>当你想要调用一个 <code>Ship</code> 的方法时，在没有代码补全的情况下，你可能先找到 <code>Ship.java</code>，打开这个该死的文件，然后拿鼠标慢慢向下滑，一个一个看它有哪些方法可以用。当你找到了一个方法，你选中这个方法名，将它复制到你要用的地方，然后修改它的参数。要是少复制了一个字母，你还要等到编译的时候，查看报错信息才能发现。<br />
-<br></p>
-<p>当你完成这些工作的时候，你使用自动补全的同事已经完成所有工作准备下班了。<br />
-<br></p>
-<p>使用自动补全的话，假定你的 <code>Ship</code> 类型的变量是 <code>shipX</code>，当你输入 <code>shipX.</code> 的时候，<code>Ship</code> 类内所有可以用的方法都会跳出来，你只需要选择一个你需要的就可以了。<br />
-<br></p>
-<p>这是<strong>基于语义的代码提示</strong>，它会分析你写的代码结构，给出最完全的信息，并且一般会在编译之前就给出错误提示。<br />
-<br></p>
-<p>另外一种，是<strong>基于页面内容的代码提示</strong>。它是一些轻量级编辑器，如 <code>sublime</code> 和 <code>notepad++</code> 会搭载的。它们会抓取你在当前页面上输入过的单词，给出提示，但是并不能观察你在另一个文件里定义过的方法名，所以越等于没有用。
-<br></p>
-<h2 id="_3">关于编辑器选择</h2>
-<p>（你当然可以选择跳过下面的废话，各种都尝试一下。）</p>
-<h3 id="vscode">VSCode</h3>
-<p>如果你特别爱定制化，比如会精心布置你的房间， 那么 <code>VSCode</code> 可能是很好的选择。它提供了各种插件，让你可以自由配置外观、快捷键和各种功能，可以让你随心所欲，做到一款编辑器，写遍天下代码。</p>
-<h3 id="webstorm">WebStorm</h3>
-<p><code>WebStorm</code> 的好处在于 JetBrains 香到无法拒绝的全家桶。基本上，你想开发的语言，想用的开发工具，JetBrains 都帮你准备好了（JetBrain 之于我，好比 Adobe 之于设计师吧...）。它把所有功能都集成进去了，同时也提供许多定制化。缺点就是，如果你要同时开发 <code>Java</code>，<code>Python</code> 和 <code>Web</code>，那么你要安装他们家的三个不同产品：<code>IntelliJ</code>，<code>Python</code> 和 <code>WebStorm</code>（不过好像付费版本的 <code>IntelliJ</code> 啥都能开发...家里有矿的同学可以考虑一下）。</p>
-<h3 id="_4">其它</h3>
-<p><code>Sublime</code>，<code>Vim</code> 和 <code>Emacs</code> 都是很好用的编辑器，但是并不能通过简单的配置提供很好的体验。<br />
-<br></p>
-<p>不过，如果你是非常非常 Geeky 的人，推荐尝试学习一下 <code>Vim</code> 和 <code>Emacs</code>， 尤其是后者。</p>
-<p>（但是在这里夹带一波私货：快来学 <code>Vim</code>！自从学了 <code>Vim</code>，我再也不用鼠标了！打字太爽了！工作效率直接翻倍！）</p></div>
+<!-- 
+@ author: Kobe Norris (KobeNorrisWu@gmail.com)
+@ date: 2021/03/24 18/32/22 pm
+@ 
+ -->
+
+<h1 id="faq"><strong>FAQ</strong></h1>
+<ol>
+<li>
+<p><code>Game Board</code> 结构</p>
+<ul>
+<li><code>Game Board</code><ul>
+<li><code>piece</code> 1<ul>
+<li><code>block</code> 1-1</li>
+<li><code>block</code> 1-2</li>
+<li><code>block</code> 1-3</li>
+<li><code>block</code> 1-4</li>
+</ul>
+</li>
+<li><code>piece</code> 2<ul>
+<li><code>block</code> 2-1</li>
+<li><code>block</code> 2-2</li>
+<li><code>block</code> 2-3</li>
+<li><code>block</code> 2-4</li>
+</ul>
+</li>
+<li><code>piece</code> 3<ul>
+<li><code>block</code> 3-1</li>
+<li><code>block</code> 3-2</li>
+<li><code>block</code> 3-3</li>
+<li><code>block</code> 3-4</li>
+</ul>
+</li>
+<li>....</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>piece</code> 结构</p>
+<ul>
+<li><code>piece</code><ul>
+<li>rowPos</li>
+<li>colPos</li>
+<li>style<ul>
+<li>top</li>
+<li>left</li>
+</ul>
+</li>
+<li><code>block</code> 1-1</li>
+<li><code>block</code> 1-2</li>
+<li><code>block</code> 1-3</li>
+<li><code>block</code> 1-4</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>block</code> 结构</p>
+<ul>
+<li><code>block</code> 1-1<ul>
+<li>style<ul>
+<li>top</li>
+<li>left</li>
+<li>width</li>
+<li>height</li>
+<li>background</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>game 运行流程</p>
+<ol>
+<li>
+<p><code>play()</code></p>
+</li>
+<li>
+<p><code>cleanBoard()</code></p>
+</li>
+<li>
+<p>Gaming</p>
+<ol>
+<li>
+<p><code>generatePiece()</code></p>
+<ol>
+<li><code>initializePiece()</code></li>
+</ol>
+</li>
+<li>
+<p>Manipulation</p>
+<ol>
+<li>
+<p><code>moveLeft(piece)</code></p>
+</li>
+<li>
+<p><code>moveRight(piece)</code></p>
+</li>
+<li>
+<p><code>rotateClock(piece)</code></p>
+</li>
+<li>
+<p><code>rotateAntiClock(piece)</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p><code>pieceMoveDown()</code></p>
+<ol>
+<li>
+<p><code>check()</code></p>
+</li>
+<li>
+<p><code>rowFull(rowIdx)</code></p>
+</li>
+<li>
+<p><code>clearRow(rowIdx)</code></p>
+</li>
+<li>
+<p><code>rowDown(rowIdx)</code></p>
+</li>
+<li>
+<p><code>gameOver();</code></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><code>gameOver()</code></p>
+</li>
+</ol>
+</li>
+</ol></div>
         
         
     </div>
@@ -182,7 +276,7 @@
       </footer>
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../../../js/bootstrap-3.0.3.min.js"></script>
 
     
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
@@ -190,10 +284,10 @@
     <script>hljs.initHighlightingOnLoad();</script>
     
 
-    <script>var base_url = "../.."</script>
+    <script>var base_url = "../../../.."</script>
     
-    <script src="../../js/base.js"></script>
-    <script src="../../search/main.js"></script>
+    <script src="../../../../js/base.js"></script>
+    <script src="../../../../search/main.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

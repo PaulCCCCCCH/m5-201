@@ -1,0 +1,25 @@
+/*define the interface*/
+#playground {
+    /* margin-left: 100px; */
+    border: 1px solid black;
+    height: 400px;
+    width: 200px;
+    position:relative;
+    overflow: hidden;
+}
+
+.block {
+    border: 1px solid silver;
+    border-style: groove;
+    position: absolute;
+}
+
+
+.control {
+    border: 3px;
+    font-family: sans-serif;
+    background-color: silver;
+    border-style: groove;
+    width: 80px;
+    /* height: 30px; */
+}

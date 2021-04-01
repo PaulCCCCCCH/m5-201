@@ -1,4 +1,5 @@
 docs/content/solutions
+docs/content/solutions/*
 docs/content/source
 .DS_Store
 *.swp
