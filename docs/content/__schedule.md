@@ -1,6 +1,6 @@
 # Announcements
-3/2: 第一次线下活动的时间是 3 月 24 日（周三），地点是 PMB 309。第一次活动比较重要，会牵扯到后续的淘汰筛选机制，请大家务必按时前来哦！
-
+4/4：清明节假期 Lab 照常，不过不安排内容。各位如果要出去玩儿错过了也不用太担心！
+另外，我们马上就要进行分组，并开始真实项目的开发了，所以之后两周的参与会非常重要。
 
 # Schedule
 
@@ -38,7 +38,7 @@
       <a href="../web-basics">3. Web 基础</a>
     </td>
     <td class="tg-svo0" rowspan="2"> <a href="../web-basics-practice"> Web 练习</a></td>
-    <td class="tg-svo0" rowspan="6"> <a href="../tetris-in-js">Project 1: Tetris in JS</a></td>
+    <td class="tg-svo0" rowspan="6"> <a href="../project-1-tetris-in-js">Project 1: Tetris in JS</a></td>
     <td class="tg-svo0">
       <a href="https://www.runoob.com/html/html5-intro.html">1. 菜鸟 HTML 教程</a>
       <br>
@@ -55,7 +55,6 @@
       <br>
       <a href="../debugging">2. Debugging </a>
       <br>
-      <!-- <span href="../tetris">4. Tetris in JS </a> -->
     </td>
     <td class="tg-c3ow"></td>
   </tr>
@@ -99,6 +98,8 @@
     <td class="tg-svo0"></td>
     <td class="tg-svo0">
       <span href="https://blog.csdn.net/qq_26787115/article/details/52133008"> 1. 为开源项目贡献内容</span>
+      <br>
+      <span href="https://pages.github.com/"> 2. GitHub Pages</span>
     </td>
   </tr>
   <tr>
@@ -111,29 +112,46 @@
       <br>
     </td>
     <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">
+      <span href="https://uniapp.dcloud.io/"> 1. uni-app 官网</span>
+    </td>
   </tr>
 
-<tr><td class="tg-c3ow" colspan="6">后续内容陆续展示</td></tr>
-<!--
   <tr>
     <td class="tg-svo0" rowspan="2">Week 4</td>
-    <td class="tg-svo0">TBA</td>
-    <td class="tg-svo0">TBA</td>
+    <td class="tg-svo0">Wed<br>4/14<br>20:00-22:00</td>
+    <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <span href="../mvc">1. MVC 设计模式</a>
+      <span href="../software">1. 软件工程 </a>
       <br>
-      <span href="../client-server">2. 客户端-服务器通讯</a>
-      <br>
-
     </td>
     <td class="tg-svo0"></td>
+    <td class="tg-svo0" rowspan="8">
+      <span href="../project-2">Project 2: 企业项目——前端</a>
+      <br>
+      <br>
+      <span href="../project-2-1-mirror">Option 1: 智能化妆镜交互</a>
+      <br>
+      <br>
+      <span href="../project-2-1-forum">Option 2: m5-201 论坛前端</a>
+      <br>
+      <br>
+      <span href="../project-2-1-website">Option 3: 零下五度官网</a>
+      <br>
+      <br>
+    </td>
     <td class="tg-svo0"></td>
   </tr>
+
   <tr>
-    <td class="tg-c3ow">TBA</td>
-    <td class="tg-c3ow">TBA</td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Sun<br>4/18<br>20:00-22:00</td>
+    <td class="tg-c3ow">PMB<br>309</td>
+    <td class="tg-c3ow">
+      <span href="../client-server">1. 客户端-服务器通讯</a>
+      <br>
+      <span href="../mvvc">2. MVVC 设计模式</a>
+      <br>
+    </td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
   </tr>
@@ -141,17 +159,20 @@
     <td class="tg-svo0" rowspan="2">Week 5</td>
     <td class="tg-svo0">TBA</td>
     <td class="tg-svo0">TBA</td>
-    <td class="tg-svo0"></td>
+    <td class="tg-svo0">TBA</td>
     <td class="tg-svo0"></td>
     <td class="tg-svo0"></td>
   </tr>
   <tr>
     <td class="tg-c3ow">TBA</td>
     <td class="tg-c3ow">TBA</td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">TBA</td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
   </tr>
+
+<tr><td class="tg-c3ow" colspan="6">后续内容陆续展示</td></tr>
+<!--
    <tr>
     <td class="tg-svo0" rowspan="2">Week 5</td>
     <td class="tg-svo0">Placeholder</td>

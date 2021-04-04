@@ -7,10 +7,8 @@ theme:
   name: cinder
 
 nav:
-  - Home: content/schedule.md
-  - Schedule: content/schedule.md
-  - Notes:
-    - Introduction: 'content/introduction.md'
+  - Home: home.md
+  - Schedule: index.md
 
 repo_url: https://github.com/PaulCCCCCCH/m5-201
 site_dir: m5-201/
