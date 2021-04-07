@@ -92,16 +92,16 @@
     <td class="tg-svo0">Wed<br>4/7<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <span href="./content/git">1. Git 的使用</a>
+      <a href="./content/git">1. Git 的使用</a>
       <br>
-      <span href="./content/gh-hosting">2. 公布你的网页</a>
+      <a href="./content/gh-hosting">2. 公布你的网页</a>
       <br>
     </td>
     <td class="tg-svo0"></td>
     <td class="tg-svo0">
-      <span href="https://blog.csdn.net/qq_26787115/article/details/52133008"> 1. 为开源项目贡献内容</span>
+      <a href="https://blog.csdn.net/qq_26787115/article/details/52133008"> 1. 为开源项目贡献内容</span>
       <br>
-      <span href="https://pages.github.com/"> 2. GitHub Pages</span>
+      <a href="https://pages.github.com/"> 2. GitHub Pages 官方文档</span>
     </td>
   </tr>
   <tr>
