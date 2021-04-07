@@ -97,7 +97,7 @@
       <a href="./content/gh-hosting">2. 公布你的网页</a>
       <br>
     </td>
-    <td class="tg-svo0"></td>
+    <td class="tg-svo0"><a href='./content/git-practice'>Git 练习</a></td>
     <td class="tg-svo0">
       <a href="https://blog.csdn.net/qq_26787115/article/details/52133008"> 1. 为开源项目贡献内容</span>
       <br>
