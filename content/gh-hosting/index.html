@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/gh-hosting/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>公布你的网页 - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../home/">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../..">Schedule</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/gh-hosting.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#_1">公布你的网页</a></li>
+            <li class="second-level"><a href="#github-pages">GitHub Pages 部署</a></li>
+                
+            <li class="second-level"><a href="#_2">服务器部署</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="_1">公布你的网页</h1>
+<p>当你用 Web 三件套做好了一个网页，你可能希望大家都来访问。这应该怎么做呢？<br />
+<br></p>
+<h2 id="github-pages">GitHub Pages 部署</h2>
+<p>一个比较简单的方法，是使用 GitHub Pages。<br />
+<br></p>
+<p>首先，你需要在本地创建一个新分支，然后在 <code>GitHub</code> 上创建一个 <code>Repository</code>，把你的网站 <code>push</code> 上去。
+<br></p>
+<p>进入自己的 <code>Repository</code>，点击右上角的 <code>Settings</code>，来到 <code>GitHub Pages</code> 这一栏。<br />
+<br></p>
+<p>在 <code>Source</code> 里的第一个下拉框，选择刚才的分支。如果你的网站入口（通常是 <code>index.html</code>）在根目录下，那么第二个下拉框直接选用默认的 <code>root</code>。如果是在 <code>./docs</code> 下，那么选择 <code>./docs</code>。它暂时不支持部署入口在其它目录下的网站。 <br />
+<br></p>
+<p>设置完毕，点击 <code>save</code> 之后，你就可以通过它给的链接访问你自己的网页了（不过有时候可能得等上一小会儿）。<br />
+<br></p>
+<p><code>GitHub Pages</code> 只提供 Web 前端页面的部署，并且功能上有一些局限。想要自由地部署网站，还需要使用服务器才行。<br />
+<br></p>
+<p>如果愿意花一些钱购买服务器的话，请往下看。不然的话，可以先跳过，我们会在之后的项目中给大家玩儿服务器的机会。<br />
+<br></p>
+<h2 id="_2">服务器部署</h2>
+<p>我们列出部署服务器的每一个步骤。请活用搜索引擎，遇到问题请向有经验的人求助！<br />
+<br></p>
+<ul>
+<li>
+<p>首先，购买服务器并设置初始用户名密码后，你可以使用 <code>ssh &lt;用户名&gt;@&lt;服务器 ip 地址&gt;</code> 登录它。<br />
+<br></p>
+</li>
+<li>
+<p>在服务器上，你需要先安装 <code>nginx</code>。根据你系统的镜像不同，安装的命令可能稍有不同。<br />
+<code>nginx</code> 可以理解为一个接待员。每当有人访问你的网页，这个接待员就会把他引导向指定地方，这是由你的配置文件决定的。<br />
+<br></p>
+</li>
+<li>
+<p>在你购买服务器的网站上，你需要找到 <code>安全组</code>，将 <code>80</code> 端口开放（不过大部分的 <code>80</code> 端口会默认为你打开）。如果工作正常，在启动 <code>nginx</code> 后，用浏览器访问服务器的 <code>ip</code> 地址，你就可以看到一个 <code>nginx</code> 的欢迎页面。<br />
+<br></p>
+</li>
+<li>
+<p>你需要配置 <code>nginx</code> 的文件。它在 <code>/etc/nginx/</code> 里，通常是 <code>nginx.conf</code> 或 <code>sites-enabled/default</code>。那个 <code>nginx</code> 的欢迎页面，其实是放在 <code>var/www/html</code> 下的 <code>index.html</code>。你可以看到默认配置是怎么监听端口，并且把 <code>http</code> 请求引到这个 <code>index.html</code> 文件的。<br />
+注意，<code>location</code> 如果是 <code>/something</code>，那么这个对应 <code>&lt;服务器 ip 地址&gt;/something</code>。具体用法请参阅文档。<br />
+<br></p>
+</li>
+<li>
+<p>你可以加入新的配置，然后在 <code>var/www</code> 中创建新的文件夹，把自己的网页放进去。<br />
+<br></p>
+</li>
+<li>
+<p>最后，重启 <code>nginx</code>，这样你就可以通过服务器的 <code>ip</code> 地址以及路径访问到你的网页了！</p>
+</li>
+</ul></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

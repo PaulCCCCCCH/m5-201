@@ -1,6 +1,6 @@
 .divBlackBoarder {
     width: 50px;
-    height: 100px;
+   height: 100px;
     boarder: 5px solid black;
     position: relative;
 }
