@@ -1,4 +1,9 @@
 # Announcements
+### 4 月 10 日（**新**）
+- 为了更早熟悉项目、组成团队，我们提早开放了五个待选项目的**预览**。
+- 注意，虽然五个项目已经敲定，但关于项目内容的详细文档还没有完成。**五个项目文档会随时更新，请务必密切关注！**
+- 请大家先对各个项目有个大致的了解，与身边的人交流一下；不过没必要着急确定自己的选择，我们之后会组织大家选择项目并组队的。我们会尽量在 Week 4 之前把项目和团队确定下来。
+
 ### 4/4：
 - 清明节假期 Lab 照常，不过不安排内容。各位如果要出去玩儿错过了也不用太担心！
 - 我们马上就要进行分组，并开始真实项目的开发了，所以清明节之后两周的参与会非常重要。  
@@ -108,14 +113,16 @@
     <td class="tg-c3ow">Sun<br>4/11<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <span href="./content/frontend-frameworks">1. 前端框架</a>
+      <a href="./content/frontend-frameworks">1. 前端框架</a>
       <br>
-      <span href="./content/uni-app">2. Uni-app </a>
+      <a href="./content/uni-app">2. Uni-app </a>
       <br>
     </td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow">
-      <span href="https://uniapp.dcloud.io/"> 1. uni-app 官网</span>
+      <a href="https://uniapp.dcloud.io/"> 1. uni-app 官网</a>
+      <br>
+      <a href="https://www.jianshu.com/p/bef1c1ee5a0e"> 2. Virtual DOM 的概念</a>
     </td>
   </tr>
 
@@ -129,16 +136,22 @@
     </td>
     <td class="tg-svo0"></td>
     <td class="tg-svo0" rowspan="8">
-      <span href="./content/project-2">Project 2: 企业项目——前端</a>
+      <a href="./content/project-2">Project 2: 企业项目前端</a>
       <br>
       <br>
-      <span href="./content/project-2-1-mirror">Option 1: 智能化妆镜交互</a>
+      <a href="./content/project-2-1-mirror">Option 1: 智能化妆镜交互</a>
       <br>
       <br>
-      <span href="./content/project-2-1-forum">Option 2: m5-201 论坛前端</a>
+      <a href="./content/project-2-2-forum">Option 2: m5-201 平台前端</a>
       <br>
       <br>
-      <span href="./content/project-2-1-website">Option 3: 零下五度官网</a>
+      <a href="./content/project-2-3-website">Option 3: 零下五度官网</a>
+      <br>
+      <br>
+      <a href="./content/project-2-4-tree-hole">Option 4: “树洞”前端 </a>
+      <br>
+      <br>
+      <a href="./content/project-2-5-orange">Option 5: “橘否”前端</a>
       <br>
       <br>
     </td>
@@ -151,7 +164,7 @@
     <td class="tg-c3ow">
       <span href="./content/client-server">1. 客户端-服务器通讯</a>
       <br>
-      <span href="./content/mvvc">2. MVVC 设计模式</a>
+      <span href="./content/mvvm">2. MVVM 设计模式</a>
       <br>
     </td>
     <td class="tg-c3ow"></td>
