@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/uni-app/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Uni-app - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../home/">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../..">Schedule</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/uni-app.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#uni-app">Uni-app</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="uni-app">Uni-app</h1>
+<p>建议在阅读完本教程之后，再去阅读一下 <code>uni-app</code> 的<a href="https://uniapp.dcloud.io/">官方文档</a>。<br />
+<br></p>
+<p><code>uni-app</code> 是众多 <code>一套代码，多端编译</code> 的框架之一。什么意思呢？<br />
+<br></p>
+<p>比如，你用 Web 三件套 (<code>HTML</code>, <code>CSS</code> 和 <code>JavaScript</code>) 为公司开发了一个网页。在公司的运营下，网页取得了不错的浏览量。现在，为了拓宽用户渠道，公司需要做一个小程序。这时候，你可能需要用微信的框架 (<code>WXML</code> 之类的鬼东西) 重新开发一遍。日后，如果公司需要进军手机应用，那么你还需要用 <code>Java</code> + <code>Google API</code> 开发安卓和 <code>Objective-C</code> 或 <code>Swift</code> 开发 <code>iOS</code>。在开发力量不足的情况下，这是要人命的节奏。<br />
+<br></p>
+<p><code>一套代码，多端编译</code> 的框架就可以提供一个<strong>临时</strong>解决方案。你只需要用一种框架开发一遍，就可以在各个平台部署 (网页、小程序、安卓、<code>iOS</code> 等等，要看框架具体支持哪些平台）。<br />
+<br></p>
+<p>但是为什么说是<strong>临时</strong>解决方案呢？<br />
+<br></p>
+<p>首先，由于是编译过去的，代码的效率会很低。之前用 <code>uni-app</code> 开发的一个没多少 <code>DOM</code> 的表单页面，编译之后竟然出现了上千个 <code>DOM</code> 节点，直接把手机卡成了暖宝宝，令人震惊。<br />
+<br></p>
+<p>其次，以我们的开发经验来看，如果你用<code>多端编译</code>的框架，瞄准小程序去开发和 debug，确定没问题后，把它编译到另一个平台，比如网页或安卓，出问题的概率是 100%。会有各式各样的兼容性问题需要修复。不过工作量确实比重新开发小不少。
+<br></p>
+<p>所以，<code>多端编译</code>的框架，非常适合中小型的、对性能要求不很高的、demo 性的或启动阶段的项目。在业务发展到一定规模，有能力组建庞大开发团队之后，再去专门开发各个平台的应用。  </p>
+<p><code>uni-app</code> 是根据 <code>vue</code> 框架改编的，写起来跟 <code>vue</code> 基本没差。所以也可以直接去学习 <code>vue</code> 框架的使用。<br />
+还有很多类似的框架，比如同样基于 <code>vue</code> 的 <code>mpvue</code>，基于 <code>React</code> 的 <code>Taro</code> 和 <code>nanachi</code> 等等。<br />
+（很好奇有没有基于 <code>Angular</code> 的框架...有的话麻烦告诉我一下）<br />
+<br></p>
+<p>我们不会在 note 里讲解具体语法和规则。还请各位自行阅读教程，活用搜索引擎，然后多向有经验的人求助。</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

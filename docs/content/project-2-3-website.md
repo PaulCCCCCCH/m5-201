@@ -4,9 +4,11 @@
 零下五度（宁波）信息科技有限公司
 
 ## 负责人
-皮大爷
+裴文哲
 
 ## 项目预览
+请阅读[项目文档](../resources/website.docx)和我们的[设计稿](https://lanhuapp.com/url/jZgID-WQhBl)
+
 这个项目需要为零下五度制作官方网页。
 <br>
 
