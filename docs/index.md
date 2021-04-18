@@ -1,10 +1,14 @@
 # Announcements
-### 4 月 10 日（**新**）
+### 4 月 18 日 (**新**)
+- 我们的五个项目团队已经组建完毕，各项目 leader 应该已经开始了接洽工作。错过了项目选择，但是仍然想要加入的同学，请联系我们！
+- 今后，每周两次的 lab 照常进行，lab 内容会与项目内容紧密相关（经过协调，我们五个项目涉及到的技术有很大重合）。除此之外，各项目 leader 会额外组织线下的 group work，请与 leader 多沟通，有问题随时联系我们！
+
+### 4 月 10 日
 - 为了更早熟悉项目、组成团队，我们提早开放了五个待选项目的**预览**。
 - 注意，虽然五个项目已经敲定，但关于项目内容的详细文档还没有完成。**五个项目文档会随时更新，请务必密切关注！**
 - 请大家先对各个项目有个大致的了解，与身边的人交流一下；不过没必要着急确定自己的选择，我们之后会组织大家选择项目并组队的。我们会尽量在 Week 4 之前把项目和团队确定下来。
 
-### 4/4：
+### 4 月 4 日
 - 清明节假期 Lab 照常，不过不安排内容。各位如果要出去玩儿错过了也不用太担心！
 - 我们马上就要进行分组，并开始真实项目的开发了，所以清明节之后两周的参与会非常重要。  
 - Project 2 的三个选项并没有最终敲定，我们会从内容含金量、难度以及项目费三个角度选择项目。各位如果有好的项目提议也可以找我们聊！
@@ -129,13 +133,13 @@
   <tr>
     <td class="tg-svo0" rowspan="2">Week 4</td>
     <td class="tg-svo0">Wed<br>4/14<br>20:00-22:00</td>
-    <td class="tg-svo0">PMB<br>309</td>
+    <td class="tg-svo0"><b>海洋楼<b><br>405</td>
     <td class="tg-svo0">
-      <span href="./content/software">1. 软件工程 </a>
+      <b>项目选择</b>
       <br>
     </td>
     <td class="tg-svo0"></td>
-    <td class="tg-svo0" rowspan="8">
+    <td class="tg-svo0" rowspan="6">
       <a href="./content/project-2">Project 2: 企业项目前端</a>
       <br>
       <br>
@@ -162,7 +166,34 @@
     <td class="tg-c3ow">Sun<br>4/18<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <span href="./content/client-server">1. 客户端-服务器通讯</a>
+      <a href="./content/se-and-tools">1. 软件工程及相关工具</a>
+      <br>
+      <a href="./content/client-server">2. 客户端-服务器通讯</a>
+      <br>
+    </td>
+    <td class="tg-c3ow">
+      <a href="./content/uni-app-practice">uni-app 联调练习</a>
+    </td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr>
+    <td class="tg-svo0" rowspan="2">Week 5</td>
+    <td class="tg-svo0">Wed<br>4/21<br>20:00-22:00</td>
+    <td class="tg-svo0">PMB<br>309</td>
+    <td class="tg-svo0">
+      <span href="./content/best-practice-frontend">1. 前端开发规范</a>
+      <br>
+      <span href="./content/network">2. 前端自动化测试</a>
+      <br>
+    </td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Sun<br>4/25<br>20:00-22:00</td>
+    <td class="tg-c3ow">PMB<br>309</td>
+    <td class="tg-c3ow">
+      <span href="./content/network">1. 长链接</a>
       <br>
       <span href="./content/mvvm">2. MVVM 设计模式</a>
       <br>
@@ -170,39 +201,78 @@
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
   </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 5</td>
-    <td class="tg-svo0">TBA</td>
-    <td class="tg-svo0">TBA</td>
-    <td class="tg-svo0">TBA</td>
-    <td class="tg-svo0"></td>
-    <td class="tg-svo0"></td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">TBA</td>
-    <td class="tg-c3ow">TBA</td>
-    <td class="tg-c3ow">TBA</td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-  </tr>
 
+   <tr>
+    <td class="tg-svo0" rowspan="2">Week 6</td>
+    <td class="tg-svo0">Wed<br>4/28<br>20:00-22:00</td>
+    <td class="tg-svo0">PMB<br>309</td>
+    <td class="tg-svo0">
+      <span href="./content/network">1. 云服务</a>
+      <br>
+      <span href="./content/network">2. Linux 系统</a>
+      <br>
+    </td>
+    <td class="tg-svo0" rowspan="2"> 云服务操作练习</td>
+    <td class="tg-svo0"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Sun<br>5/2<br>20:00-22:00</td>
+    <td class="tg-c3ow">PMB<br>309</td>
+    <td class="tg-c3ow">
+      <span href="./content/network">1. 简单服务部署 </a>
+    </td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr>
+    <td class="tg-svo0" rowspan="2">Week 7</td>
+    <td class="tg-svo0">Wed<br>5/5<br>20:00-22:00</td>
+    <td class="tg-svo0">PMB<br>309</td>
+    <td class="tg-svo0">
+      <span href="./content/network">1. 服务端开发</a>
+      <br>
+      <span href="./content/network">2. SpringBoot</a>
+    </td>
+    <td class="tg-svo0">
+      <span href="./content/network">SpringBoot 练习</a>
+    </td>
+    <td class="tg-svo0" rowspan="8">
+      <a href="./content/project-2">Project 3: 企业项目后端</a>
+    </td>
+    <td class="tg-svo0"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Sun<br>5/9<br>20:00-22:00</td>
+    <td class="tg-c3ow">PMB<br>309</td>
+    <td class="tg-c3ow">
+      <span href="./content/network">1. 实用第三方库</a>
+      <br>
+      <span href="./content/network">2. 包管理</a>
+      <br>
+      <span href="./content/network">3. 后端开发规范</a>
+      <br>
+    </td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr>
+    <td class="tg-svo0" rowspan="2">Week 8</td>
+    <td class="tg-svo0">Wed<br>5/12<br>20:00-22:00</td>
+    <td class="tg-svo0">PMB<br>309</td>
+    <td class="tg-svo0">
+      <span href="./content/network">1. 后端自动化测试</a>
+    </td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Sun<br>5/16<br>20:00-22:00</td>
+    <td class="tg-c3ow">PMB<br>309</td>
+    <td class="tg-c3ow">TBA</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+  </tr>
 <tr><td class="tg-c3ow" colspan="6">后续内容陆续展示</td></tr>
 <!--
-   <tr>
-    <td class="tg-svo0" rowspan="2">Week 5</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-  </tr>
   <tr>
     <td class="tg-svo0" rowspan="2">Week 5</td>
     <td class="tg-svo0">Placeholder</td>
@@ -292,36 +362,7 @@
     <td class="tg-c3ow">Placeholder</td>
     <td class="tg-c3ow">Placeholder</td>
     <td class="tg-c3ow">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 5</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 5</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-  </tr> -->
+  </tr> 
+-->
 </tbody>
 </table>
