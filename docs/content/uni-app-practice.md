@@ -10,7 +10,7 @@
 ## 接口信息
 以下接口可以用来获取一个商品的数据。  
 ```
-icewould.com:5201/getProduct?id=<id>
+http://icewould.com:5201/getProduct?id=<id>
 ``` 
 
-比如，`icewould.com:5201/getProduct?id=100` 会查询 `id` 是 `100` 的商品信息。
+比如，`http://icewould.com:5201/getProduct?id=100` 会查询 `id` 是 `100` 的商品信息。
