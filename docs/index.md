@@ -1,5 +1,5 @@
 # Announcements
-### 4 月 18 日 (**新**)
+### 4 月 18 日
 - 我们的五个项目团队已经组建完毕，各项目 leader 应该已经开始了接洽工作。错过了项目选择，但是仍然想要加入的同学，请联系我们！
 - 今后，每周两次的 lab 照常进行，lab 内容会与项目内容紧密相关（经过协调，我们五个项目涉及到的技术有很大重合）。除此之外，各项目 leader 会额外组织线下的 group work，请与 leader 多沟通，有问题随时联系我们！
 
@@ -181,9 +181,9 @@
     <td class="tg-svo0">Wed<br>4/21<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <span href="./content/best-practice-frontend">1. 前端开发规范</a>
+      <a href="./content/best-practice-frontend">1. 前端开发规范</a>
       <br>
-      <span href="./content/network">2. 前端自动化测试</a>
+      <a href="./content/automated-testing">2. 自动化测试</a>
       <br>
     </td>
     <td class="tg-svo0"></td>
