@@ -193,13 +193,16 @@
     <td class="tg-c3ow">Sun<br>4/25<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <span href="./content/network">1. 长链接</a>
-      <br>
-      <span href="./content/mvvm">2. MVVM 设计模式</a>
-      <br>
+      <a href="./content/websocket">1. 长连接</a>
     </td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">
+      <a href="./content/websocket-practice">长连接练习</a>
+    </td>
+    <td class="tg-c3ow">
+      <a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1108898947791072">1. 请阅读完 MVVM <br>以及五个子页面</a> 
+      <br>
+      <a href="https://uniapp.dcloud.io/api/request/websocket"> 2. uni-app WebSocket 文档</a>
+    </td>
   </tr>
 
    <tr>

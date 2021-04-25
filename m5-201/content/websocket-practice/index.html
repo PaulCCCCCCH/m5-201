@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="IceWould Training Hub">
     <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
-    <link rel="canonical" href="https://paulcccccch.github.io/content/best-practice-frontend/">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/websocket-practice/">
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>前端开发规范 - m5-201</title>
+    <title>长连接练习 - m5-201</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -89,7 +89,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/best-practice-frontend.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/websocket-practice.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -101,25 +101,22 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#_1">前端开发规范</a></li>
-            <li class="second-level"><a href="#_2">格式规范</a></li>
-                
-            <li class="second-level"><a href="#_3">逻辑规范和注释</a></li>
-                
+        <li class="first-level active"><a href="#_1">长连接练习</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="_1">前端开发规范</h1>
-<h2 id="_2">格式规范</h2>
-<p>列举几个格式规范的例子：
-- 等号两边要加括号
-- if 和 for 后面的括号前要空格
-- 句子结尾不能带分号</p>
-<p>不存在最好的格式规范。每个开发团队可以有不同的规范。Leader 们可以要求组员在 <code>HBuilder</code> 中下载 <code>eslint</code>，然后配置你们需要的规范（或者使用默认规范）。这样，<code>HBuilder</code> 就会在规范不正确的时候报错。</p>
-<h2 id="_3">逻辑规范和注释</h2>
-<p>请查看阿里的<a href="../resources/best-practice.pdf">开发手册</a>第一章下的第五、第七、第八小节。</p>
-<p>注意其中的注释部分。虽然我们不是用 <code>Java</code>，但是，仍然可以按照 <code>JavaDoc</code> 的规范去写注释，然后用 <code>JSDoc</code> 插件生成文档。</p></div>
+<h1 id="_1">长连接练习</h1>
+<p>请使用以下代码连接 <code>socket</code>，加入我们的聊天室。</p>
+<pre><code class="language-javascript">uni.connectSocket({
+    url: 'ws://icewould.tpddns.cn:18123',
+    success: data =&gt; {
+        console.log(data)
+    }
+})
+
+</code></pre>
+<p>在前端页面做一个输入框，用 <code>socket</code> 发送用户输入的信息。</p></div>
         
         
     </div>
