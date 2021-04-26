@@ -16,6 +16,6 @@ http://icewould.com:5201/getProduct?id=<id>
 比如，`http://icewould.com:5201/getProduct?id=100` 会查询 `id` 是 `100` 的商品信息。
 
 ## 部分代码参考
-[点击这里下载](../code/reference.zip)
+[点击这里下载](../code/uni-app-reference.zip)
 
 
