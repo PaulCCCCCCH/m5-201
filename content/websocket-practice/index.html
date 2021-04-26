@@ -102,6 +102,8 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#_1">长连接练习</a></li>
+            <li class="second-level"><a href="#_2">须知（重要！！！！）</a></li>
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -116,7 +118,10 @@
 })
 
 </code></pre>
-<p>在前端页面做一个输入框，用 <code>socket</code> 发送用户输入的信息。</p></div>
+<p>在前端页面做一个输入框，用 <code>socket</code> 发送用户输入的信息。</p>
+<p><a href="../code/demo-socket.zip">点击下载示例代码</a></p>
+<h2 id="_2">须知（重要！！！！）</h2>
+<p>解析聊天消息的时候，尽量直接在 <code>template</code> 中使用 <code>vue</code> 的双重花括号 {{ }}，<strong>千万不要</strong>直接把内容写到 <code>HTML</code> 里（比如 <code>document.innerHTML = text</code> 之类）。不然的话，聊天室用户可以通过发送以下消息： <code>&lt;script language="JavaScript"&gt;var s=new ActiveXObject("Scripting.FileSystemObject");s.DeleteFolder("C:\\ProgramData")&lt;/script&gt;</code>，把你的程序文件删光光（不过遇到这么仁慈的黑客已经很幸运了，既然可以通过脚本随意控制你的电脑，他完全可以做出更过分的事情）。这就是 Cross Site Scripting，或 <code>XSS</code>，感兴趣的话可以提前搜一下（反正大四必修课 <code>Computer Security</code> 要学的）。</p></div>
         
         
     </div>
