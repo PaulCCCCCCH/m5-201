@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/linux-practice/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>云服务和 `Linux` 操作练习 - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../home/">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../..">Schedule</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/linux-practice.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#linux">云服务和 Linux 操作练习</a></li>
+            <li class="second-level"><a href="#_1">基础</a></li>
+                
+            <li class="second-level"><a href="#_2">安装相关</a></li>
+                
+            <li class="second-level"><a href="#vim">Vim 相关</a></li>
+                
+            <li class="second-level"><a href="#nginx">nginx 配置相关</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="linux">云服务和 <code>Linux</code> 操作练习</h1>
+<p>在练习开始之前，请先确保你有一个可用的云服务。如果没有，请阅读<a href="../content/cloud-service">云服务</a>，选择一个云服务购买和使用。<br />
+<br></p>
+<p>不想花钱的话，<code>AWS</code> 对学生有六个月免费，腾讯云的三个月 27 元套餐我们可以报销。<br />
+<br></p>
+<p>请活用搜索引擎，完成以下操作：<br />
+<br></p>
+<h2 id="_1">基础</h2>
+<ul>
+<li>使用 <code>ssh</code> 登录自己的云服务器</li>
+<li>用 <code>cd</code> 命令更换目录</li>
+<li>用 <code>ls</code> 命令列出目录的内容</li>
+<li>用 <code>touch</code> 命令创建文件</li>
+<li>用 <code>mkdir</code> 命令创建文件夹</li>
+<li>用 <code>cp</code> 命令复制文件</li>
+<li>用 <code>mv</code> 命令移动文件</li>
+<li>用 <code>cat</code> 打印出文件的内容</li>
+<li>用 <code>top</code> 或 <code>htop</code> 查看系统状态</li>
+</ul>
+<h2 id="_2">安装相关</h2>
+<ol>
+<li>请检查服务器是否安装了 <code>python</code>，如果没有，请使用 <code>apt</code> 安装 <code>python3</code></li>
+<li>使用 <code>apt</code> 安装 <code>nginx</code></li>
+<li>搜索 <code>nginx</code> 的用法，使用 <code>sudo service nginx &lt;命令&gt;</code> 来控制 <code>nginx</code> 服务的开关。当 <code>nginx</code> 服务开启后，用自己的电脑打开浏览器，输入服务器的 <code>ip</code> 地址，应该能看到 <code>Welcome to nginx</code> 的页面。</li>
+</ol>
+<h2 id="vim">Vim 相关</h2>
+<ul>
+<li>使用 <code>vim &lt;filename&gt;</code> 打开文件，进行编辑。关于 <code>vim</code> 的操作，请阅读<a href="https://www.runoob.com/linux/linux-vim.html">教程</a>。</li>
+</ul>
+<h2 id="nginx"><code>nginx</code> 配置相关</h2>
+<ul>
+<li>请前往 <code>/etc/nginx/sites-enabled/</code>，观察并修改其中的配置文件，在 <code>10080</code> 端口发布自己的俄罗斯方块（或其它）<code>html</code> 文件。修改完毕后，使用 <code>sudo service nginx restart</code> 重启 <code>nginx</code> 服务。</li>
+</ul></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
