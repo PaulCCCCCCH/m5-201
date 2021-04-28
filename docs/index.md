@@ -202,6 +202,8 @@
       <a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1108898947791072">1. 请阅读完 MVVM <br>以及五个子页面</a> 
       <br>
       <a href="https://uniapp.dcloud.io/api/request/websocket"> 2. uni-app WebSocket 文档</a>
+      <br>
+      <a href="https://www.bilibili.com/video/BV1564y1U7zd/">3. 录像</a>
     </td>
   </tr>
 
@@ -210,12 +212,14 @@
     <td class="tg-svo0">Wed<br>4/28<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <span href="./content/network">1. 云服务</a>
+      <a href="./content/cloud-service">1. 云服务</a>
       <br>
-      <span href="./content/network">2. Linux 系统</a>
+      <a href="./content/linux">2. Linux 系统</a>
       <br>
     </td>
-    <td class="tg-svo0" rowspan="2"> 云服务操作练习</td>
+    <td class="tg-svo0" rowspan="2"> 
+      <a href="./content/linux-practice">云服务和 Linux 操作练习</a>
+    </td>
     <td class="tg-svo0"></td>
   </tr>
   <tr>
