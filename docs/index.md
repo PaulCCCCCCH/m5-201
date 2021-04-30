@@ -1,4 +1,11 @@
 # Announcements
+## 4 月 30 日（新）
+- 五一假期，**没有 Lab（请看时间表）**，不要空跑了呀！项目的 meeting 怎么安排，请和自己的 Leader 商量哦！
+- 虽然没有 Lab，但是有问题还是可以随时在微信问的！
+- 我们正在进行暑期实习生招聘，如果想要丰富自己的假期、获得一些工作经验，可以关注微信公众号 icewould，点击校内招聘了解更多信息！填表的时候备注来自 `m5-201` 可以优先被考虑！
+- 出行注意安全！祝大家玩儿得愉快！
+
+
 ### 4 月 18 日
 - 我们的五个项目团队已经组建完毕，各项目 leader 应该已经开始了接洽工作。错过了项目选择，但是仍然想要加入的同学，请联系我们！
 - 今后，每周两次的 lab 照常进行，lab 内容会与项目内容紧密相关（经过协调，我们五个项目涉及到的技术有很大重合）。除此之外，各项目 leader 会额外组织线下的 group work，请与 leader 多沟通，有问题随时联系我们！
@@ -220,22 +227,26 @@
     <td class="tg-svo0" rowspan="2"> 
       <a href="./content/linux-practice">云服务和 Linux 操作练习</a>
     </td>
-    <td class="tg-svo0"></td>
+    <td class="tg-svo0" rowspan="2">
+      <a href="https://vim-adventures.com/">1. Vim 游戏</a>
+      <br>
+      <a href="https://www.bilibili.com/video/BV12K4y1P7o1/">2. 录像</a>
+    </td>
   </tr>
   <tr>
     <td class="tg-c3ow">Sun<br>5/2<br>20:00-22:00</td>
-    <td class="tg-c3ow">PMB<br>309</td>
+    <td class="tg-c3ow"><b>没有安排</b></td>
     <td class="tg-c3ow">
-      <span href="./content/network">1. 简单服务部署 </a>
+        <b>劳动节，没有 Lab</b>
     </td>
-    <td class="tg-c3ow"></td>
   </tr>
   <tr>
     <td class="tg-svo0" rowspan="2">Week 7</td>
     <td class="tg-svo0">Wed<br>5/5<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <span href="./content/network">1. 服务端开发</a>
+      <span href="./content/network">1. 简单服务部署 </a>
+      <br>
       <br>
       <span href="./content/network">2. SpringBoot</a>
     </td>
