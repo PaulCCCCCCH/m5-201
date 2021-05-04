@@ -135,9 +135,7 @@
       <br>
       <a href="https://www.jianshu.com/p/bef1c1ee5a0e"> 2. Virtual DOM 的概念</a>
     </td>
-  </tr>
-
-  <tr>
+  </tr><tr>
     <td class="tg-svo0" rowspan="2">Week 4</td>
     <td class="tg-svo0">Wed<br>4/14<br>20:00-22:00</td>
     <td class="tg-svo0"><b>海洋楼<b><br>405</td>
@@ -167,9 +165,7 @@
       <br>
     </td>
     <td class="tg-svo0"></td>
-  </tr>
-
-  <tr>
+  </tr> <tr>
     <td class="tg-c3ow">Sun<br>4/18<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
@@ -212,9 +208,7 @@
       <br>
       <a href="https://www.bilibili.com/video/BV1564y1U7zd/">3. 录像</a>
     </td>
-  </tr>
-
-   <tr>
+  </tr><tr>
     <td class="tg-svo0" rowspan="2">Week 6</td>
     <td class="tg-svo0">Wed<br>4/28<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
@@ -245,31 +239,34 @@
     <td class="tg-svo0">Wed<br>5/5<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <span href="./content/network">1. 简单服务部署 </a>
+      <a href="./content/spring-boot">1. SpringBoot</a>
       <br>
-      <br>
-      <span href="./content/network">2. SpringBoot</a>
+      <a href="./content/deployment">2. 服务部署 </a>
     </td>
     <td class="tg-svo0">
-      <span href="./content/network">SpringBoot 练习</a>
+      <a href="./content/spring-boot-practice-1">SpringBoot 练习 1</a>
     </td>
     <td class="tg-svo0" rowspan="8">
       <a href="./content/project-2">Project 3: 企业项目后端</a>
     </td>
-    <td class="tg-svo0"></td>
+    <td class="tg-svo0">
+    	<a href="https://maven.apache.org/guides/getting-started/">1. Maven 入门</a>
+        <br>
+        <a href="https://www.bilibili.com/video/BV1ra4y1t7rs?from=search&seid=1215952686030783862">2. 服务器软件大科普</a>
+    </td>
   </tr>
   <tr>
     <td class="tg-c3ow">Sun<br>5/9<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <span href="./content/network">1. 实用第三方库</a>
+      <span href="./content/network">1. SpringBoot 与数据库</a>
       <br>
-      <span href="./content/network">2. 包管理</a>
-      <br>
-      <span href="./content/network">3. 后端开发规范</a>
+      <span href="./content/network">2. 后端开发规范</a>
       <br>
     </td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">
+      <span href="./content/spring-boot-practice-2">SpringBoot 练习 2</a>
+    </td>
     <td class="tg-c3ow"></td>
   </tr>
   <tr>
@@ -384,3 +381,4 @@
 -->
 </tbody>
 </table>
+
