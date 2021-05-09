@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/spring-boot-and-database/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>SpringBoot 和数据库 - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../home/">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../..">Schedule</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/spring-boot-and-database.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#springboot">SpringBoot 和数据库</a></li>
+            <li class="second-level"><a href="#_1">引入</a></li>
+                
+            <li class="second-level"><a href="#_2">配置</a></li>
+                
+            <li class="second-level"><a href="#_3">使用</a></li>
+                
+                <li class="third-level"><a href="#pojo">创建类（Pojo)</a></li>
+                <li class="third-level"><a href="#mapper">创建 Mapper</a></li>
+            <li class="second-level"><a href="#_4">代码结构</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="springboot">SpringBoot 和数据库</h1>
+<h2 id="_1">引入</h2>
+<p>我们已经尝试过使用 <code>SpringBoot</code> 搭建服务，根据用户的请求返回对应消息了。比如，你在 <code>/product</code> 路径下做了一个接口，每当用户以 <code>GET</code> 形式调用，可以返回一些产品信息给用户。但是，我们现在有这样的要求：我们要让用户自己上架、查看、删除商品。这该怎么做呢？</p>
+<p>我们首先要做一个新的接口，就放在 <code>/product/add</code> 下吧。这个借口接收一个 产品的信息作为参数（要接收 <code>request body</code>的话，需要用 <code>POST</code> 形式的请求） 。每当用户传过来一个商品信息，我们可以运用 <code>Java</code> 本身的能力，创建一个 <code>ArrayList</code> 或者 <code>HashMap</code>对象，把它保存进去。用户查询的时候，我们再把对应的东西拿出来。大概的逻辑如下：</p>
+<pre><code class="language-python"># 以下是半 Python 半 Java 的伪代码
+class ProductController:
+    products = new HashMap()
+
+    @PostMapping(“/product/add”)
+    public void addProduct(requestBody):
+        # 获取商品 id
+        productId = requestBody.id
+
+        # 下面是 Python 的写法
+        this.products[productId] = requestBody
+        # 如果是 Java 的写法，应该是：
+        # this.products.put(productId, requestBody)
+
+    @GetMapping(“/product/get”)
+    public Product getProduct(requestParam):
+        return this.products.get(requestParam)
+</code></pre>
+<p>但是，这有个问题：这些数据都是保存在<strong>内存</strong>里的。一旦你让程序停止运行（比如关机了之类的），那么这些数据就会统统<strong>丢失</strong>掉。</p>
+<p>所以，我们需要一个<code>数据库</code>去<strong>持久化</strong>地保存这些信息。</p>
+<p>使用数据库保存数据的逻辑是这样（这里以 <code>SQL</code> 为例，不过所有的数据库逻辑都差不多）：</p>
+<pre><code class="language-python">
+# 配置数据库连接的属性
+configs = ...
+
+# 与数据库建立连接
+sqlConnection = new SQLConnection(“sqlUrl”, configs)
+
+# 写一个 SQL 语句，并运行
+query = “SELECT ... FROM ... WHERE ...”
+# result 并不直接是数据，应该是包装好的一个东西，就跟 http 请求的回复一样
+result = sqlConnection.runQuery(query)
+
+# 查询结果是一个 Product 对象，需要把它从 result 中提取出来
+product = getProduct(result)
+</code></pre>
+<p>这样其实非常不好。至少有以下几个原因：</p>
+<ul>
+<li>我们要把 <code>SQL</code> 代码和 <code>Java</code> 代码混在一起写。</li>
+<li>对于 <code>Product</code> 这个类，我们要写一个 <code>getProduct</code> 来从 <code>result</code> 里提取对应的信息。假如我们的项目有三十个类，那么这样的信息提取函数就有三十个，非常麻烦。</li>
+<li>每当从数据库读取消息，我们都需要用到 <code>sqlConnection</code> 这个变量。我们可能要在程序开始前初始化 <code>sqlConnection</code>，然后保存一份它的全局变量。</li>
+</ul>
+<p>所以，我们引入 <code>Mybatis</code>，并且使用 <code>SpringBoot</code> 默认的 <code>Hikari</code> 管理与数据库的连接。</p>
+<h2 id="_2">配置</h2>
+<p>网上的教程有点魔幻，所以直接在这写一份供大家参考。</p>
+<p>首先，需要在 <code>pom.xml</code> 引入第三方库。</p>
+<pre><code class="language-XML">&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>然后在 <code>src/main/resources/application.properties</code> 加入</p>
+<pre><code class="language-html">spring.datasource.url=jdbc:mysql://&lt;ip_address&gt;:&lt;port&gt;/&lt;schema_name&gt;?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=true
+spring.datasource.username=&lt;username&gt;
+spring.datasource.password=&lt;password&gt;
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+</code></pre>
+<p>这里是在配置数据库的连接。连接数据库，和一个登录的请求是一样的，需要知道服务器的地址 (<code>&lt;ip_address&gt;</code>)，端口 (<code>&lt;port&gt;</code>)，然后提供账号 (<code>&lt;username&gt;</code>) 和密码 (<code>&lt;password&gt;</code>) 。除此之外，我们还要明确，我们使用的是哪个 <code>database</code> （<code>&lt;schema_name&gt;</code>) ，因为一个主机上可能存在好多个 <code>database</code>（在 <code>MySQL</code> 中，<code>database</code> 也叫做 <code>schema</code>) 。</p>
+<p>最后一行，我们指定了数据库的<code>驱动</code>。我们可以看到 <code>jdbc</code>，这是一套为 <code>Java</code> 设计的数据库的接口，有兴趣的话可以去了解一下。</p>
+<p>配置完之后，<code>SpringBoot</code> 就会自己去管理所有的数据库连接了，不需要我们自己在 <code>Java</code> 代码里面新建。</p>
+<h2 id="_3">使用</h2>
+<h3 id="pojo">创建类（<code>Pojo</code>)</h3>
+<p>首先，我们要在创建一个类，对应数据库里的数据。</p>
+<p>例如，在数据库里，我们定义了这样一张 <code>student</code> 表，有以下内容：</p>
+<p><img alt="" src="../images/mybatis-1.jpg" /></p>
+<p>相对应地，我们要创建一个 <code>Java class</code>，像这样：</p>
+<p><img alt="" src="../images/mybatis-2.jpg" /></p>
+<p><strong>注意：请为全部五个字段加入 <code>getter</code> 和 <code>setter</code></strong>，否则会造成无法正常读取或者写入信息。用 <code>IntelliJ</code> 的话，可以在 <code>.java</code> 文件里按下 <code>Alt + Insert</code>，选择 <code>Getter and setter</code>，按住 <code>Shift</code> 选中所有的类，自动添加。</p>
+<h3 id="mapper">创建 Mapper</h3>
+<p><code>Mapper</code> 是用来管理与数据库的交互的。它可以将一个数据库的操作，对应到一个 <code>Java</code> 的函数调用。</p>
+<p>首先，请先创建一个 <code>StudentMapper</code> 的 <code>interface</code> 文件。然后加入以下内容</p>
+<pre><code class="language-java">@Mapper // 这一句告诉 SpringBoot，这是一个 Mapper，这样你才能在其它地方使用它
+public interface StudentMapper {
+    @Select(&quot;SELECT * from student WHERE id = #{studentId}&quot;) // 在这里写 SQL 语句。注意其中的变量的写法
+    Student findById(@Param(&quot;studentId&quot;) String studentId); // 这里写的是 Java 的函数名以及参数。注意 @Param 里面定义的就是 SQL 语句里 #{} 里面的变量
+
+    // 可以写很多个语句，每个对应一个函数
+    @Select(&quot;SELECT * from student WHERE major = #{major}&quot;)
+    List&lt;Student&gt; findByMajor(@Param(&quot;major&quot;) String major);
+}
+</code></pre>
+<p>我们先只添加这两个函数。这样，你就可以在另一个 <code>class</code> 里这样使用：</p>
+<pre><code class="language-java">public class StudentController {
+
+    @Resource // 这个标签让你无需在 constructor 里面初始化这个 studentMapper
+    private StudentMapper studentMapper; 
+
+    @GetMapping(&quot;/student-major&quot;)
+    public List&lt;Student&gt; getStudentByMajor(@RequestParam(&quot;major&quot;) String major) {
+        return studentMapper.findByMajor(major); // 这里直接用就行
+    }
+}
+</code></pre>
+<h2 id="_4">代码结构</h2>
+<p>我们要把所有的 <code>Controller</code>，<code>class</code> (<code>pojo</code>) 和 <code>mapper</code> 分好类，放在独立的 <code>package</code> 里面。上面的例子的代码结构应该是这样：</p>
+<p><img alt="" src="../images/mybatis-3.jpg" /> </p>
+<p>当然，我们还需要一个叫 <code>service</code> 的包，专门存放 <code>Service</code> 类，并且把 <code>Controller</code> 的权力转交给 <code>Service</code> 类。具体怎么做，我们会在之后的<code>后端代码规范</code>里细说。</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
