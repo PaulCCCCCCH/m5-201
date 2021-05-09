@@ -22,7 +22,8 @@
 2. 阅读`指引`的`1.3`，完成公众号的申请。  
 3. 完成`指引`中`1.4`的`1)`和`2)`两步  
 4. 使用 `SpringBoot` 代替 `python` 完成`指引`中`1.4`的`3)`和`4)`两步。
-    提示：写一个`GetMapping`，`url` 是 `wx`；然后现在阶段其实并不需要像文中说的，把 `hashcode` 和 `signature` 去比对，只需要把 `data` 中的 `echostr` 给 `return` 回去就好了。  
+    - 提示 1：写一个`GetMapping`，`url` 是 `wx`；然后现在阶段其实并不需要像文中说的，把 `hashcode` 和 `signature` 去比对，只需要把 `data` 中的 `echostr` 给 `return` 回去就好了。  
+    - 提示 2：微信发给你的服务器的消息长下面这样：`<ip地址>/wx?signature=123&timestamp=123&nonce=123&echostr=123`，需要用 `@RequestParam` 把它们解析出来（就和教程里一样）。
 5. 参照`指引`中`2.1` - `2.5` 的内容，对上一步的 `url` 再写一个 `PostMapping`，解析收到的 `XML`，如果是文本消息，则返回事先准备好的消息（你可以自己决定回复什么）。  
 6. 尝试给自己的公众号发消息，看回复的内容是什么。
 7. **（挑战）**在收到用户的文本消息后，调用[ chatbot api](https://www.chatbot.com/docs/)，对用户进行智能回复。

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/spring-boot/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>SpringBoot - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../home/">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../..">Schedule</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/spring-boot.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#springboot">SpringBoot</a></li>
+            <li class="second-level"><a href="#_1">准备工作</a></li>
+                
+            <li class="second-level"><a href="#_2">开始</a></li>
+                
+            <li class="second-level"><a href="#_3">进一步</a></li>
+                
+            <li class="second-level"><a href="#_4">更多</a></li>
+                
+                <li class="third-level"><a href="#maven">刷新 Maven</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="springboot">SpringBoot</h1>
+<p>在开始之前，请重新回顾一下 <a href="../client-server">客户端-服务端通讯</a> <code>1.2 后端</code> 的内容。我们要开发一个应用程序的后台的话，大体的逻辑就是这样。
+<br></p>
+<p>这段逻辑可以由不同的语言和框架去实现。<code>Spring</code> 就是一个用来搭建这套逻辑的框架。而 <code>SpringBoot</code> 在 <code>Spring</code> 的基础上，提供了一些预设和封装，开发起来更加快捷。<br />
+<br></p>
+<h2 id="_1">准备工作</h2>
+<p>首先，强烈推荐 <a href="https://www.jetbrains.com/idea/">IntelliJ</a>。注意，请下载 <code>Ultimate</code> 版，这样才能获得 <code>Spring</code> 的完整支持！下载的同时，请从<a href="https://www.jetbrains.com/shop/eform/students">这里</a> 用学校邮箱申请免费使用。<br />
+<br></p>
+<p>下载完成后，打开 <code>intelliJ</code>，点击新建项目，从左边一栏选中 <code>Spring Initializer</code>，指定一个 JDK 包，然后点击下一步。<br />
+<br></p>
+<p><img alt="" src="../images/springboot-init-project.jpg" /></p>
+<p>在下一个页面，你可以像正常的 <code>Java</code> 项目那样进行配置。<code>Type</code> 我们统一先选 <code>Maven</code>（如果想尝试 <code>Gradle</code> 的话可以之后自己操作），<code>Language</code> 自然是 <code>Java</code>，<code>Packaging</code> 选 <code>Jar</code> 和 <code>War</code> 目前没区别。<code>Group</code> 是你的公司或是组织，通常是 <code>com.&lt;公司名&gt;</code> 或 <code>org.&lt;组织名&gt;</code>（像是倒着写的域名），<code>Artifact</code> 是你的项目名字，可以随便起。<br />
+<br></p>
+<p><img alt="" src="../images/springboot-init-project-2.jpg" /></p>
+<p>下一页会让我们选要安装的 <code>Dependency</code>。我们需要勾选 <code>Web</code> 下的 <code>Spring Web</code>。这是用来写 <code>HTTP</code> 请求的接口的（后面教程里会用到）。其它的先啥也不装，点 <code>next</code>。之后有需要再慢慢安装。<br />
+<br></p>
+<p><img alt="" src="../images/springboot-init-project-3.jpg" /></p>
+<p>最后，指定项目保存在哪个目录下面，我们就完成了。<br />
+<br></p>
+<p>进入页面后，我们需要等待右下角的下载 (<code>download</code>) 和索引 (<code>indexing</code>) 进程结束（有时候会贼慢，可能需要科学上网来提速）。<br />
+<br></p>
+<p>完成之后，点击一下右上角的运行试试。如果正常，终端会告诉你一个网址，用浏览器打开，可以看到一些消息。如果跑不起来，可以尝试以下：
+- 刷新一下 <code>Maven</code>（具体做法见 <code>刷新 Maven</code> 板块）
+- 打开 <code>settings</code>，输入 <code>maven</code>，找到它下面的 <code>repositories</code>，看看有没有 Error。把里面的东西都 <code>update</code> 一下。
+- 把 <code>IntelliJ</code> 关了重开。</p>
+<p>当然，也可能是其它问题。请积极寻求帮助。<br />
+<br></p>
+<h2 id="_2">开始</h2>
+<p>可以跟着<a href="https://spring.io/quickstart">教程1</a>写一个简单的接口了！请跳过教程中的 <code>Step 1</code>（因为 <code>IntelliJ</code> 已经帮你做好了）。<br />
+<br></p>
+<h2 id="_3">进一步</h2>
+<p>完成后，请跟着<a href="https://spring.io/guides/gs/rest-service/">教程2</a>做一个接口出来。请跳过前面的部分，直接从 <code>Create a Resource Representation Class</code> 开始。</p>
+<h2 id="_4">更多</h2>
+<p>在大部分场景下，服务端绕不开向数据库写入和读取数据（比如存储和读取用户的信息）。但是，我们把数据库留到下次再讲（这是大头），先用一个叫做 <code>Faker</code> 的包生成一些虚拟的数据。请先阅读它的<a href="https://github.com/DiUS/java-faker">文档</a>。
+<br></p>
+<h3 id="maven">刷新 <code>Maven</code></h3>
+<p>注意，我们这里要安装新的第三方库。首先，要把 <code>dependency</code> 加到 <code>pom.xml</code> 文件里。然后，我们要刷新 <code>Maven</code></p>
+<p><img alt="" src="../images/springboot-init-project-4.jpg" /></p>
+<p>如图所示，点击 <code>IntelliJ</code> 最右边（紧贴屏幕的）竖着写的 <code>Maven</code>，展开页面，点击工具栏的第一个按钮进行刷新。<br />
+<br></p>
+<p>这样，我们就可以直接在 <code>java</code> 文件里 <code>import</code> 这个包并且使用了。<br />
+<br></p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

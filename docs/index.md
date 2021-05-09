@@ -1,5 +1,5 @@
 # Announcements
-## 4 月 30 日（新）
+### 4 月 30 日
 - 五一假期，**没有 Lab（请看时间表）**，不要空跑了呀！项目的 meeting 怎么安排，请和自己的 Leader 商量哦！
 - 虽然没有 Lab，但是有问题还是可以随时在微信问的！
 - 我们正在进行暑期实习生招聘，如果想要丰富自己的假期、获得一些工作经验，可以关注微信公众号 icewould，点击校内招聘了解更多信息！填表的时候备注来自 `m5-201` 可以优先被考虑！
@@ -259,15 +259,15 @@
     <td class="tg-c3ow">Sun<br>5/9<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <span href="./content/network">1. SpringBoot 与数据库</a>
-      <br>
-      <span href="./content/network">2. 后端开发规范</a>
+      <a href="./content/spring-boot-and-database">1. SpringBoot 与数据库</a>
       <br>
     </td>
     <td class="tg-c3ow">
-      <span href="./content/spring-boot-practice-2">SpringBoot 练习 2</a>
+      <a href="./content/spring-boot-practice-2">SpringBoot 练习 2</a>
     </td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">
+      <a href="https://www.cnblogs.com/ityouknow/p/6037431.html">1. 不错的 Mybatis 配置 Checklist</a>
+    </td>
   </tr>
   <tr>
     <td class="tg-svo0" rowspan="2">Week 8</td>
@@ -275,6 +275,9 @@
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
       <span href="./content/network">1. 后端自动化测试</a>
+      <br>
+      <span href="./content/best-practice-backend">2. 后端开发规范</a>
+      <br>
     </td>
     <td class="tg-svo0"></td>
     <td class="tg-svo0"></td>
