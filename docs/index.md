@@ -274,18 +274,25 @@
     <td class="tg-svo0">Wed<br>5/12<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <span href="./content/network">1. 后端自动化测试</a>
-      <br>
-      <span href="./content/best-practice-backend">2. 后端开发规范</a>
+      <a href="./content/best-practice-backend">1. 后端开发规范</a>
       <br>
     </td>
-    <td class="tg-svo0"></td>
-    <td class="tg-svo0"></td>
+    <td class="tg-svo0">
+      <a href="./content/spring-boot-practice-3">SpringBoot 练习 3</a>
+    </td>
+    <td class="tg-svo0">
+      <a href="./content/resources/best-practice.pdf">1. 阿里开发规范</a>
+    </td>
   </tr>
   <tr>
     <td class="tg-c3ow">Sun<br>5/16<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
-    <td class="tg-c3ow">TBA</td>
+    <td class="tg-c3ow">
+      <span href="./content/best-practice-backend">1. 实用第三方库</a>
+      <br>
+      <span href="./content/automated-testing-backend">2. 后端自动化测试</a>
+      <br>
+    </td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
   </tr>
