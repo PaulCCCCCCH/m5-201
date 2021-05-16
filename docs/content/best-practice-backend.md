@@ -223,10 +223,31 @@ public CommonResult<UserVO> getUser(@PathVariable BigInteger id) {
 前端开发人员需要使用接口从后端调取数据。为了节省沟通成本，后端开发人员需要把接口以文档的形式详细列出，包括请求的 `url`、请求的参数、可能的返回值，以及其它可能需要的信息。  
 <br>
 
-我们当然可以用 `word` 手写这样一份文档，但是维护起来可能比较麻烦（而且用微信传来传去的非常不优雅）。推荐使用 `Swagger` 去做这件事。只要加入注释，就可以自动生成非常漂亮的接口文档。  
+我们当然可以用 `word` 手写这样一份文档，但是维护起来可能比较麻烦（而且用微信传来传去的非常不优雅）。推荐使用 `Springfox` 去做这件事。只要进行一些配置，就可以自动生成非常漂亮的接口文档。  
 <br>
 
-具体的使用方法，[这个教程](https://www.tutorialspoint.com/spring_boot/spring_boot_enabling_swagger2.htm)讲得非常详细了。  
+具体的使用方法，[官方文档](http://springfox.github.io/springfox/docs/snapshot/)讲得非常详细了。但是暂时不建议通读，因为不需要每个人全盘掌握。可以在开发团队里面找个人专门负责这一块，然后阅读文档，进行配置。  
+<br>
+
+如果只是想使用基础功能的话，只需要在 `pom.xml` 里面加入这个依赖：  
+```xml
+<dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-boot-starter</artifactId>
+        <version>3.0.0</version>
+</dependency>
+```
+然后在应用程序入口 `class` （就是那个有个 `main` 函数，里面有一句 `SpringApplication.run()` 的) 上方加入 `@EnableSwagger2` 即可，做完之后，看起来是这样：  
+```java
+@SpringBootApplication
+@EnableSwagger2
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+```
+之后，你可以从 `base_url/swagger-ui/index.html` 去访问你的接口文档。你也可以自己配置这个路径。  
 <br>
 
 
