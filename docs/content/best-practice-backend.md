@@ -160,30 +160,36 @@ public User getUser(@PathVariable BigInteger id) {
 于是，上面的代码变成：
 
 ```java
-@GetMapping("/users/{id}")
-public CommonResult<UserVO> getUser(@PathVariable BigInteger id) {
-    // 先去数据库找 user，跟之前一样，但是考虑数据库错误的情况
-    User user;
-    try {
-        user = userMapper.findById(id);
-    } catch (Exception e) {
-        return CommonResult.failed("数据库错误。"); 
-        // 精益求精的话，可以考虑 throw 一个数据库相关的 Exception 出去
+@RestController
+public class UserController {
+
+    @Resource // 告诉 SpringBoot，如何初始化这个变量，这样就不用在 constructor 里去初始化了。
+    private UserMapper userMapper;
+
+    @GetMapping("/users/{id}")
+    public CommonResult<UserVO> getUser(@PathVariable BigInteger id) {
+        // 先去数据库找 user，跟之前一样，但是考虑数据库错误的情况
+        User user;
+        try {
+            user = userMapper.findById(id);
+        } catch (Exception e) {
+            return CommonResult.failed("数据库错误。"); 
+        }
+
+        // 如果 user 找不到的话：
+        if (!user) {
+            return CommonResult.failed("操作失败，用户未找到。");
+        }
+
+        // 这跟之前一样
+        UserVO userVO = new userVO();
+        userVO.setDisplayName(user.getDisplayName());
+        userVO.setUserLevel(user.getUserLevel());
+        userVO.setUserExp(user.getUserExp());
+
+        // 返回封装好的 result
+        return CommonResult.success(userVO);
     }
-
-    // 如果 user 找不到的话：
-    if (!user) {
-        return CommonResult.failed("操作失败，用户未找到。");
-    }
-
-    // 这跟之前一样
-    UserVO userVO = new userVO();
-    userVO.setDisplayName(user.getDisplayName());
-    userVO.setUserLevel(user.getUserLevel());
-    userVO.setUserExp(user.getUserExp());
-
-    // 返回封装好的 result
-    return CommonResult.success(userVO);
 }
 ```
 
@@ -206,18 +212,146 @@ public CommonResult<UserVO> getUser(@PathVariable BigInteger id) {
 之前提到，`getUser` 这个函数做的事情太多了，也不能被重复利用。我们需要再设计一个类 `UserService`，里面写一些可以被重复利用的逻辑（就像为自己打造各种形状的小积木），这样 `UserController` 就不需要写很多代码，只需要把想用的积木从 `UserService` 里拿出来，拼一下就可以了。  
 <br>
 
+具体地，对于 `UserController`，我们写一个 `UserService`，像下面这样：  
+
+```java
+@Service
+public class UserService throws Exception{
+
+    @Resource 
+    private UserMapper userMapper;
+
+    public User getUserById(BigInteger id) {
+        User user;
+        try {
+            user = userMapper.findById(id);
+        } catch (Exception e) {
+            throw new Exception("Database error", e);
+        }
+
+        // 如果 user 找不到的话：
+        if (user == null) {
+            throw new NotFoundException("User not found");
+        }
+        
+        return user;
+    }
+
+    public static UserVO UserToUserVO(User user) {
+        UserVO userVO = new userVO();
+        userVO.setDisplayName(user.getDisplayName());
+        userVO.setUserLevel(user.getUserLevel());
+        userVO.setUserExp(user.getUserExp());
+        return userVO
+    }
+}
+```
+我们注意到，把 `User` 转成 `UserVO` 这样的操作会经常用到，所以我们写一个函数，方便复用。  
+这样写好之后，我们的 `UserController` 就变成：  
+
+```java
+@RestController
+public class UserController {
+
+    // 用 UserService 去替换之前的 UserMapper
+    // 这样 UserController 就没有权限去直接操控数据库了，一切处理都需要通过 UserService 完成
+    @Resource
+    private UserService userService; 
+
+    @GetMapping("/users/{id}")
+    public CommonResult<UserVO> getUser(@PathVariable BigInteger id) {
+        // 先去数据库找 user，跟之前一样，但是考虑数据库错误的情况
+        // 这跟之前一样
+        try {
+        	User user = userService.getUserById(id);
+        } catch (NotFoundException e) {
+            return CommonResult(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace(); // 这个错误信息对 debug 非常有用，要 print 出来
+            return CommonResult(e.getMessage());
+        }
+        UserVO userVO = UserService.UserToUserVO(user);
+        // 返回封装好的 result
+        return CommonResult.success(userVO);
+    }
+}
+```
+
+
 这样处理之后，上述的流程就变成：  
 1. （不变）`UserController` 的 `user/{id}` 这个 `url` 上接到请求。  
 2. （不变）`UserController` 调用对应的函数 `getUser()`。  
-3. **（新）** `UserController` 里的 `getUser()` 调用 `userService.getUserById()` 函数。
-4. **（新）** 在 `UserService` 的 `getUserById` 函数中，使用 `userMapper` 查找数据库，返回 `User` 对象。
+3. **（新）** `UserController` 里的 `getUser()` 调用 `userService.getUserById()` 函数。  
+4. **（新）** 在 `UserService` 的 `getUserById` 函数中，使用 `userMapper` 查找数据库，返回 `User` 对象。  
 5. **（新）** 在 `UserService` 的 `getUserById` 函数中创建 `UserVO` 对象，把可以给用户看的属性从 `User` 对象里提取出来，塞到 `UserVO` 对象里。  
 6. **（新）** `UserService` 把 `UserVO` 返回给 `UserController`。  
 7. （不变）`UserController` 把 `UserVO` 塞到 `CommonResult` 里，返回给用户。  
 <br>
 
-注意，这里 `UserService` 需要考虑到各种错误情况，`throw` 对应的 `Exception`，然后 `UserController` 根据 `Exception` 的类型，返回用 `CommonResult` 封装的错误信息。  
+注意，这里 `UserService` 考虑了各种错误情况，`throw` 对应的 `Exception`，然后 `UserController` 根据 `Exception` 的类型，返回用 `CommonResult` 封装的错误信息。  
 <br>
+
+可是，我们发现 `UserService` 和 `UserController` 里充满了 `try...catch`。写其它接口的时候，可能会发现，大部分的 `try...catch` 都是相同内容的重复。在 `SpringBoot` 里，我们可以使用`全局异常处理`来简化。  
+
+<br>
+
+##  全局异常处理
+
+我们可以创建一个类 `GlobalExceptionHandler`，打上 `SpringBoot` 的特定标签，让它处理整个程序任何地方的 `Exception`，像这样：  
+
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+    // @ExceptionHandler 告诉 SpringBoot，所有的没有 catch 的 `NotFoundException` 全部送给这个函数处理
+ 	// @RespondBody 告诉 SpringBoot 把返回的对象变成 JSON（我们的 @RestController 标签其实就包含了 @ResponseBody)
+    @ExceptionHandler(value=NotFoundException.class)
+    @ResponseBody
+    public CommonResult<String> notFoundExceptionHandler(NotFoundException e) {
+        return CommonResult.failed(e.getMessage());
+    }
+    
+    // 处理剩下的所有 Exception
+    @ExceptionHandler(value = Exception.class)
+    @ResponseBody
+    public CommonResult<String> exceptionHandler(Exception e) {
+        e.printStackTrace();
+        return CommonResult.failed(e.getMessage());
+    }
+
+}
+
+```
+
+然后，`Service` 和 `Controller` 就变得简单了，不需要处理 `Exception`，只需要在函数头部声明 `throws Exception` 就行。先看 `UserController` 中的请求处理：
+
+```java
+@GetMapping("/users/{id}")
+public CommonResult<UserVO> getUser(@PathVariable BigInteger id) throws Exception {
+    User user = userService.getUserById(id);
+    UserVO userVO = UserService.UserToUserVO(user);
+    return CommonResult.success(userVO);
+
+```
+
+然后是 `ProductService` 里的对应函数：
+
+```java
+public User getUserById(BigInteger id) {
+
+    User user = userMapper.findById(id);
+    if (user == null) {
+        throw new NotFoundException("User not found");
+    }
+    return user;
+}
+```
+
+于是，异常处理的篇幅被大大缩减了。优雅。  
+
+<br>
+
+
 
 ## 接口文档
 前端开发人员需要使用接口从后端调取数据。为了节省沟通成本，后端开发人员需要把接口以文档的形式详细列出，包括请求的 `url`、请求的参数、可能的返回值，以及其它可能需要的信息。  
