@@ -294,38 +294,41 @@
     <td class="tg-svo0">Wed<br>5/19<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <span href="./content/best-practice-backend">1. 实用第三方库</a>
-      <br>
-      <span href="./content/automated-testing-backend">2. 后端自动化测试</a>
-      <br>
+      <a href="https://jerriodaddy.github.io/2021/05/09/springboot-mybatis-generator/"> MyBatis Generator <br> (link to Jerrio's Blog)</a>
     </td>
-    <td class="tg-svo0">SpringBoot 练习 4</td>
+    <td class="tg-svo0"></td>
     <td class="tg-svo0"></td>
   </tr>
   <tr>
     <td class="tg-c3ow">Sun<br>5/23<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
-    <td class="tg-c3ow">答疑</td>
+    <td class="tg-c3ow">
+      <a href="./content/automated-testing-backend">1. 后端自动化测试</a>
+      <br>
+    </td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">
+      <a href="https://docs.spring.io/spring-boot/docs/1.4.1.RELEASE/reference/htmlsingle/#boot-features-testing-spring-boot-applications">1. SpringBoot 测试官方文档</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-svo0" rowspan="2">Week 10</td>
+    <td class="tg-svo0">Wed<br>5/26<br>20:00-22:00</td>
+    <td class="tg-svo0">PMB<br>309</td>
+    <td class="tg-svo0">答疑＋结课</td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">TBD</td>
+    <td class="tg-c3ow">待定</td>
+    <td class="tg-c3ow"><b>团建！！！</b></td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
   </tr>
-<tr><td class="tg-c3ow" colspan="6">...</td></tr>
+<tr><td class="tg-c3ow" colspan="7">The End</td></tr>
 <!--
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 5</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-  </tr>
+
   <tr>
     <td class="tg-svo0" rowspan="2">Week 5</td>
     <td class="tg-svo0">Placeholder</td>

@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>Automated testing backend - m5-201</title>
+    <title>后端自动化测试 - m5-201</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -101,11 +101,158 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#_1">后端自动化测试</a></li>
+            <li class="second-level"><a href="#_2">引入工具</a></li>
+                
+            <li class="second-level"><a href="#_3">模拟完整请求</a></li>
+                
+            <li class="second-level"><a href="#_4">模拟单个组件</a></li>
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-</div>
+<h1 id="_1">后端自动化测试</h1>
+<p>后端自动化测试的逻辑与<a href="../automated-testing">前端自动化测试</a>很像：都是引入一些工具，对于每一个功能模块，用代码模拟真实的运行场景，然后通过脚本一键运行所有测试。<br />
+<br></p>
+<h2 id="_2">引入工具</h2>
+<p>首先，在 <code>pom.xml</code> 中间声明这个依赖包（如果创建项目时使用的是 <code>Spring Initializer</code>，这个应该默认是有的）。<br />
+<br></p>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>这个依赖其实是很多工具的打包版本，其中包含各位熟悉的 <code>JUnit</code>。<br />
+<br></p>
+<h2 id="_3">模拟完整请求</h2>
+<p>在这里，我们测试完整的后端逻辑：接收请求 -&gt; 调用 <code>Controller</code> -&gt; 调用 <code>Service</code> -&gt; 调用 <code>Mapper</code> -&gt; 查询数据库 -&gt; 返回。为了这样测试，我们只需要模拟真实场景，给自己发送请求就行了。<br />
+<br></p>
+<p>我们需要新建一个测试类，并为它打上标签，像下面这样  </p>
+<pre><code class="language-java">@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+public class ProductTest {
+    //...
+}
+</code></pre>
+<p><code>@SpringBootTest</code> 会告诉 <code>SpringBoot</code> 这是一个测试用的类，这样可以在一键运行的时候找到。<br />
+<br></p>
+<p>而括号里的 <code>webEnvironment</code> 部分，可以理解为让 <code>SpringBoot</code> 跑一个模拟的服务：手动测试的时候，是要先让服务跑起来，然后发请求；这样写之后，你不需要运行这个项目，只需要运行这个测试文件就可以了。<code>RANDOM_PORT</code> 意思是随便指定一个端口运行这个模拟的服务。<br />
+<br></p>
+<p>之后，我们使用 <code>RestTemplate</code> 这个东西（一个发送 <code>HTTP</code> 请求的工具），向自己的接口发送请求，然后用常规的 <code>JUnit</code> 语句测试返回值是否符合预期。<br />
+<br></p>
+<p>举个例子，假定我们的接口是这样：</p>
+<pre><code class="language-java">@PostMapping(&quot;/product&quot;)
+public CommonResult&lt;Product&gt; addProduct(@RequestBody Product product) {
+    // 插入一个 product 到数据库里
+}
+</code></pre>
+<p>为了测试这个接口，我们的测试类可以这样写：</p>
+<pre><code class="language-java">@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+public class ProductTest {
+
+    @Resource
+    TestRestTemplate restTemplate; // 用来向模拟服务发送 HTTP 请求
+
+    @Resource
+    ObjectMapper mapper;    // 用来把 JSON String 转成 Java Object
+
+    @Test
+    void testPostProduct() throws Exception {
+        // 创建一个 Product
+        Product product = new Product();
+        product.setId(BigInteger.valueOf(777));
+        product.setName(&quot;AirPods&quot;);
+        // ... 以及 set 一堆东西...
+
+        // 发送 POST 请求，然后以 String 形式从模拟的服务拿回一个 response
+        // 注意：这里的 String.class 告诉 restTemplate，返回值是 String
+        // 但是，无法直接告诉它，返回值是 `CommonResult&lt;Product&gt;`，因为牵扯到 generic type
+        String response = restTemplate.postForObject(&quot;/product&quot;, product, String.class);
+
+        // 把 response 从 String 弄成一个有结构的 class
+        CommonResult&lt;Product&gt; result = this.mapper.readValue(
+            response,
+            new TypeReference&lt;CommonResult&lt;Product&gt;&gt;() {} 
+            // 这个 TypeReference 用来告诉 mapper，要把 JSON 转成啥类型
+            // TypeReference 是一个 AbstractClass，所以初始化它的时候后面要加一个 {}
+        );
+
+        // 用正常的 JUnit 的功能去测试即可
+        Assertions.assertEquals(&quot;AirPods&quot;, result.getData().getName());
+
+    }
+}
+</code></pre>
+<p>这里对 <code>/product</code> 发送了一个 <code>POST</code> 请求，模拟了插入一个 <code>Product</code> 的请求。  </p>
+<p>我们也可以用<code>RestTemplate</code> 下的 <code>put</code>，<code>delete</code>，<code>exchange</code>、<code>getForObject</code> 等方法，发送不同请求。具体的使用方法可以查阅这个 <a href="https://www.baeldung.com/rest-template">Guide</a> 或 <code>RestTemplate</code> 的 <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html">官方文档</a>。  </p>
+<h2 id="_4">模拟单个组件</h2>
+<p>我们可以把 <code>Mapper</code>，<code>Service</code> 或 <code>Controller</code> 单独拿来测试。我们会用到 <code>MockMvc</code> 这个工具（其实是 <code>mockito</code> 这个工具的延申）。它的<a href="https://spring.io/guides/gs/testing-web/">官方教程</a>在这里。<br />
+<br></p>
+<p>比如，我们现在只测试 <code>Controller</code>，而不去管 <code>Service</code> 层有没有在正确地干活，我们需要先 <code>Mock</code>一个 <code>Service</code> 层，假定它是好的，在这基础上，测试 <code>controller</code> 的功能。 举个例子：<br />
+<br></p>
+<pre><code class="language-java">@SpringBootTest
+@AutoConfigureMockMvc
+public class ProductTest2 {
+
+    @MockBean
+    private ProductService productService; // 这是我们 mock 的 service
+
+    @Resource
+    private MockMvc mockMvc; // 这是我们要用的工具
+
+    @Test
+    public void testProductController() throws Exception {
+
+        // 创建一个 product
+        Product p = new Product();
+        p.setId(BigInteger.valueOf(777));
+        p.setName(&quot;Apple&quot;);
+        // 指定怎么个 mock 法
+        // 意思是：别管 productService 到底是怎么实现的（没写都没关系）
+        // 假定：只要我给了任何 argument，它都会 return 一个 p (之前定义的 product)
+        given(this.productService.getProductById(ArgumentMatchers.any())).willReturn(p);
+
+        // 然后，去向 controller 发请求，然后 expect 一堆结果（就像 assert 那样）
+        // jsonPath 里面的东西是用来获取 json 的 attribute 的
+        mockMvc.perform(get(&quot;/product/777&quot;))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath(&quot;$.code&quot;).value(200))
+                .andExpect(jsonPath(&quot;$.message&quot;).value(&quot;操作成功&quot;))
+                .andExpect(jsonPath(&quot;$.data.id&quot;).value(777))
+                .andExpect(jsonPath(&quot;$.data.name&quot;).value(&quot;Apple&quot;))
+                .andReturn();
+    }
+}
+
+</code></pre>
+<p>如果想要测试 <code>Service</code> 和 <code>Mapper</code>，其实逻辑非常像，而且由于不牵扯到发送请求，所以更加简单。  </p>
+<p>以测试 Service 的代码为例：  </p>
+<pre><code class="language-java">@SpringBootTest
+@AutoConfigureMockMvc
+public class ProductServiceTest {
+    @MockBean
+    private ProductMapper productMapper;
+    @Autowired
+    private ProductService productService;
+    @Test
+    public void testProductService(){
+        Product p = new Product();
+        p.setxxx() //... 设置 p 的属性
+
+        // 假定 Mapper 是 ok 的，不管查询什么 id，都会返回 p
+        given(productMapper.findById(any())).willReturn(p);
+
+        // 在 Mapper ok 的情况下，使用 productService
+        Product resultProduct = productService.findById(100);
+
+        // 然后在这里使用 assert 语句判断 resultProduct 是否符合要求。
+        // 如果没有问题，说明 Service 这层没问题。
+    }
+}
+
+</code></pre>
+<p>测试 <code>Mapper</code> 的话，就不需要使用 <code>mock</code> 去假定什么东西了。  </p></div>
         
         
     </div>
