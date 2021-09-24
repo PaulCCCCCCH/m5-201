@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/web-toolkit/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Web 三件套 - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../home/">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../..">Schedule</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/web-toolkit.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#web">Web 三件套</a></li>
+            <li class="second-level"><a href="#web_1">Web 三件套的总览</a></li>
+                
+                <li class="third-level"><a href="#web_2">Web 三件套是哪三件</a></li>
+                <li class="third-level"><a href="#_1">为什么是这三件</a></li>
+            <li class="second-level"><a href="#web_3">细说Web三件套</a></li>
+                
+                <li class="third-level"><a href="#html">HTML</a></li>
+                <li class="third-level"><a href="#css">CSS</a></li>
+                <li class="third-level"><a href="#javascript">JavaScript</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="web">Web 三件套</h1>
+<h2 id="web_1">Web 三件套的总览</h2>
+<h4 id="web_2">Web 三件套是哪三件</h4>
+<ul>
+<li><strong>HTML</strong>（HyperText Markup Language）：超文本标记语言。</li>
+<li><strong>CSS</strong>（Cascading Style Sheets）：层叠样式表。</li>
+<li><strong>JavaScript</strong> ：一种属于网络的高级脚本语言。</li>
+</ul>
+<h4 id="_1">为什么是这三件</h4>
+<p>很多人（不包括在座部分大佬）可能之前没有听说过，或者说没有真正运用过这三件套，但是这都是非常非常正常的。作为普通的网民，显然我们不需要接触这些东西，因为<strong>Web 三件套是服务于设计网页的</strong>。</p>
+<p>那么既然是设计网页，我们就有必要先了解一下网页的构成。如果是按层次分的话，那么就可以分为<strong>结构层</strong>、<strong>表示层</strong>和<strong>行为层</strong>。而<strong>HTML</strong> 、<strong>CSS</strong>和<strong>JavaScript</strong>就分别对应了实现这三个层的工具。更具体一点地来说，<strong>HTML</strong>指定了<strong>每个元素在网页中的位置这样最基础的网页结构</strong>（拿下面第一张图来说就是定义了白色大方块等等在网页中的位置以及长宽），<strong>css</strong>定义了<strong>元素的具体样式</strong>（拿下面第二张图来说就是将原先的白色大方块修改成了白色的椭圆等等），而<strong>JavaScript</strong>定义了<strong>元素的互动</strong>（拿下面第三张图来说就是点一下页面，会让笑脸都动起来等等）。</p>
+<p><img alt="html_css_js" src="./html_css_js.jpg" /></p>
+<p>引用网上一个形象的例子来讲，<strong>HTML</strong>就好比人的骨骼和器官，<strong>CSS</strong>就好比人的皮相，而<strong>JavaScript</strong>就好比人的灵魂，有了<strong>HTML</strong>才会有基础的人形,但没有<strong>CSS</strong>就会毁容，而没有<strong>JavaScript</strong>则会变成动不了的植物人。</p>
+<h2 id="web_3">细说Web三件套</h2>
+<p>在大致了解Web三件套后，下面就让我们通过一个简单的例子来更深入地学习这三件套。</p>
+<p>而在进行讲解之前，先让我们看一下这个例子最终的实现效果：</p>
+<p><img alt="JS" src="C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\JS.gif" /></p>
+<p>写有 <strong><em>Welcome</em></strong> 的按钮在被点击后会弹出写有 <em>hello</em> 的提示框，而写有 <strong><em>Change Color</em></strong> 的按钮在被点击后则会改变颜色（注意：点击按钮时出现的黄色的圆只是录屏时候显示的左键点击，不是网页的效果哦）。</p>
+<p>那么接下来就让我们通过三件套，一步一步地实现这个简单的网页。</p>
+<h4 id="html">HTML</h4>
+<p>首先，我们需要通过<strong>HTML</strong>定义两个按钮以及他们的位置（代码看不懂没关系，下面会进行讲解）：</p>
+<p><img alt="HTML" src="C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\HTML.gif" /></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Button Example&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;button&gt;Welcome&lt;/button&gt;&lt;br&gt;
+    &lt;button&gt;Change Color&lt;/button&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>跳脱代码表达的具体意思，一眼看去，我们很容易发现，<strong>HTML</strong>是由普通的文本以及很多<code>&lt;xxx&gt;</code>这样形式的标注组成的，而这种形式的标注我们称之为<strong>HTML</strong>的<strong>标签</strong>，也就是<strong>tag</strong>。通过这些标签，我们得以标记原本普通的文本内容，决定它们在网页中的基础呈现形式（比如做为按钮）以及位置等等。这也就是为什么<strong>HTML</strong>被称为<strong>超文本标记语言</strong>。而这些标签通常成对出现，像<code>&lt;html&gt;</code>和<code>&lt;/html&gt;</code>这样，以<code>&lt;xxx&gt;</code>开始，<code>&lt;/xxx&gt;</code>结束。当然也有少数的标签比较“坚强”，一个人就能完成任务，像<code>&lt;br&gt;</code>这样。这里需要注意的是代码第一行的<code>&lt;!DOCTYPE html&gt;</code>并不是一个标签，它是指示Web浏览器关于页面使用哪个<strong>HTML</strong>版本的指令，所以必须写在所有标签的前面。</p>
+<p>进一步观察代码，通过缩进，我们可以发现<strong>HTML</strong>的基础是由一对<code>&lt;html&gt;</code>标签、一对<code>&lt;head&gt;</code>标签以及一对<code>&lt;body&gt;</code>标签构建而成的。其中<code>&lt;html&gt;</code>标签标志着<strong>文档的开始与结束</strong>；<code>&lt;head&gt;</code>标签标志着<strong>文档的头部</strong>，我们通常会在里面指定<strong>整个文档的公共信息</strong>，比如用<code>&lt;title&gt;</code>标签指定网页的名字，或者指定文档引用的外部<strong>CSS</strong>、<strong>JS</strong>文件等的链接；<code>&lt;body&gt;</code>标签则标志着<strong>文档的正文部分</strong>，网页中能看到的元素都在这里定义。</p>
+<p>在上面的代码中，我们先是在文档头部指定了这个网页的名字叫<strong><em>Button Example</em></strong>，然后在文档的正文部分分别声明了写有<strong><em>Welcome</em></strong>以及写有<strong><em>Change Color</em></strong>的按钮。如果只是做单纯的声明，那么两个按钮将会出现在同一行。但是我们知道<strong>HTML</strong>可以指定网页元素的位置，所以我们这里用了<code>&lt;br&gt;</code>来进行换行，使得两个按钮出现在了两行。</p>
+<p>当然，<strong>HTML</strong>的功能远不止于此，标签的种类也是千千万万，一下子全部学完是不现实也不必要的。所以我们只要了解<strong>HTML</strong>基本的思想，碰到不会的标签等等，面向谷歌编程就可以了。</p>
+<h4 id="css">CSS</h4>
+<p>其次，我们需要通过<strong>CSS</strong>定义两个按钮的颜色：</p>
+<p><img alt="CSS" src="C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\CSS.gif" /></p>
+<pre><code class="language-css">button{
+    background-color: aqua;
+}
+
+.different_color_button{
+    background-color: pink;
+}
+</code></pre>
+<p>看到这里，第一次接触的同学可能就会有疑问，这个代码是写在<strong>CSS</strong>的文件里的，那它是如何影响<strong>HTML</strong>中的元素的呢？所以这里我们就要讲讲<strong>HTML</strong>怎样引用<strong>CSS</strong>。但是讲之前请大家要清楚一点，那就是引用的方式不止一种。</p>
+<p>先说说<strong>HTML</strong>如何引用上面这种外部<strong>CSS</strong>文件——为了调用这个文件，我们就需要在<strong>HTML</strong>的文档里加一些东西。话不多说，上代码：</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Button Example&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;Button_Example.css&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;button&gt;Welcome&lt;/button&gt;&lt;br&gt;
+    &lt;button class=&quot;different_color_button&quot;&gt;Change Color&lt;/button&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>可以看见，在<strong>HTML</strong>的头部，多了一行<code>&lt;link ......&gt;</code>（其余部分还是相同）。<code>rel="stylesheet"</code>说明了引用文件（即<strong>CSS</strong>文件）与当前文件（即<strong>HTML</strong>文件）的关系为<strong>样式表</strong>，<code>type="text/css"</code>则告诉浏览器后面的文本不是普通文本，要当作<strong>CSS</strong>来解析（这与<strong>HTML</strong>中的<code>&lt;!DOCTYPE html&gt;</code>有着异曲同工之处）。所以说引用不同的<strong>CSS</strong>时<code>rel="stylesheet"</code>以及<code>type="text/css"</code>是不需要更改的，只要在<code>href</code>后面写上<strong>CSS</strong>文件对应的路径就可以了。这样就实现了外部<strong>CSS</strong>文件与<strong>HTML</strong>的联动，而这种引用方式也就被称为<strong>外部样式表</strong>。</p>
+<p>除了外部样式表，别的引用方式还有<strong>行内样式</strong>，也就是在<strong>HTML</strong>正文部分的标签中通过<code>style</code>属性指定样式：</p>
+<pre><code class="language-html">&lt;h1 style=&quot;color:red;&quot;&gt;运用行内样式引入CSS&lt;/h1&gt;
+</code></pre>
+<p>以及<strong>内部样式表</strong>，即在<strong>HTML</strong>文件的头部中直接写样式表：</p>
+<pre><code class="language-html">&lt;head&gt;
+  &lt;title&gt;内部样式表&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    div{
+        background: green;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+<p>在实际的工程中，最推荐的还是<strong>外部样式表</strong>，因为它实现了<strong>HTML</strong>代码与<strong>CSS</strong>代码的完全分离，使得前期制作和后期维护都十分方便。</p>
+<p>在对<strong>CSS</strong>和<strong>HTML</strong>如何联动有一个基本的了解后，让我们看回刚刚的<strong>CSS</strong>代码：</p>
+<pre><code class="language-css">button{
+    background-color: aqua;
+}
+
+.different_color_button{
+    background-color: pink;
+}
+</code></pre>
+<p>我们可以发现，<strong>CSS</strong>的定义是<code>aaa{bbb: ccc;}</code>这样的，这里的<code>aaa</code>被我们称为<strong>选择器</strong>，它有很多类型，比如元素选择器，id选择器等等，这边就不一一赘述了。而<code>{}</code>内部则以<code>属性名：属性值</code>的形式具体定义了属性。</p>
+<p>从具体的代码来说，<code>button{background-color: aqua;}</code>的选择器是<strong>元素选择器</strong>，它指定了所有标签为<code>&lt;button&gt;</code>元素的背景色为<strong><em>aqua</em></strong>，即两个<strong>button</strong>的背景色都为<strong><em>aqua</em></strong>。而<code>.different_color_button{background-color: pink;}</code>则是<strong>class选择器</strong>，它指定了所有<code>class="different_color_button"</code>的元素的背景色为<strong><em>pink</em></strong>，即写有<strong><em>Change Color</em></strong>的<strong>button</strong>的背景色为<strong><em>pink</em></strong>。</p>
+<p>那么这样也就衍生出了一个问题，如果按照第一条代码来说，写有<strong><em>Change Color</em></strong>的<strong>button</strong>的背景色应该是<strong><em>aqua</em></strong>，但按第二条代码来说，背景色又应该是<strong><em>pink</em></strong>，那么这时候究竟听谁的？</p>
+<p>当碰到这样的问题，以及类似的比如行内样式和外部样式表起冲突的问题时，<strong>CSS</strong>就会通过优先级来判定究竟听谁的。就以上面的例子来讲，由于<strong>class选择器</strong>的优先级高于<strong>元素选择器</strong>，最终<strong>class选择器</strong>后面定义的属性决定了写有<strong><em>Change Color</em></strong>的<strong>button</strong>的背景色为<strong><em>pink</em></strong>。总的来说，如果是不同引入方式的样式起冲突的话，<strong>行内样式</strong> &gt; <strong>内部样式表</strong> &gt; <strong>外部样式表</strong>；而涉及到不同选择器起冲突的话，一般遵循越具体的选择器优先级越高的原则。这也就解释了<strong>CSS</strong>（Cascading Style Sheets）层叠样式表这个名字的由来——在判定优先级后，不同的样式层叠和覆盖，这就是<strong>CSS</strong>。</p>
+<h4 id="javascript">JavaScript</h4>
+<p>最后，我们通过JacaScript定义按钮被点击后的行为：</p>
+<p><img alt="JS" src="C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\JS.gif" /></p>
+<pre><code class="language-js">var welcome_btn = document.getElementById(&quot;welcome&quot;);
+welcome_btn.onclick = function(){
+    alert(&quot;hello&quot;);
+}
+
+var change_btn = document.getElementById(&quot;change_color&quot;);
+change_btn.onclick = function(){
+    change_btn.style.backgroundColor = &quot;plum&quot;;
+}
+</code></pre>
+<p>和<strong>CSS</strong>类似，<strong>JavaScript</strong>也有三种引入方式，<strong>外部引入</strong>、<strong>内部引入</strong>以及<strong>行内引入</strong>，而引入上面这种<strong>JavaScript</strong>文件的方式称为外部引入。同样地，<strong>HTML</strong>文件中也要相应地标示出这种引用：</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Button Example&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;Button_Example.css&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;button id=&quot;welcome&quot;&gt;Welcome&lt;/button&gt;&lt;br&gt;
+    &lt;button class=&quot;different_color_button&quot; id=&quot;change_color&quot;&gt;Change Color&lt;/button&gt;
+&lt;/body&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;Button_Example.js&quot;&gt;&lt;/script&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>与前面讲引用外部的<strong>CSS</strong>文件类似，对于不同的外部<strong>JavaScript</strong>文件，只要改动<code>src</code>后的对应路径即可。</p>
+<p>看回<strong>JavaScript</strong>的代码：</p>
+<pre><code class="language-javascript">var welcome_btn = document.getElementById(&quot;welcome&quot;);
+welcome_btn.onclick = function(){
+    alert(&quot;hello&quot;);
+}
+
+var change_btn = document.getElementById(&quot;change_color&quot;);
+change_btn.onclick = function(){
+    change_btn.style.backgroundColor = &quot;plum&quot;;
+}
+</code></pre>
+<p>不同于<strong>HTML</strong>和<strong>CSS</strong>，<strong>JavaScript</strong>是一门编程语言，所以有了<code>var welcome_btn = ......</code>这样的声明部分。而为了得到<strong>HTML</strong>中的元素，这里使用的方法是<code>document.getElementById</code>，也就是通过<strong>HTML</strong>中元素的<strong>id</strong>来得到元素，并再给得到元素的对应行为（这里例子为<code>onclick</code>）指定回应（这里分别为弹出写有<strong>hello</strong>的提示框以及更改背景色）。</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
