@@ -126,17 +126,17 @@
 <h4 id="_1">为什么是这三件</h4>
 <p>很多人（不包括在座部分大佬）可能之前没有听说过，或者说没有真正运用过这三件套，但是这都是非常非常正常的。作为普通的网民，显然我们不需要接触这些东西，因为<strong>Web 三件套是服务于设计网页的</strong>。</p>
 <p>那么既然是设计网页，我们就有必要先了解一下网页的构成。如果是按层次分的话，那么就可以分为<strong>结构层</strong>、<strong>表示层</strong>和<strong>行为层</strong>。而<strong>HTML</strong> 、<strong>CSS</strong>和<strong>JavaScript</strong>就分别对应了实现这三个层的工具。更具体一点地来说，<strong>HTML</strong>指定了<strong>每个元素在网页中的位置这样最基础的网页结构</strong>（拿下面第一张图来说就是定义了白色大方块等等在网页中的位置以及长宽），<strong>css</strong>定义了<strong>元素的具体样式</strong>（拿下面第二张图来说就是将原先的白色大方块修改成了白色的椭圆等等），而<strong>JavaScript</strong>定义了<strong>元素的互动</strong>（拿下面第三张图来说就是点一下页面，会让笑脸都动起来等等）。</p>
-<p><img alt="html_css_js" src="./html_css_js.jpg" /></p>
+<p><img alt="html-css-js" src="../images/web-toolkit-1.jpg" /></p>
 <p>引用网上一个形象的例子来讲，<strong>HTML</strong>就好比人的骨骼和器官，<strong>CSS</strong>就好比人的皮相，而<strong>JavaScript</strong>就好比人的灵魂，有了<strong>HTML</strong>才会有基础的人形,但没有<strong>CSS</strong>就会毁容，而没有<strong>JavaScript</strong>则会变成动不了的植物人。</p>
 <h2 id="web_3">细说Web三件套</h2>
 <p>在大致了解Web三件套后，下面就让我们通过一个简单的例子来更深入地学习这三件套。</p>
 <p>而在进行讲解之前，先让我们看一下这个例子最终的实现效果：</p>
-<p><img alt="JS" src="C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\JS.gif" /></p>
+<p><img alt="JS" src="../images/web-toolkit-2.gif" /></p>
 <p>写有 <strong><em>Welcome</em></strong> 的按钮在被点击后会弹出写有 <em>hello</em> 的提示框，而写有 <strong><em>Change Color</em></strong> 的按钮在被点击后则会改变颜色（注意：点击按钮时出现的黄色的圆只是录屏时候显示的左键点击，不是网页的效果哦）。</p>
 <p>那么接下来就让我们通过三件套，一步一步地实现这个简单的网页。</p>
 <h4 id="html">HTML</h4>
 <p>首先，我们需要通过<strong>HTML</strong>定义两个按钮以及他们的位置（代码看不懂没关系，下面会进行讲解）：</p>
-<p><img alt="HTML" src="C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\HTML.gif" /></p>
+<p><img alt="HTML" src="../images/web-toolkit-3.gif" /></p>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
@@ -157,7 +157,7 @@
 <p>当然，<strong>HTML</strong>的功能远不止于此，标签的种类也是千千万万，一下子全部学完是不现实也不必要的。所以我们只要了解<strong>HTML</strong>基本的思想，碰到不会的标签等等，面向谷歌编程就可以了。</p>
 <h4 id="css">CSS</h4>
 <p>其次，我们需要通过<strong>CSS</strong>定义两个按钮的颜色：</p>
-<p><img alt="CSS" src="C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\CSS.gif" /></p>
+<p><img alt="CSS" src="../images/web-toolkit-4.gif" /></p>
 <pre><code class="language-css">button{
     background-color: aqua;
 }
@@ -213,7 +213,7 @@
 <p>当碰到这样的问题，以及类似的比如行内样式和外部样式表起冲突的问题时，<strong>CSS</strong>就会通过优先级来判定究竟听谁的。就以上面的例子来讲，由于<strong>class选择器</strong>的优先级高于<strong>元素选择器</strong>，最终<strong>class选择器</strong>后面定义的属性决定了写有<strong><em>Change Color</em></strong>的<strong>button</strong>的背景色为<strong><em>pink</em></strong>。总的来说，如果是不同引入方式的样式起冲突的话，<strong>行内样式</strong> &gt; <strong>内部样式表</strong> &gt; <strong>外部样式表</strong>；而涉及到不同选择器起冲突的话，一般遵循越具体的选择器优先级越高的原则。这也就解释了<strong>CSS</strong>（Cascading Style Sheets）层叠样式表这个名字的由来——在判定优先级后，不同的样式层叠和覆盖，这就是<strong>CSS</strong>。</p>
 <h4 id="javascript">JavaScript</h4>
 <p>最后，我们通过JacaScript定义按钮被点击后的行为：</p>
-<p><img alt="JS" src="C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\JS.gif" /></p>
+<p><img alt="JS" src="../images/web-toolkit-2.gif" /></p>
 <pre><code class="language-js">var welcome_btn = document.getElementById(&quot;welcome&quot;);
 welcome_btn.onclick = function(){
     alert(&quot;hello&quot;);
