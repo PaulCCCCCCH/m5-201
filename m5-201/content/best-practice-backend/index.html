@@ -351,10 +351,10 @@ public class UserController {
         try {
             User user = userService.getUserById(id);
         } catch (NotFoundException e) {
-            return CommonResult(e.getMessage());
+            return CommonResult.failed(e.getMessage());
         } catch (Exception e) {
             e.printStackTrace(); // 这个错误信息对 debug 非常有用，要 print 出来
-            return CommonResult(e.getMessage());
+            return CommonResult.failed(e.getMessage());
         }
         UserVO userVO = UserService.UserToUserVO(user);
         // 返回封装好的 result

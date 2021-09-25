@@ -57,7 +57,7 @@
       <br>
       <a href="./content/web-toolkit">4. Web 三件套</a>
     </td>
-    <td class="tg-svo0" rowspan="2"> <a href="./content/web-basics-practice"> Web 练习</a></td>
+    <td class="tg-svo0" rowspan="2"> <a href="./content/web-toolkit-practice"> Web 练习</a></td>
     <td class="tg-svo0" rowspan="6"> <a href="./content/project-1-tetris-in-js">Project 1: Tetris in JS</a></td>
     <td class="tg-svo0">
       <a href="https://www.runoob.com/html/html5-intro.html">1. 菜鸟 HTML 教程</a>

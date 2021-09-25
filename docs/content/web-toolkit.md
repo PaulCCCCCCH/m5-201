@@ -22,7 +22,7 @@
 
 那么既然是设计网页，我们就有必要先了解一下网页的构成。如果是按层次分的话，那么就可以分为**结构层**、**表示层**和**行为层**。而**HTML** 、**CSS**和**JavaScript**就分别对应了实现这三个层的工具。更具体一点地来说，**HTML**指定了**每个元素在网页中的位置这样最基础的网页结构**（拿下面第一张图来说就是定义了白色大方块等等在网页中的位置以及长宽），**css**定义了**元素的具体样式**（拿下面第二张图来说就是将原先的白色大方块修改成了白色的椭圆等等），而**JavaScript**定义了**元素的互动**（拿下面第三张图来说就是点一下页面，会让笑脸都动起来等等）。
 
-![html_css_js](./html_css_js.jpg)
+![html-css-js](./images/web-toolkit-1.jpg)
 
 引用网上一个形象的例子来讲，**HTML**就好比人的骨骼和器官，**CSS**就好比人的皮相，而**JavaScript**就好比人的灵魂，有了**HTML**才会有基础的人形,但没有**CSS**就会毁容，而没有**JavaScript**则会变成动不了的植物人。
 
@@ -36,7 +36,7 @@
 
 而在进行讲解之前，先让我们看一下这个例子最终的实现效果：
 
-![JS](C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\JS.gif)
+![JS](./images/web-toolkit-2.gif)
 
 写有 ***Welcome*** 的按钮在被点击后会弹出写有 *hello* 的提示框，而写有 ***Change Color*** 的按钮在被点击后则会改变颜色（注意：点击按钮时出现的黄色的圆只是录屏时候显示的左键点击，不是网页的效果哦）。
 
@@ -48,7 +48,7 @@
 
 首先，我们需要通过**HTML**定义两个按钮以及他们的位置（代码看不懂没关系，下面会进行讲解）：
 
-![HTML](C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\HTML.gif)
+![HTML](./images/web-toolkit-3.gif)
 
 ```html
 <!DOCTYPE html>
@@ -80,7 +80,7 @@
 
 其次，我们需要通过**CSS**定义两个按钮的颜色：
 
-![CSS](C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\CSS.gif)
+![CSS](./images/web-toolkit-4.gif)
 
 ```css
 button{
@@ -162,7 +162,7 @@ button{
 
 最后，我们通过JacaScript定义按钮被点击后的行为：
 
-![JS](C:\Users\Lamb\Desktop\Leon\UNNC\社团\m5\JS.gif)
+![JS](./images/web-toolkit-2.gif)
 
 ```js
 var welcome_btn = document.getElementById("welcome");
