@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/git-guidance/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Git的使用 - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../home/">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../..">Schedule</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/git-guidance.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#git">Git的使用</a></li>
+        <li class="first-level "><a href="#git_1">Git本地用法</a></li>
+            <li class="second-level"><a href="#use-the-terminal">Use the Terminal（熟悉命令行用法的同学可以跳过这段）</a></li>
+                
+        <li class="first-level "><a href="#gitlocal-repository">Git本地用法（local  repository）</a></li>
+            <li class="second-level"><a href="#_1">初始化</a></li>
+                
+            <li class="second-level"><a href="#_2">追踪</a></li>
+                
+            <li class="second-level"><a href="#_3">查看文件状态</a></li>
+                
+            <li class="second-level"><a href="#_4">提交</a></li>
+                
+            <li class="second-level"><a href="#_5">还原</a></li>
+                
+            <li class="second-level"><a href="#_6">分支</a></li>
+                
+            <li class="second-level"><a href="#_7">合并</a></li>
+                
+        <li class="first-level "><a href="#gitremote-repository">Git远程用法（remote repository）</a></li>
+            <li class="second-level"><a href="#_8">注意</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="git">Git的使用</h1>
+<p><a href="https://git-scm.com/downloads">戳这里下载Git</a></p>
+<h1 id="git_1"><strong>Git本地用法</strong></h1>
+<p>在本章中，我们会介绍以下几个git常用的命令：- <code>git init</code>- <code>git add</code>- <code>git status</code>- <code>git commit</code>- <code>git log</code>- <code>git checkout</code>- <code>git branch</code>- <code>git merge</code></p>
+<p>同时大家可以参照本章完成“Git练习”，体验git的强大功能。</p>
+<h4 id="use-the-terminal">Use the Terminal（熟悉命令行用法的同学可以跳过这段）</h4>
+<p>打开git bash / cmd / shell / teminal /…</p>
+<ol>
+<li>进入/切换目录</li>
+</ol>
+<p><code>cd "需要打开的路径"</code></p>
+<ol>
+<li>返回上一级目录</li>
+</ol>
+<p><code>cd ../</code></p>
+<ol>
+<li>列出当前目录下所有文件和文件夹</li>
+</ol>
+<p><code>ls</code></p>
+<ol>
+<li>新建文件夹/目录</li>
+</ol>
+<p><code>mkdir "新建目录名称"</code></p>
+<ol>
+<li>删除文件</li>
+</ol>
+<p><code>rm "文件名称"</code></p>
+<h1 id="gitlocal-repository">Git本地用法（local  repository）</h1>
+<h4 id="_1">初始化</h4>
+<pre><code>git init
+</code></pre>
+<p>首先，更改路径！！！使用cd命令切换到目标路径下面。</p>
+<p>对于一个文件夹，你需要使用 <code>git init</code> 来初始化。相当于告诉git在当前目录下建立仓库(repository)，它会在本地创建一个 <code>.git</code> 文件夹，这个文件夹里存放了完整的历史记录。然后，你就可以在这个文件夹里用 <code>git</code> 进行追溯了。</p>
+<p>注意：请不要更改 .git 这个文件夹里的任何东西。除非你想重新初始化 <code>git</code> 历史。这样的话，请把整个 <code>.git</code> 文件夹删除，然后重新运行 <code>git init</code></p>
+<h4 id="_2">追踪</h4>
+<p>现在仓库所在的目录下可能有文件，但不意味着会被git跟踪识别，想要让git看到这些文件需要使用<code>add</code>命令</p>
+<pre><code>git add &quot;路径/文件名及后缀&quot;
+</code></pre>
+<p>当然，你可以使用 <code>git add ./</code> 或者<code>git add -A</code>来追踪当前目录下所有文件。</p>
+<p>如果你不想追踪一个文件了，你可以使用 <code>git rm --cached &lt;你不想追踪的文件名字&gt;</code>。</p>
+<h4 id="_3">查看文件状态</h4>
+<p>通过<code>git status</code>随时查看git的状态和我们输入命令的效果</p>
+<pre><code>git status
+</code></pre>
+<p>在提交之前，请先使用 git status 查看一下，哪些文件正在被追踪（即，这次提交会提交哪些文件），确认没有乱七八糟的东西被提交上去。</p>
+<h4 id="_4">提交</h4>
+<p>当文件被git跟踪后，使用<code>commit</code>命令提交暂存区的指定文件到仓库区</p>
+<pre><code>git commit -m &quot;message&quot;
+</code></pre>
+<p>提交（commit），可以理解成进行一次备份。所有被追踪的文件，都会被备份，你可以随时还原。</p>
+<p>提交的时候，使用：<code>git commit -m "&lt;在这里留言&gt;"</code>。留言的话，可以说一下这次提交主要改了什么东西，最好清晰一点，让下次自己一眼能知道这是哪个版本。</p>
+<p>团队合作的时候，留言相当重要，你要把这次提交达成的功能清晰、完整地列出来。这可能不是一句话能讲清楚的，你需要用 <code>git commit</code>，然后在弹出来的文档里完整地撰写提交信息（编辑的时候会用到 <code>Vim</code> ，建议有精力的同学学习一下）。</p>
+<h4 id="_5">还原</h4>
+<p>想要回溯到一个指定时刻，需要先查看提交日志信息，知道你要回溯到哪一次提交。</p>
+<pre><code>git log
+</code></pre>
+<p>用 git log 来查看所有历史的提交，这时候，你提交时候输入的留言（commit message）就很重要。</p>
+<p>你会看到所有的 commit 后面，都有一个很长一串 0-9 数字以及 a-e 字母组成的编码。找到你想恢复的版本后，你只需要复制对应的编码，然后使用 git checkout &lt;对应编码&gt; 就可以回到对应的版本了。</p>
+<pre><code>git checkout &lt;对应编码&gt;
+</code></pre>
+<p>注意，这个操作就像把你的文件夹扔到了一台时光机上，所有代码就变成那次提交时的样子了。所以，git 会强制要求你在 checkout 操作之前先进行一次 commit 操作，不然当前的进度就全都丢失了。</p>
+<h4 id="_6">分支</h4>
+<p>你可以使用 <code>git branch &lt;新分支名&gt;</code> 在当前分支基础上创建一个新的分支。</p>
+<p>你可以使用 <code>git branch</code> 来查看所有分支以及当前所在的分支。</p>
+<p>你可以使用 <code>git checkout &lt;分支名&gt;</code> 来跳转到某一个分支的版本。这个操作也会<strong>把当前文件夹送上时光机（当前代码进度会丢失）</strong>。</p>
+<h4 id="_7">合并</h4>
+<p>当你在 <code>main</code> 分支，想把 <code>dev</code> 分支最新版本的文件合并进来，你可以使用 <code>git merge dev</code>。</p>
+<p>注意，有时候会提示有 <code>conflict</code>，你可以看它提示的 <code>conflict</code> 在哪个文件，打开它，按 <code>CTRL+F</code> 搜索 <code>====</code>（一堆等号），就能看到 <code>git</code> 帮你把两边的代码列出来。按照自己的意思改正好之后，你可以 <code>commit</code> 一下，就完成了 <code>merge</code> 操作。</p>
+<h1 id="gitremote-repository">Git远程用法（remote repository）</h1>
+<p>我们讲过，完整的文件夹历史会被存放在 <code>.git</code> 文件里。</p>
+<p>Git的灵魂就在于，<code>.git</code> 文件可以放在远程服务器上，这样所有人都可以往同一个 <code>.git</code> 文件里提交东西，大家共享彼此的开发历史。</p>
+<p>Github就提供了这样一个平台。推荐大家注册一个 <code>GitHub</code> 帐号，这样不仅可以在云端保存自己的代码历史、和其它人合作，还可以展示一些自己引以为傲的项目（然后给 <code>m5-201</code> 的课程点一个 Star ...lol）。</p>
+<p>你可以自己创建一个 <code>GitHub Repository</code>（<strong>注意不要创建 <code>README</code> 文件</strong>），然后按照它的指引，把本地初始化好的 <code>git</code> 推送到自己的 <code>GitHub Repository</code> 上。</p>
+<p>远程的 <code>git</code> 相关操作比较简单，主要是这几个： - <code>git push</code> 把本地的 <code>.git</code> 上传到远程。 - <code>git pull</code> 把远程的 <code>.git</code> 合并到本地，并 <code>checkout</code> 到最新的版本。如果远程的 <code>.git</code> 被其它人 <code>commit</code> 过，你需要像合并分支那样解决 <code>conflict</code>。 - <code>git clone</code> 把远程的 <code>.git</code> 文件下载到本地。<strong>这个命令是下载整个初始化好的文件夹，不需要进行 <code>git init</code></strong>。</p>
+<h2 id="_8">注意</h2>
+<ul>
+<li>请不要使用 <code>git</code> 去追踪大文件，这样备份起来会相当缓慢，<code>git</code> 文件也会异常巨大。可以用 <code>.gitignore</code> 文件自动忽略一些不需要追踪的文件。具体如何操作，请自行搜索 <code>gitignore</code>。</li>
+<li>在最开始使用 <code>git</code> 的时候，常常会发现它提示你，现在不能用某个命令，然后给了一些让你一头雾水的提示。这个时候，最好先询问有经验的人，这样可以最大限度节省时间。</li>
+</ul>
+<p>戳这里查看 <a href="https://www.runoob.com/git/git-commit.html">菜鸟教程</a></p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

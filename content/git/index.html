@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>Git 的使用 - m5-201</title>
+    <title>Git - m5-201</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -101,133 +101,72 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#git">Git 的使用</a></li>
-            <li class="second-level"><a href="#_1">引言</a></li>
+        <li class="first-level active"><a href="#git">Git</a></li>
+        <li class="first-level "><a href="#_1">引言</a></li>
+        <li class="first-level "><a href="#git_1">Git是什么？</a></li>
+            <li class="second-level"><a href="#_2">版本控制器的用途</a></li>
                 
-            <li class="second-level"><a href="#git_1">Git 概念</a></li>
+            <li class="second-level"><a href="#git_2">什么让Git脱颖而出?</a></li>
                 
-            <li class="second-level"><a href="#git_2">Git 安装</a></li>
-                
-            <li class="second-level"><a href="#git_3">Git 本地用法</a></li>
-                
-                <li class="third-level"><a href="#_2">初始化</a></li>
-                <li class="third-level"><a href="#_3">追踪</a></li>
-                <li class="third-level"><a href="#_4">提交</a></li>
-                <li class="third-level"><a href="#_5">还原</a></li>
-                <li class="third-level"><a href="#_6">分支</a></li>
-                <li class="third-level"><a href="#_7">合并</a></li>
-            <li class="second-level"><a href="#git_4">Git 远程用法</a></li>
-                
-            <li class="second-level"><a href="#_8">注意</a></li>
-                
+        <li class="first-level "><a href="#git_3">Git的工作原理</a></li>
+        <li class="first-level "><a href="#github">GitHub</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="git">Git 的使用</h1>
-<h2 id="_1">引言</h2>
-<p>不知道你有没有过这种经历：<br />
-<br></p>
-<p>你写好了一份代码，准备提交的时候，突然有个更好的点子，想改动一下，但是又不敢动手，怕改坏了。于是你把代码备份了一份，这才放心删改起来。<br />
-<br></p>
-<p>你疯狂敲键盘，点子逐渐成型，然而你这时候你的点子出现了分支：是走 A 路线，还是走 B 路线呢？你陷入了沉思，于是又把代码复制了一份... <br />
-<br></p>
-<p>当你完成这个项目之后，你发现你的代码被复制了几十份，放在你的硬盘里，文件名乱七八糟，甚至分不出每份代码到底是哪个阶段的，想回到某个节点的话，得还原哪份带代码。<br />
-<br></p>
-<p>这还只是一个人 solo 一个项目的情况。如果有十来个人一起工作，每个人都有自己的一点小想法，把代码复制一遍进行尝试，很快整个项目就变成了屎山（Pi, 2021）。<br />
-<br></p>
-<p>为了避免这种情况，我们强烈推荐使用 <code>git</code> 。这是一个非常好用的版本管理工具。<br />
-<br></p>
-<h2 id="git_1">Git 概念</h2>
-<p><code>git</code> 会为你保存整个文件夹历史。它会把每次改动的信息都完整地保存在一个地方，这样你就可以随时查看、还原，非常方便。  </p>
-<p><code>git</code> 的工作流程是这样：<br />
-- 首先，你需要声明，要让 <code>git</code> 去<code>追踪（track）</code>哪些文件。当你创建新文件的时候，需要把它加入<code>追踪</code>的列表中。<br />
-- 然后，每次你认为你的工作进行到了一定的阶段（i.e. 需要备份一下你的代码的节点），你需要用 <code>git</code> 去<code>提交（commit）</code>所有被<code>追踪（track）</code>的文件，这样，相当与备份了一下。<br />
-- 当你有需要的时候，你可以用 <code>git</code> 去<code>回溯（checkout）</code>某个版本的文件。<br />
-<br></p>
-<p>当然不只是这些，你还可以：<br />
-- 你可以创建一个<code>分支（branch）</code>。你可以把代码备份（提交）到分支上。<br />
-- 你可以把一个<code>分支``合并（merge）</code>到另一个<code>分支</code>上，<code>git</code> 会自动分析两个分支之间的相同与不同之处，非常方便。<br />
-<br></p>
-<p><code>分支</code>和<code>合并</code>的功能在团队合作的时候尤其有用。通常，企业分工的时候，我们会每个人创建一个<code>分支</code>，在<code>分支</code>上开发一个具体的功能，完成后再<code>合并</code>回主分支。<br />
-<br></p>
-<p>在<code>合并</code>的时候，会有人专门去审核代码，同意后才能<code>合并</code>。我们还可以撰写脚本，在试图<code>合并</code>的时候自动运行测试代码，测试通过后才能发出<code>合并</code>请求。<br />
-<br></p>
-<p>总之，<code>git</code> 为我们提供了很好的工作流程。</p>
-<h2 id="git_2">Git 安装</h2>
-<p>请自行搜索 <code>git installation</code></p>
-<h2 id="git_3">Git 本地用法</h2>
-<p>我们会介绍以下几个：<br />
-- <code>git init</code><br />
-- <code>git add</code><br />
-- <code>git status</code><br />
-- <code>git commit</code><br />
-- <code>git log</code><br />
-- <code>git checkout</code><br />
-- <code>git branch</code><br />
-- <code>git merge</code>  </p>
-<p>掌握它们之后，基本上就可以加入团队进行合作了。<br />
-<br></p>
-<h3 id="_2">初始化</h3>
-<p>首先，对于一个文件夹，你需要使用 <code>git init</code> 来初始化。它会在本地创建一个 <code>.git</code> 文件夹。然后，你就可以在这个文件夹里用 <code>git</code> 进行追溯了。<br />
-<br></p>
-<p><strong>注意：请不要更改这个文件夹里的任何东西。</strong>除非你想重新初始化 <code>git</code> 历史。这样的话，请把整个 <code>.git</code> 文件夹删除，然后重新运行 <code>git init</code>。<br />
-<br></p>
-<h3 id="_3">追踪</h3>
-<p>想让 <code>git</code> 追踪一个文件，你只需要输入 <code>git add &lt;你要追踪的文件路径&gt;</code>。这样，下次备份（<code>commit</code>）的时候，这个文件就会被放进去。<br />
-<br></p>
-<p>当然，这样可能会比较麻烦。你可以使用 <code>git add -A</code> 来追踪所有文件。<br />
-<br></p>
-<p>如果你不想追踪一个文件了，你可以使用 <code>git rm --cached &lt;你不想追踪的文件名字&gt;</code>。<br />
-<br></p>
-<h3 id="_4">提交</h3>
-<p>提交（<code>commit</code>），可以理解成进行一次备份。所有被<code>追踪</code>的文件，都会被备份，你可以随时还原。<br />
-<br></p>
-<p>在提交之前，请先使用 <code>git status</code> 查看一下，哪些文件正在被追踪（即，这次提交会提交哪些文件），确认没有乱七八糟的东西被提交上去。</p>
-<p>提交的时候，使用：<code>git commit -m "&lt;在这里留言&gt;"</code>。留言的话，可以说一下这次提交主要改了什么东西，最好清晰一点，让下次自己一眼能知道这是哪个版本。<br />
-<br></p>
-<p>团队合作的时候，留言相当重要，你要把这次提交达成的功能清晰、完整地列出来。这可能不是一句话能讲清楚的，你需要用
-<code>git commit</code>，然后在弹出来的文档里完整地撰写提交信息（编辑的时候会用到 <code>Vim</code> ，建议有精力的同学学习一下）。<br />
-<br></p>
-<h3 id="_5">还原</h3>
-<p>想要还原某个版本，首先你需要用 <code>git log</code> 来查看所有历史的提交。这时候，你提交时候输入的留言（<code>commit message</code>）就很重要。<br />
-<br></p>
-<p>你会看到所有的 <code>commit</code> 后面，都有一个很长一串 <code>0-9</code> 数字以及 <code>a-e</code> 字母组成的编码。找到你想恢复的版本后，你只需要复制对应的编码，然后使用 <code>git checkout &lt;对应编码&gt;</code> 就可以回到对应的版本了。<br />
-<br></p>
-<p><strong>注意，这个操作就像把你的文件夹扔到了一台时光机上，所有代码就变成那次提交时的样子了。</strong>所以，<code>git</code> 会强制要求你在 <code>checkout</code> 操作之前先进行一次 <code>commit</code> 操作，不然当前的进度就全都丢失了。<br />
-<br></p>
-<h3 id="_6">分支</h3>
-<p>你可以使用 <code>git branch &lt;新分支名&gt;</code> 在当前分支基础上创建一个新的分支。<br />
-<br></p>
-<p>你可以使用 <code>git branch</code> 来查看所有分支以及当前所在的分支。<br />
-<br></p>
-<p>你可以使用 <code>git checkout &lt;分支名&gt;</code> 来跳转到某一个分支的版本。这个操作也会<strong>把当前文件夹送上时光机（当前代码进度会丢失）</strong>。</p>
-<h3 id="_7">合并</h3>
-<p>当你在 <code>main</code> 分支，想把 <code>dev</code> 分支最新版本的文件合并进来，你可以使用 <code>git merge dev</code>。<br />
-<br></p>
-<p>注意，有时候会提示有 <code>conflict</code>，你可以看它提示的 <code>conflict</code> 在哪个文件，打开它，按 <code>CTRL+F</code> 搜索 <code>====</code>（一堆等号），就能看到 <code>git</code> 帮你把两边的代码列出来。按照自己的意思改正好之后，你可以 <code>commit</code> 一下，就完成了 <code>merge</code> 操作。<br />
-<br></p>
-<h2 id="git_4">Git 远程用法</h2>
-<p>我们讲过，完整的文件夹历史会被存放在 <code>.git</code> 文件里。<br />
-<br></p>
-<p><code>git</code> 的灵魂就在于，<code>.git</code> 文件可以放在远程服务器上，这样所有人都可以往同一个 <code>.git</code> 文件里提交东西，大家共享彼此的开发历史。<br />
-<br></p>
-<p><code>GitHub</code> 就提供了这样一个平台。推荐大家注册一个 <code>GitHub</code> 帐号，这样不仅可以在云端保存自己的代码历史、和其它人合作，还可以展示一些自己引以为傲的项目（然后给 <code>m5-201</code> 的课程点一个 Star ...lol）。<br />
-<br></p>
-<p>你可以自己创建一个 <code>GitHub Repository</code>（<strong>注意不要创建 <code>README</code> 文件</strong>），然后按照它的指引，把本地初始化好的 <code>git</code> 推送到自己的 <code>GitHub Repository</code> 上。<br />
-<br></p>
-<p>远程的 <code>git</code> 相关操作比较简单，主要是这几个：
-- <code>git push</code> 把本地的 <code>.git</code> 上传到远程。
-- <code>git pull</code> 把远程的 <code>.git</code> 合并到本地，并 <code>checkout</code> 到最新的版本。如果远程的 <code>.git</code> 被其它人 <code>commit</code> 过，你需要像合并分支那样解决 <code>conflict</code>。
-- <code>git clone</code> 把远程的 <code>.git</code> 文件下载到本地。<strong>这个命令是下载整个初始化好的文件夹，不需要进行 <code>git init</code></strong>。</p>
-<h2 id="_8">注意</h2>
+<h1 id="git">Git</h1>
+<h1 id="_1">引言</h1>
+<p>不知道你有没有过这种经历：</p>
+<p>你写好了一份代码，准备提交的时候，突然有个更好的点子，想改动一下，但是又不敢动手，怕改坏了。于是你把代码备份了一份，这才放心删改起来。</p>
+<p>你疯狂敲键盘，点子逐渐成型，然而你这时候你的点子出现了分支：是走 A 路线，还是走 B 路线呢？你陷入了沉思，于是又把代码复制了一份...</p>
+<p>当你完成这个项目之后，你发现你的代码被复制了几十份，放在你的硬盘里，文件名乱七八糟，甚至分不出每份代码到底是哪个阶段的，想回到某个节点的话，得还原哪份带代码。</p>
+<p>这还只是一个人 solo 一个项目的情况。如果有十来个人一起工作，每个人都有自己的一点小想法，把代码复制一遍进行尝试，很快整个项目就变成了屎山（Pi, 2021）。</p>
+<p>为了避免这种情况，我们强烈推荐使用 <code>git</code> 。这是一个非常好用的版本管理工具。</p>
+<h1 id="git_1">Git是什么？</h1>
+<blockquote>
+<p>标准答案：Git 是一个开源的<strong>分布式</strong>版本控制系统。</p>
+</blockquote>
+<p>让我们一步步来理解这个答案。首先，Git本质上是一个<strong>版本控制器</strong>，这个名字可能有些陌生，但大家平时都有接触到。比如，某些app编辑栏里的<em>撤销</em> 、<em>重做</em> 或是浏览器的历史记录管理。简单的来说，你可以通过浏览器的history再次打开你之前浏览过的页面，而通过git这个版本控制系统，程序猿们可以回到之前每一次的保存记录。git 会把每次改动的信息都完整地保存在一个地方，这样你就可以随时查看、还原，非常方便。</p>
+<h3 id="_2">版本控制器的用途</h3>
+<p>举个栗子，或许大家工作学习中遇到过下列情况：</p>
+<p>不敢改原稿，新建了十多个副本</p>
+<p><img alt="1" src="../images/git-1.png" /></p>
+<p>每次都是复制粘贴副本，产出的文件就越来越多，文件多不是问题，问题是：随着版本数量的增多，你还记得这些版本各自都是修改了什么吗？</p>
+<p>为了能够更方便我们管理这些不同版本的文件，于是有了版本控制器。</p>
+<h3 id="git_2">什么让Git脱颖而出?</h3>
+<p>这里涉及到git的一些设计理念，用来管理文件版本的工具并不只有GIt一个，著名的还有CVS / Subversion等等，与他们相比主要差别在于 Git 对待数据的方式，Git的保存提交方式更粗暴，直接用类似与屏幕快照的方式，把你在某一时刻的数据全部用一个相机拍下来。如果把你的代码成果想象成一个房间，把所有的数据想象成房间里的装饰，那么git就是那个相机，用来记录某一时刻房间内的场景，然后程序猿可以翻相册，通过索引照片回到那个时空。</p>
+<p>除此之外Git还有一个最大的特点——采用了<strong>分布式</strong>版本库的方式（就是去中心化）每个开发人员的计算机存储整个项目的所有历史版本，储存在一个<strong>仓库</strong>里，这赋予它可以离线工作的特性。</p>
+<p>为了更好的理解分布式的概念，我们先来讲一讲集中式版本控制系统，他们的版本库是集中放在中央服务器的，打个比方，钢铁侠系列电影中初代战衣全靠主角胸口的反应堆驱动，一旦被反派抢走就会陷入瘫痪（笔者想不出例子，大家悟一下）。但是分布式没有这种缺陷，它并不依赖中央服务器工作，近乎所有操作都是本地执行，如果你在飞机或火车上想做些工作，就能愉快地提交， 直到有网络连接时再上传。</p>
+<p><img alt="2" src="../images/git-2.jpg" /></p>
+<h1 id="git_3">Git的工作原理</h1>
+<p>首先，你需要声明，要让git去追踪（track)哪些文件。当你创建新文件的时候，需要把它加入<code>追踪</code>的列表中。</p>
+<p>对于任何一个文件，在Git内部都只有三种状态：已修改，已暂存和已提交。</p>
 <ul>
-<li>
-<p>请不要使用 <code>git</code> 去追踪大文件，这样备份起来会相当缓慢，<code>git</code> 文件也会异常巨大。可以用 <code>.gitignore</code> 文件自动忽略一些不需要追踪的文件。具体如何操作，请自行搜索 <code>gitignore</code>。  </p>
-</li>
-<li>
-<p>在最开始使用 <code>git</code> 的时候，常常会发现它提示你，现在不能用某个命令，然后给了一些让你一头雾水的提示。这个时候，最好先询问有经验的人，这样可以最大限度节省时间。</p>
-</li>
+<li>已修改 表示修改了某个文件，但还没有提交保存</li>
+<li>已暂存 表示把已修改的文件放在下次提交时要保存的清单中</li>
+<li>已提交 表示该文件已经被安全的保存在本地数据库中</li>
+</ul>
+<p>打个比方，把git想象成你的管家：</p>
+<p>“已修改”意味着你对一些文件做出了改动，但管家还不知道；</p>
+<p>“已暂存”意味着你告诉管家，帮我盯着这些改动过的文件，但他不会做任何事；</p>
+<p>“已提交”意味着你让管家把这些文件拍照保存下来，放到书架上去。</p>
+<p><img alt="3" src="../images/git-3.png" /></p>
+<p>然后，每次你认为你的工作进行到了一定的阶段（i.e. 需要备份一下你的代码的节点），你需要用 <code>git</code> 去<code>提交（commit）</code>所有被<code>追踪（track）</code>的文件，这样，相当与备份了一下。- 当你有需要的时候，你可以用 <code>git</code> 去<code>回溯（checkout）</code>某个版本的文件。</p>
+<p>本地基本的Git工作流程如下：  在本地的工作目录修改某些文件；然后对修改后的文件进行快照，保存到暂存区域；最后提交更新，将保存在暂存区域中的文件快照永久转存到Git的工作目录中。</p>
+<p>还要注意到的一点是：提交（commit）不会对原始文件做出修改，git仅仅是拍了一个文件快照，就像你给朋友拍了一张照片，但不意味着你朋友就跑到照片里去，变成一个纸片人。</p>
+<p>不止这些，你可以创建一个<code>分支（branch）</code>。你可以把代码备份（提交）到分支上。- 你可以把一个<code>分支``合并（merge）</code>到另一个<code>分支</code>上，<code>git</code> 会自动分析两个分支之间的相同与不同之处，非常方便。</p>
+<p><code>分支</code>和<code>合并</code>的功能在团队合作的时候尤其有用。通常，企业分工的时候，我们会每个人创建一个<code>分支</code>，在<code>分支</code>上开发一个具体的功能，完成后再<code>合并</code>回主分支。</p>
+<p>Git 速度快，非常灵活，这对于大项目来说很重要。 Git 最为出色的是它的合并跟踪能力（这会在github教程中进一步阐述），被Linus Torvalds称为傻瓜内容跟踪器。随着开发的深入，Git 的正常使用都由一些友好的脚本命令来执行，使 Git 变得非常好用，即使是用来管理我们自己的开发项目，Git 都是一个友好，有力的工具。现在，越来越多的著名项目采用 Git 来管理项目开发。</p>
+<p>当然git的功能不止于此，用于大项目的开发势必会需要多人合作，之前我们说到Git分布式的特性——每个项目成员的电脑都有一个完整的版本库，这会引申出一个问题：<strong>多个人如何协作呢</strong>？每个成员的工作成果都保存在本地，如何把各自的修改推送给对方就成了一个问题，比如说自己在电脑上修改了文件A，其他人也在电脑上修改了文件A，这时，你们两之间需要互相统一修改内容，知道对方的修改了什么。那么如何把各自的修改推送给对方呢？用微信发肯定不行，这里我们不得不提到Github。</p>
+<h1 id="github">GitHub</h1>
+<p>之前说到，Git采用了分布式版本库的方式，这意味着每个项目成员的电脑都有一个完整的版本库，如果你想分享你的代码或者与其他开发人员合作，你就需要直接把数据用微信发给对方，通过某种方法发送给对方。更直接的方法是，<strong>把数据放到公开的地方让别人下载（说的就是Github）</strong>。</p>
+<p>GitHub简单来说是一个基于web的Git仓库，提供分享开源项目的平台，我们可以在上面建立仓库。</p>
+<p>Git就像一座通向GitHub的桥梁。我们可以通过git把本地项目上传到GitHub，同时也可以通过git从GitHub上下载项目到本地。</p>
+<p>你可以在上面共享工作成果，比较出名的开源软件都会在上面发布自己的代码，你也可以在上面淘到海量的代码，总之非常的牛逼实用。</p>
+<p>今天，GitHub已是：</p>
+<ul>
+<li>一个拥有143万开发者的社区。其中不乏Linux发明者<a href="https://github.com/torvalds">Torvalds</a>这样的顶级黑客，以及Rails创始人<a href="https://github.com/dhh">DHH</a>这样的年轻极客。</li>
+<li>这个星球上最流行的开源托管服务。</li>
 </ul></div>
         
         
