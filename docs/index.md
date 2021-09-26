@@ -110,12 +110,19 @@
     <td class="tg-svo0">Wed<br>4/7<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <a href="./content/git">1. Git 的使用</a>
+      <a href="./content/git">1. Git 的概念</a>
       <br>
-      <a href="./content/gh-hosting">2. 公布你的网页</a>
+      <a href="./content/git-guidance">2. Git 的使用</a>
+      <br>
+      <a href="./content/gh-hosting">3. 公布你的网页</a>
       <br>
     </td>
-    <td class="tg-svo0"><a href='./content/git-practice'>Git 练习</a></td>
+    <td class="tg-svo0">
+      <a href='./content/git-practice'>1. Git 练习</a>
+      <br>
+      <a href="./content/github-practice">2. Github 练习</a>
+      <br>
+    </td>
     <td class="tg-svo0">
       <a href="https://blog.csdn.net/qq_26787115/article/details/52133008"> 1. 为开源项目贡献内容</span>
       <br>
