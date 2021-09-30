@@ -53,7 +53,7 @@
       <br>
       <a href="./content/dev-setup">2. 开发环境搭建 </a>
       <br>
-      <a href="./content/web-basics">3. Web 基础</a>
+      <a href="./content/web-basics">3. Web 基本原理</a>
       <br>
       <a href="./content/web-toolkit">4. Web 三件套</a>
     </td>
@@ -64,7 +64,7 @@
       <br>
       <a href="https://www.runoob.com/css3/css3-tutorial.html">2. 菜鸟 CSS 教程</a>
       <br>
-      <a href="https://www.runoob.com/js/js-tutorial.html">3. 菜鸟 JavaScript 教程</a>
+      <a href="https://zh.javascript.info/">3. 现代 JavaScript 教程</a>
     </td>
   </tr>
   <tr>
