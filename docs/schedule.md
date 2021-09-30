@@ -49,16 +49,16 @@
     <td class="tg-svo0">Wed<br>3/24<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <a href="/content/introduction">1. 前言 </a>
+      <a href="../content/introduction">1. 前言 </a>
       <br>
-      <a href="/content/dev-setup">2. 开发环境搭建 </a>
+      <a href="../content/dev-setup">2. 开发环境搭建 </a>
       <br>
-      <a href="/content/web-basics">3. Web 基本原理</a>
+      <a href="../content/web-basics">3. Web 基本原理</a>
       <br>
-      <a href="/content/web-toolkit">4. Web 三件套</a>
+      <a href="../content/web-toolkit">4. Web 三件套</a>
     </td>
-    <td class="tg-svo0" rowspan="2"> <a href="/content/web-toolkit-practice"> Web 练习</a></td>
-    <td class="tg-svo0" rowspan="6"> <a href="/content/project-1-tetris-in-js">Project 1: Tetris in JS</a></td>
+    <td class="tg-svo0" rowspan="2"> <a href="../content/web-toolkit-practice"> Web 练习</a></td>
+    <td class="tg-svo0" rowspan="6"> <a href="../content/project-1-tetris-in-js">Project 1: Tetris in JS</a></td>
     <td class="tg-svo0">
       <a href="https://www.runoob.com/html/html5-intro.html">1. 菜鸟 HTML 教程</a>
       <br>
@@ -71,9 +71,9 @@
     <td class="tg-c3ow">Sun<br>3/28<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <a href="/content/GOP">1. GOP-面向谷歌编程 </a>
+      <a href="../content/GOP">1. GOP-面向谷歌编程 </a>
       <br>
-      <a href="/content/debugging">2. Debugging </a>
+      <a href="../content/debugging">2. Debugging </a>
       <br>
     </td>
     <td class="tg-c3ow"></td>
@@ -82,12 +82,12 @@
     <td class="tg-svo0" rowspan="2">Week 2</td>
     <td class="tg-svo0">Wed<br>3/31<br>20:00-22:00</td> <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <a href="/content/copying-a-website">1. 天下前端一大抄 </a>
+      <a href="../content/copying-a-website">1. 天下前端一大抄 </a>
       <br>
-      <a href="/content/css-and-bootstrap">2. CSS 和 Bootstrap </a>
+      <a href="../content/css-and-bootstrap">2. CSS 和 Bootstrap </a>
       <br>
     </td>
-    <td class="tg-svo0"><a href="/content/cracking-a-website-practice">Web 逆向练习</a></td>
+    <td class="tg-svo0"><a href="../content/cracking-a-website-practice">Web 逆向练习</a></td>
     <td class="tg-svo0">
       <a href="https://angrytools.com/css-generator/border/">1. CSS 特效生成器</a>
       <br>
@@ -110,17 +110,17 @@
     <td class="tg-svo0">Wed<br>4/7<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <a href="/content/git">1. Git 的概念</a>
+      <a href="../content/git">1. Git 的概念</a>
       <br>
-      <a href="/content/git-guidance">2. Git 的使用</a>
+      <a href="../content/git-guidance">2. Git 的使用</a>
       <br>
-      <a href="/content/gh-hosting">3. 公布你的网页</a>
+      <a href="../content/gh-hosting">3. 公布你的网页</a>
       <br>
     </td>
     <td class="tg-svo0">
-      <a href='/content/git-practice'>1. Git 练习</a>
+      <a href='../content/git-practice'>1. Git 练习</a>
       <br>
-      <a href="/content/github-practice">2. Github 练习</a>
+      <a href="../content/github-practice">2. Github 练习</a>
       <br>
     </td>
     <td class="tg-svo0">
@@ -133,9 +133,9 @@
     <td class="tg-c3ow">Sun<br>4/11<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <a href="/content/frontend-frameworks">1. 前端框架</a>
+      <a href="../content/frontend-frameworks">1. 前端框架</a>
       <br>
-      <a href="/content/uni-app">2. Uni-app </a>
+      <a href="../content/uni-app">2. Uni-app </a>
       <br>
     </td>
     <td class="tg-c3ow"></td>
@@ -154,22 +154,22 @@
     </td>
     <td class="tg-svo0"></td>
     <td class="tg-svo0" rowspan="6">
-      <a href="/content/project-2">Project 2: 企业项目前端</a>
+      <a href="../content/project-2">Project 2: 企业项目前端</a>
       <br>
       <br>
-      <a href="/content/project-2-1-mirror">Option 1: 智能化妆镜交互</a>
+      <a href="../content/project-2-1-mirror">Option 1: 智能化妆镜交互</a>
       <br>
       <br>
-      <a href="/content/project-2-2-forum">Option 2: m5-201 平台前端</a>
+      <a href="../content/project-2-2-forum">Option 2: m5-201 平台前端</a>
       <br>
       <br>
-      <a href="/content/project-2-3-website">Option 3: 零下五度官网</a>
+      <a href="../content/project-2-3-website">Option 3: 零下五度官网</a>
       <br>
       <br>
-      <a href="/content/project-2-4-tree-hole">Option 4: “树洞”前端 </a>
+      <a href="../content/project-2-4-tree-hole">Option 4: “树洞”前端 </a>
       <br>
       <br>
-      <a href="/content/project-2-5-orange">Option 5: “橘否”前端</a>
+      <a href="../content/project-2-5-orange">Option 5: “橘否”前端</a>
       <br>
       <br>
     </td>
@@ -178,13 +178,13 @@
     <td class="tg-c3ow">Sun<br>4/18<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <a href="/content/se-and-tools">1. 软件工程及相关工具</a>
+      <a href="../content/se-and-tools">1. 软件工程及相关工具</a>
       <br>
-      <a href="/content/client-server">2. 客户端-服务器通讯</a>
+      <a href="../content/client-server">2. 客户端-服务器通讯</a>
       <br>
     </td>
     <td class="tg-c3ow">
-      <a href="/content/uni-app-practice">uni-app 联调练习</a>
+      <a href="../content/uni-app-practice">uni-app 联调练习</a>
     </td>
     <td class="tg-c3ow"></td>
   </tr>
@@ -193,9 +193,9 @@
     <td class="tg-svo0">Wed<br>4/21<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <a href="/content/best-practice-frontend">1. 前端开发规范</a>
+      <a href="../content/best-practice-frontend">1. 前端开发规范</a>
       <br>
-      <a href="/content/automated-testing">2. 自动化测试</a>
+      <a href="../content/automated-testing">2. 自动化测试</a>
       <br>
     </td>
     <td class="tg-svo0"></td>
@@ -205,10 +205,10 @@
     <td class="tg-c3ow">Sun<br>4/25<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <a href="/content/websocket">1. 长连接</a>
+      <a href="../content/websocket">1. 长连接</a>
     </td>
     <td class="tg-c3ow">
-      <a href="/content/websocket-practice">长连接练习</a>
+      <a href="../content/websocket-practice">长连接练习</a>
     </td>
     <td class="tg-c3ow">
       <a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1108898947791072">1. 请阅读完 MVVM <br>以及五个子页面</a> 
@@ -222,13 +222,13 @@
     <td class="tg-svo0">Wed<br>4/28<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <a href="/content/cloud-service">1. 云服务</a>
+      <a href="../content/cloud-service">1. 云服务</a>
       <br>
-      <a href="/content/linux">2. Linux 系统</a>
+      <a href="../content/linux">2. Linux 系统</a>
       <br>
     </td>
     <td class="tg-svo0" rowspan="2"> 
-      <a href="/content/linux-practice">云服务和 Linux 操作练习</a>
+      <a href="../content/linux-practice">云服务和 Linux 操作练习</a>
     </td>
     <td class="tg-svo0" rowspan="2">
       <a href="https://vim-adventures.com/">1. Vim 游戏</a>
@@ -248,15 +248,15 @@
     <td class="tg-svo0">Wed<br>5/5<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <a href="/content/spring-boot">1. SpringBoot</a>
+      <a href="../content/spring-boot">1. SpringBoot</a>
       <br>
-      <a href="/content/deployment">2. 服务部署 </a>
+      <a href="../content/deployment">2. 服务部署 </a>
     </td>
     <td class="tg-svo0">
-      <a href="/content/spring-boot-practice-1">SpringBoot 练习 1</a>
+      <a href="../content/spring-boot-practice-1">SpringBoot 练习 1</a>
     </td>
     <td class="tg-svo0" rowspan="8">
-      <a href="/content/project-2">Project 3: 企业项目后端</a>
+      <a href="../content/project-2">Project 3: 企业项目后端</a>
     </td>
     <td class="tg-svo0">
     	<a href="https://maven.apache.org/guides/getting-started/">1. Maven 入门</a>
@@ -268,11 +268,11 @@
     <td class="tg-c3ow">Sun<br>5/9<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <a href="/content/spring-boot-and-database">1. SpringBoot 与数据库</a>
+      <a href="../content/spring-boot-and-database">1. SpringBoot 与数据库</a>
       <br>
     </td>
     <td class="tg-c3ow">
-      <a href="/content/spring-boot-practice-2">SpringBoot 练习 2</a>
+      <a href="../content/spring-boot-practice-2">SpringBoot 练习 2</a>
     </td>
     <td class="tg-c3ow">
       <a href="https://www.cnblogs.com/ityouknow/p/6037431.html">1. 不错的 Mybatis 配置 Checklist</a>
@@ -283,14 +283,14 @@
     <td class="tg-svo0">Wed<br>5/12<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0" rowspan="2">
-      <a href="/content/best-practice-backend">1. 后端开发规范</a>
+      <a href="../content/best-practice-backend">1. 后端开发规范</a>
       <br>
     </td>
     <td class="tg-svo0" rowspan="2">
-      <a href="/content/spring-boot-practice-3">SpringBoot 练习 3</a>
+      <a href="../content/spring-boot-practice-3">SpringBoot 练习 3</a>
     </td>
     <td class="tg-svo0">
-      <a href="/content/resources/best-practice.pdf">1. 阿里开发规范</a>
+      <a href="../content/resources/best-practice.pdf">1. 阿里开发规范</a>
     </td>
   </tr>
   <tr>
@@ -312,7 +312,7 @@
     <td class="tg-c3ow">Sun<br>5/23<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <a href="/content/automated-testing-backend">1. 后端自动化测试</a>
+      <a href="../content/automated-testing-backend">1. 后端自动化测试</a>
       <br>
     </td>
     <td class="tg-c3ow"></td>
