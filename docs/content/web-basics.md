@@ -120,7 +120,7 @@ Self Learning: [https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview](http
 
 ![Untitled 2.png](https://i.loli.net/2021/09/30/noHyXQIxNlSDa1J.png)
 
-### R**equest methods 请求方法**
+### Request methods 请求方法
 
 | Method | Description                                             |
 | ------ | ------------------------------------------------------- |
@@ -178,7 +178,7 @@ Self Learning: [https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status](https:
 
 ![Untitled 4.png](https://i.loli.net/2021/09/30/btXgGcAqm7YjxQi.png)
 
-### **HTTPS**
+### HTTPS
 
 HTTPS = HTTP + **SSL/TLS** (*Transport Layer Security***) 会话层协议**
 
@@ -283,7 +283,7 @@ MVVM (Model View View-Model) (现代前端工程师必须了解的 View-Model �
 
 [https://github.com/livoras/blog/issues/11](https://github.com/livoras/blog/issues/11)
 
-### **World Wide Web Consortium (W3C)**
+### World Wide Web Consortium (W3C)
 
 作为Web领域的布道者以及标准制定者，W3C组织是每一个 web programmer 都应该知晓并了解的组织。尽管 web 编程相对来说更为自由和开放，但是若没有统一的标准来约束不同技术的创造者和使用者，那么这种 freedom 将会变成一种令人苦恼的 chaos
 
