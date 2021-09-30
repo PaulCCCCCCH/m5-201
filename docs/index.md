@@ -1,404 +1,101 @@
-# Announcements
-### 4 月 30 日
-- 五一假期，**没有 Lab（请看时间表）**，不要空跑了呀！项目的 meeting 怎么安排，请和自己的 Leader 商量哦！
-- 虽然没有 Lab，但是有问题还是可以随时在微信问的！
-- 我们正在进行暑期实习生招聘，如果想要丰富自己的假期、获得一些工作经验，可以关注微信公众号 icewould，点击校内招聘了解更多信息！填表的时候备注来自 `m5-201` 可以优先被考虑！
-- 出行注意安全！祝大家玩儿得愉快！
+# 欢迎来到 M5-201!
+`M5-201`是为想要成为全栈工程师或想要主导一个开发团队的人准备的。
+如果您没有任何开发经验，或者编程能力只限于写一百行左右的程序片段，请考虑参加[`M5-101`](https://paulcccccch.github.io/m5-101)。
+
+# 主办方
+本次创造营由 **零下五度（宁波）信息科技有限公司** 举办。
+
+# 联系方式
+各项事宜敬请联系我们的官方邮箱： icewould@outlook.com
 
 
-### 4 月 18 日
-- 我们的五个项目团队已经组建完毕，各项目 leader 应该已经开始了接洽工作。错过了项目选择，但是仍然想要加入的同学，请联系我们！
-- 今后，每周两次的 lab 照常进行，lab 内容会与项目内容紧密相关（经过协调，我们五个项目涉及到的技术有很大重合）。除此之外，各项目 leader 会额外组织线下的 group work，请与 leader 多沟通，有问题随时联系我们！
+# 安排
+- 每周两次线下的 Live Coding Session，每次两小时，具体地点和时间请密切留意我们的[课表](/schedule)。
+- 在参加线下 Live Coding Session 之前，建议先把[课表](/schedule)上的内容先过一遍，尽量多地搞懂。
+- 每周在线下参与之外，需要额外花费大约 10 小时练习和完成项目。
+- 线下的时间用来答疑和完成项目。
+- 项目内容会动态调整，视实际情况而定。
+- 为保证产出，创造营最终人数控制在 10 人左右，并有一定筛选机制。
 
-### 4 月 10 日
-- 为了更早熟悉项目、组成团队，我们提早开放了五个待选项目的**预览**。
-- 注意，虽然五个项目已经敲定，但关于项目内容的详细文档还没有完成。**五个项目文档会随时更新，请务必密切关注！**
-- 请大家先对各个项目有个大致的了解，与身边的人交流一下；不过没必要着急确定自己的选择，我们之后会组织大家选择项目并组队的。我们会尽量在 Week 4 之前把项目和团队确定下来。
+# 内容概览
+通过涉猎甚广却又联系紧密的项目，让学生获得成为全栈工程师的潜力。项目的内容会根据实际情况酌情更改。
+涉及的主要语言有：
 
-### 4 月 4 日
-- 清明节假期 Lab 照常，不过不安排内容。各位如果要出去玩儿错过了也不用太担心！
-- 我们马上就要进行分组，并开始真实项目的开发了，所以清明节之后两周的参与会非常重要。  
-- Project 2 的三个选项并没有最终敲定，我们会从内容含金量、难度以及项目费三个角度选择项目。各位如果有好的项目提议也可以找我们聊！
+- `Java`  
+- `SQL`
+- Web 开发三件套（`HTML`&`JavaScript`&`CSS`）
 
-# Schedule
+涉及的主要框架有：  
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;}
-.tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
-  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:15px 12px;word-break:normal;}
-.tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
-  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:15px 12px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-svo0{background-color:#D2E4FC;border-color:inherit;text-align:center;vertical-align:top}
-</style>
-<table class="tg">
-<thead>
-  <tr>
-    <th class="tg-c3ow">Week</th>
-    <th class="tg-c3ow">Date/Time</th>
-    <th class="tg-c3ow">Location</th>
-    <th class="tg-c3ow">Notes</th>
-    <th class="tg-c3ow">Practice</th>
-    <th class="tg-c3ow">Project</th>
-    <th class="tg-c3ow">Resources</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 1</td>
-    <td class="tg-svo0">Wed<br>3/24<br>20:00-22:00</td>
-    <td class="tg-svo0">PMB<br>309</td>
-    <td class="tg-svo0">
-      <a href="./content/introduction">1. 前言 </a>
-      <br>
-      <a href="./content/dev-setup">2. 开发环境搭建 </a>
-      <br>
-      <a href="./content/web-basics">3. Web 基本原理</a>
-      <br>
-      <a href="./content/web-toolkit">4. Web 三件套</a>
-    </td>
-    <td class="tg-svo0" rowspan="2"> <a href="./content/web-toolkit-practice"> Web 练习</a></td>
-    <td class="tg-svo0" rowspan="6"> <a href="./content/project-1-tetris-in-js">Project 1: Tetris in JS</a></td>
-    <td class="tg-svo0">
-      <a href="https://www.runoob.com/html/html5-intro.html">1. 菜鸟 HTML 教程</a>
-      <br>
-      <a href="https://www.runoob.com/css3/css3-tutorial.html">2. 菜鸟 CSS 教程</a>
-      <br>
-      <a href="https://zh.javascript.info/">3. 现代 JavaScript 教程</a>
-    </td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Sun<br>3/28<br>20:00-22:00</td>
-    <td class="tg-c3ow">PMB<br>309</td>
-    <td class="tg-c3ow">
-      <a href="./content/GOP">1. GOP-面向谷歌编程 </a>
-      <br>
-      <a href="./content/debugging">2. Debugging </a>
-      <br>
-    </td>
-    <td class="tg-c3ow"></td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 2</td>
-    <td class="tg-svo0">Wed<br>3/31<br>20:00-22:00</td> <td class="tg-svo0">PMB<br>309</td>
-    <td class="tg-svo0">
-      <a href="./content/copying-a-website">1. 天下前端一大抄 </a>
-      <br>
-      <a href="./content/css-and-bootstrap">2. CSS 和 Bootstrap </a>
-      <br>
-    </td>
-    <td class="tg-svo0"><a href="./content/cracking-a-website-practice">Web 逆向练习</a></td>
-    <td class="tg-svo0">
-      <a href="https://angrytools.com/css-generator/border/">1. CSS 特效生成器</a>
-      <br>
-      <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">2. Bootstrap 官方文档</a>
-    </td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Sun<br>4/4<br>20:00-22:00</td>
-    <td class="tg-c3ow">PMB<br>309</td>
-    <td class="tg-c3ow">
-        <b>清明节，Lab 照常</b>
-        <br>
-        <b>但不安排新内容</b>
-    </td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 3</td>
-    <td class="tg-svo0">Wed<br>4/7<br>20:00-22:00</td>
-    <td class="tg-svo0">PMB<br>309</td>
-    <td class="tg-svo0">
-      <a href="./content/git">1. Git 的概念</a>
-      <br>
-      <a href="./content/git-guidance">2. Git 的使用</a>
-      <br>
-      <a href="./content/gh-hosting">3. 公布你的网页</a>
-      <br>
-    </td>
-    <td class="tg-svo0">
-      <a href='./content/git-practice'>1. Git 练习</a>
-      <br>
-      <a href="./content/github-practice">2. Github 练习</a>
-      <br>
-    </td>
-    <td class="tg-svo0">
-      <a href="https://blog.csdn.net/qq_26787115/article/details/52133008"> 1. 为开源项目贡献内容</span>
-      <br>
-      <a href="https://pages.github.com/"> 2. GitHub Pages 官方文档</span>
-    </td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Sun<br>4/11<br>20:00-22:00</td>
-    <td class="tg-c3ow">PMB<br>309</td>
-    <td class="tg-c3ow">
-      <a href="./content/frontend-frameworks">1. 前端框架</a>
-      <br>
-      <a href="./content/uni-app">2. Uni-app </a>
-      <br>
-    </td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow">
-      <a href="https://uniapp.dcloud.io/"> 1. uni-app 官网</a>
-      <br>
-      <a href="https://www.jianshu.com/p/bef1c1ee5a0e"> 2. Virtual DOM 的概念</a>
-    </td>
-  </tr><tr>
-    <td class="tg-svo0" rowspan="2">Week 4</td>
-    <td class="tg-svo0">Wed<br>4/14<br>20:00-22:00</td>
-    <td class="tg-svo0"><b>海洋楼<b><br>405</td>
-    <td class="tg-svo0">
-      <b>项目选择</b>
-      <br>
-    </td>
-    <td class="tg-svo0"></td>
-    <td class="tg-svo0" rowspan="6">
-      <a href="./content/project-2">Project 2: 企业项目前端</a>
-      <br>
-      <br>
-      <a href="./content/project-2-1-mirror">Option 1: 智能化妆镜交互</a>
-      <br>
-      <br>
-      <a href="./content/project-2-2-forum">Option 2: m5-201 平台前端</a>
-      <br>
-      <br>
-      <a href="./content/project-2-3-website">Option 3: 零下五度官网</a>
-      <br>
-      <br>
-      <a href="./content/project-2-4-tree-hole">Option 4: “树洞”前端 </a>
-      <br>
-      <br>
-      <a href="./content/project-2-5-orange">Option 5: “橘否”前端</a>
-      <br>
-      <br>
-    </td>
-    <td class="tg-svo0"></td>
-  </tr> <tr>
-    <td class="tg-c3ow">Sun<br>4/18<br>20:00-22:00</td>
-    <td class="tg-c3ow">PMB<br>309</td>
-    <td class="tg-c3ow">
-      <a href="./content/se-and-tools">1. 软件工程及相关工具</a>
-      <br>
-      <a href="./content/client-server">2. 客户端-服务器通讯</a>
-      <br>
-    </td>
-    <td class="tg-c3ow">
-      <a href="./content/uni-app-practice">uni-app 联调练习</a>
-    </td>
-    <td class="tg-c3ow"></td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 5</td>
-    <td class="tg-svo0">Wed<br>4/21<br>20:00-22:00</td>
-    <td class="tg-svo0">PMB<br>309</td>
-    <td class="tg-svo0">
-      <a href="./content/best-practice-frontend">1. 前端开发规范</a>
-      <br>
-      <a href="./content/automated-testing">2. 自动化测试</a>
-      <br>
-    </td>
-    <td class="tg-svo0"></td>
-    <td class="tg-svo0"></td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Sun<br>4/25<br>20:00-22:00</td>
-    <td class="tg-c3ow">PMB<br>309</td>
-    <td class="tg-c3ow">
-      <a href="./content/websocket">1. 长连接</a>
-    </td>
-    <td class="tg-c3ow">
-      <a href="./content/websocket-practice">长连接练习</a>
-    </td>
-    <td class="tg-c3ow">
-      <a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1108898947791072">1. 请阅读完 MVVM <br>以及五个子页面</a> 
-      <br>
-      <a href="https://uniapp.dcloud.io/api/request/websocket"> 2. uni-app WebSocket 文档</a>
-      <br>
-      <a href="https://www.bilibili.com/video/BV1564y1U7zd/">3. 录像</a>
-    </td>
-  </tr><tr>
-    <td class="tg-svo0" rowspan="2">Week 6</td>
-    <td class="tg-svo0">Wed<br>4/28<br>20:00-22:00</td>
-    <td class="tg-svo0">PMB<br>309</td>
-    <td class="tg-svo0">
-      <a href="./content/cloud-service">1. 云服务</a>
-      <br>
-      <a href="./content/linux">2. Linux 系统</a>
-      <br>
-    </td>
-    <td class="tg-svo0" rowspan="2"> 
-      <a href="./content/linux-practice">云服务和 Linux 操作练习</a>
-    </td>
-    <td class="tg-svo0" rowspan="2">
-      <a href="https://vim-adventures.com/">1. Vim 游戏</a>
-      <br>
-      <a href="https://www.bilibili.com/video/BV12K4y1P7o1/">2. 录像</a>
-    </td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Sun<br>5/2<br>20:00-22:00</td>
-    <td class="tg-c3ow"><b>没有安排</b></td>
-    <td class="tg-c3ow">
-        <b>劳动节，没有 Lab</b>
-    </td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 7</td>
-    <td class="tg-svo0">Wed<br>5/5<br>20:00-22:00</td>
-    <td class="tg-svo0">PMB<br>309</td>
-    <td class="tg-svo0">
-      <a href="./content/spring-boot">1. SpringBoot</a>
-      <br>
-      <a href="./content/deployment">2. 服务部署 </a>
-    </td>
-    <td class="tg-svo0">
-      <a href="./content/spring-boot-practice-1">SpringBoot 练习 1</a>
-    </td>
-    <td class="tg-svo0" rowspan="8">
-      <a href="./content/project-2">Project 3: 企业项目后端</a>
-    </td>
-    <td class="tg-svo0">
-    	<a href="https://maven.apache.org/guides/getting-started/">1. Maven 入门</a>
-        <br>
-        <a href="https://www.bilibili.com/video/BV1ra4y1t7rs?from=search&seid=1215952686030783862">2. 服务器软件大科普</a>
-    </td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Sun<br>5/9<br>20:00-22:00</td>
-    <td class="tg-c3ow">PMB<br>309</td>
-    <td class="tg-c3ow">
-      <a href="./content/spring-boot-and-database">1. SpringBoot 与数据库</a>
-      <br>
-    </td>
-    <td class="tg-c3ow">
-      <a href="./content/spring-boot-practice-2">SpringBoot 练习 2</a>
-    </td>
-    <td class="tg-c3ow">
-      <a href="https://www.cnblogs.com/ityouknow/p/6037431.html">1. 不错的 Mybatis 配置 Checklist</a>
-    </td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 8</td>
-    <td class="tg-svo0">Wed<br>5/12<br>20:00-22:00</td>
-    <td class="tg-svo0">PMB<br>309</td>
-    <td class="tg-svo0" rowspan="2">
-      <a href="./content/best-practice-backend">1. 后端开发规范</a>
-      <br>
-    </td>
-    <td class="tg-svo0" rowspan="2">
-      <a href="./content/spring-boot-practice-3">SpringBoot 练习 3</a>
-    </td>
-    <td class="tg-svo0">
-      <a href="./content/resources/best-practice.pdf">1. 阿里开发规范</a>
-    </td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Sun<br>5/16<br>20:00-22:00</td>
-    <td class="tg-c3ow">PMB<br>309</td>
-    <td class="tg-c3ow"></td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 9</td>
-    <td class="tg-svo0">Wed<br>5/19<br>20:00-22:00</td>
-    <td class="tg-svo0">PMB<br>309</td>
-    <td class="tg-svo0">
-      <a href="https://jerriodaddy.github.io/2021/05/09/springboot-mybatis-generator/"> MyBatis Generator <br> (link to Jerrio's Blog)</a>
-    </td>
-    <td class="tg-svo0"></td>
-    <td class="tg-svo0"></td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Sun<br>5/23<br>20:00-22:00</td>
-    <td class="tg-c3ow">PMB<br>309</td>
-    <td class="tg-c3ow">
-      <a href="./content/automated-testing-backend">1. 后端自动化测试</a>
-      <br>
-    </td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow">
-      <a href="https://docs.spring.io/spring-boot/docs/1.4.1.RELEASE/reference/htmlsingle/#boot-features-testing-spring-boot-applications">1. SpringBoot 测试官方文档</a>
-    </td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 10</td>
-    <td class="tg-svo0">Wed<br>5/26<br>20:00-22:00</td>
-    <td class="tg-svo0">PMB<br>309</td>
-    <td class="tg-svo0">答疑＋结课</td>
-    <td class="tg-svo0"></td>
-    <td class="tg-svo0"></td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">TBD</td>
-    <td class="tg-c3ow">待定</td>
-    <td class="tg-c3ow"><b>团建！！！</b></td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-  </tr>
-<tr><td class="tg-c3ow" colspan="7">The End</td></tr>
-<!--
+- `uni-app`
+- `SpringBoot`
+- `MyBatis`
 
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 5</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 5</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 5</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-svo0" rowspan="2">Week 5</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-    <td class="tg-svo0">Placeholder</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-    <td class="tg-c3ow">Placeholder</td>
-  </tr> 
--->
-</tbody>
-</table>
+具体的内容请查询[课表](/schedule)。
 
+## 项目1 —— 俄罗斯方块
+开发一个在网页上运行的俄罗斯方块小游戏，并在网站上部署。  
+
+### 时间
+Week 1, 2, 3
+
+### 内容
+- Web 基础
+- 前端开发技巧
+- Git 的使用
+
+### 产出
+通过有趣的游戏开发，锻炼学生实现有一定复杂度的逻辑的能力，同时提升使用 Web 开发三件套（`HTML`&`JavaScript`&`CSS`）的熟练度。
+
+## 项目2 —— 创造营讨论室（前端）
+使用 `uni-app` 为本次创造营开发一个聊天室的前端（后端接口会给出）。  
+
+### 时间
+Week 3, 4, 5, 6
+
+### 内容
+- 前端框架介绍
+- `uni-app`介绍和开发环境搭建
+- `MVC` 设计模式
+- `Client-Server`模型
+- 自动化测试
+
+### 产出
+让学生能够使用 `uni-app` 等框架开发一定体量的前端项目，同时了解软件工程的各个环节，并掌握常用工具的使用。
+
+## 项目3 
+可以从以下三个项目选择
+
+- **创造营讨论室（后端）**
+使用 `SpringBoot` 等框架和工具开发`项目2`的创造营聊天室的后端。
+
+- **创造营讨论室 EX（后端）**
+有能力的学生可以选择这个增强版的聊天室：需要在原项目的基础上，完成登录、安全验证等一系列功能。
+
+- **在线俄罗斯方块**
+有一定困难或精力不足的学生可以选择这个较为简单的项目：在`项目1`的基础上，使用 `SpringBoot` 等框架和工具搭建一个后台，记录玩家的得分以及获取玩家排名。  
+
+### 时间
+Week 6, 7, 8
+
+### 内容
+- `SpringBoot`
+- 文档规范和 `Swagger`
+- 数据库和 `MyBatis`
+- `Maven` 依赖管理
+- 安全验证
+
+### 产出
+让学生能够使用开发框架完成生产级服务的开发，并掌握撰写文档、测试与部署服务的能力。
+
+## 项目4 —— 企业分配项目
+让企业分配真实的开发项目，由学生主导和推进项目进程，学生和导师共同完成开发。  
+
+### 时间
+Week 9 and after
+
+### 内容
+- 根据企业项目具体内容而定
+
+### 产出
+让学生获得真实完整的软件工程项目经验，包括把控项目进程的能力、有一定复杂度的系统的设计以及具体的代码实现。
