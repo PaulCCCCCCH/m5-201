@@ -1,158 +1,177 @@
 # 客户端-服务器通讯
 
-现今，大家能想到的应用，基本上都逃不开客户端-服务端的通讯。  
-<br>
+相信各位应该或多或少玩过CSGO吧？
+在进入今天的主题之前，让我们回顾一下我们是怎么匹配的：
+> 假设如下内容：
+>   1. 死亡竞技
+>   2. 沙漠2
+1. 打开CSGO客户端
+2. 点击"开始游戏"
+3. 选择"死亡竞赛"->"炙热沙城 II"
+4. 点击"开始"
+5. 开始匹配
+6. 匹配完成，并加入游戏
 
-比如，我们打开打车 app ，输入要去的地方，选择打快车 (Express)，点击匹配，就能有车接单，然后界面上显示车辆信息。以此为例，这中间，到底发生了什么呢？  
-<br>
+此时此刻，我们都是"用户"，即：使用这些功能的人，也即：客户，体验这些游戏内容的人。
 
-## 前端
-大致的原理是，app（客户端）向指定的服务端（服务器的地址写在 app 里了）发送了一个请求，请求中包含用户信息，输入的目的地，以及其它服务端可能需要的信息。服务端收到请求，根据这些信息，返回一些信息给 app。最后，app 把这些信息填入模板里。  
-<br>
+稍微扩大一下，并用更专业的术语抽象的话，则是：客户端。
 
-任何语言都可以实现这样的逻辑。请看以下**伪代码**：  
-```python
-# 定义请求信息
-userLocation = "宁波诺丁汉大学一号门"
-userDestination = "印象城"
-requestData = {"userLocation": userLocation, "userDestination", userDestination}  # 这是一个 JSON object，需要查看服务端的接口文档，来确定其中放什么东西
+相对应的，在我们点击"开始"的时候，后台也做了相对应的事情：
+1. 收集你的匹配信息
+2. 发送给V社匹配服务器
+3. 根据你的匹配信息，V社给你找队友
+4. 找到以后，返回数据给CSGO，并通知用户
+5. 领着用户进入游戏
 
-# 服务器 ip 地址和路径写在这里
-requestUrl = "101.10.20.30/getExpress"
+此时此刻，后台为了提供了所有必要的服务，也即：提供者，提供这些游戏内容的人。
 
-# 向地址为 101.10.20.30 的服务器的 getExpress 路径发送一个类型为 `POST` 的消息，并且同时把 `requestData` 发送给服务器
-returnObject = sendRequest(requestUrl, "POST", requestData)
+稍微扩大一下，并用更专业的术语抽象的话，则是：服务端。
 
-# 从模板（比如 HTML）中获得要更改的元素
-driverName = getElement("driverName") 
-driverPlateNumber = getElement("driverPlateNumber")
-driverRatings = getElement("driverRatings")
+上述过程，也即客户端/服务端，也就是我们常说的C/S模型：使用/提供服务。
 
-# 用setContent 把元素的内容设置成服务器拿回来的数据
-driverName.setContent(returnObject.data.driverName)
-driverPlateNumber.setContent(returnObject.data.driverPlateNumber)
-driverRatings.setContent(returnObject.data.driverRatings)  
+诚然，客户端和服务端，一个是使用服务，另一个是提供服务，乍一看二者是相对立的，但实际上，二者并不是对立的关系，反而是可以同时存在的，取决于你怎么看待它：比如软件，它既可以是客户端，也可以是服务端：
+1. 软件需要调用硬件资源，那么在这种场合下，软件就是客户端；
+2. 相对应的，如果这个软件是某一个服务的后端，那么在这种场合下，软件就是服务端。
+
+所以，很明显，区分服务端和客户端最主要的特征就是：在这个情境下，你是享受服务呢，还是提供服务？
+
+但很明显，这里有一个问题：用户需要享受服务，后台虽然有服务，但需要有一个办法提供给用户；同样的，也需要一个办法让用户和后台交互，诸如此类。总之，需要有一个办法，沟通用户和后台。
+
+为了解决这个问题，就像在现实生活中造桥那样，我们需要确定两个端点，并搭建后台和用户之间的桥梁。用更专业点的话来说的话，这两个端点，即是所谓的"接口"，也就是"API"(Application Programming Interface)：服务端的端点，用来提供服务，客户端的端点，用来接收服务。而其中的"桥梁"，则是各种各样的数据传输方式，比如说HTTP/Socket/WebSocket/...，在此不表。
+
+接口的方式多种多样，如：
+- 调用数据库中的数据：SQL
+    ```sql
+    SELECT * WHERE something=1;
+    ```
+- 软硬件交互：汇编
+    ```cpp
+    .LC0:
+    	.string "Hello World!"
+    main:
+    	push        rbp
+    	mov         rbp, rsp
+    	mov         edi, OFFSET: .LC0
+      mov         eax, 0
+      pop         rbp
+      ret
+    ```
+- 语言交互：函数导出
+    ```cpp
+    // Export C function...
+    export "C" __function() {}
+    ```
+
+好了，让我们回到之前的匹配。
+
+之前我们提到了两端，现在我们需要处理"桥梁"。
+
+既然我们需要传输匹配参数给后台，那必然需要涉及到网络之间的交互，而网络交互相关的东西，也无外乎就HTTP/WebSocket/Socket之类的玩意。
+> Note: 在CSGO中，死亡竞赛的参数：`game_type 1; game_mode 2`，沙漠2就不用说了：`de_dust2`
+
+首先，既然我们需要发送数据给V社，那么首先我们得按照一定的标准写入数据：
+> 使用JSON以简化表述
+```json
+{
+    "steamid": 76561154567867646,
+    "game": 730,
+    "game_type": 1,
+    "game_mode": 2,
+    "map": "de_dust2"
+}
 ```
 
-注意以下：  
-- 再强调一遍，这是**伪代码**，只不过长得有点像 `Python`。这里只是展示逻辑。
-- `requestData` 究竟放什么东西，是服务端决定的，需要去看服务端的**接口文档**，它会明确告诉你，`data` 中要放什么东西，类型是什么。这有点像函数调用时的参数，只不过这个函数的内容在服务端运行。
-- 例子中发送的是 `POST` 类型的消息。还有各种类型的消息，比如 `GET`，`PUT`，`PATCH` 和 `DELETE` 等等。可以搜索 `HTTP request types` 查看它们的区别，但是，暂时可以先不去了解，接口文档指定用啥就用啥。
-<br>
-- `sendRequest` 这个函数，在网络不好的时候，会卡很久。程序运行到 `returnObject = sendRequest(...)` 这里，就会先暂停，等你收到了服务器消息，才会继续。或者这样理解：对程序来说，`sendRequest` 这个函数看起来就像是一个要执行 `100,000,000` 次的循环。下面的代码，非得等这个函数执行完，才能继续执行。这样子发请求，我们叫**`异步请求`**。
-<br>
+然后，通过某种方式发送给V社。
 
-当然，更多时候，我们不能这样干等。想想，在网络不好的时候，很多应用是不是会出现 `正在加载` 类似的界面？我们需要 `同步请求` 来做到它。这是通过 `回调函数` 实现的。就是，发请求的时候，跳过等待，执行下面的代码；返回消息过来之后，调用一个函数，去更新信息。具体做法请看以下**伪代码**：  
+> 本文使用Java做示例，仅用于方便理解。
+```java
+// Steam ID=76561154567867646 => 我瞎取的，实际上往往大概率不存在
+// game=730 => CSGO的ID
+// game_type=1 // 死亡竞赛参数
+// game_mode=2 // 死亡竞赛参数
+// map=de_dust2 // 不用我说了吧?
 
+// 假设有一个类叫MatchMaking，用来处理匹配相关的数据
+// 假设Matchmaking中有一个WriteData的函数，用于构造这个类，并构造用户匹配数据
+// public static MatchMaking WriteData(Long steamID, Long game, short gameType, short gameMode, String map);
+MatchMaking mm = Matchmaking.WriteData(steamID, game, gameType, gameMode, map);
 
-```python
-# 先定义一个回调函数，参数是服务器的返回信息，函数做的事情是，用返回信息里的东西去更新页面元素。
-def myCallback(returnObject):
-
-    # 从模板（比如 HTML）中获得要更改的元素
-    driverName = getElement("driverName") 
-    driverPlateNumber = getElement("driverPlateNumber")
-    driverRatings = getElement("driverRatings")
-
-    # 用setContent 把元素的内容设置成服务器拿回来的数据
-    driverName.setContent(returnObject.data.driverName)
-    driverPlateNumber.setContent(returnObject.data.driverPlateNumber)
-    driverRatings.setContent(returnObject.data.driverRatings)  
-
-# 定义请求信息
-userLocation = "宁波诺丁汉大学一号门"
-userDestination = "印象城"
-requestData = {"userLocation": userLocation, "userDestination", userDestination}  # 这是一个 JSON object，需要查看服务端的接口文档，来确定其中放什么东西
-
-# 服务器 ip 地址和路径写在这里
-requestUrl = "101.10.20.30/getExpress"
-
-# 向地址为 101.10.20.30 的服务器的 getExpress 路径发送一个类型为 `POST` 的消息，并且同时把 `requestData` 发送给服务器
-########     
-####### 注意，这里的 sendRequestWithCallback，使用回调函数更新页面。
-####### 服务器返回的 object 会自动递给 myCallback 作为参数。
-####### 程序会在一个新的线程里，让一个绑定了 myCallback 的 Observer 去等待服务器的回复，然后自己接着往下运行
-########
-sendRequestWithCallback(requestUrl, "POST", requestData, myCallback)
-
-# 上面那句代码不会卡住程序。下面的内容会先比 myCallback 函数先运行。
-driverName = getElement("driverName") 
-driverPlateNumber = getElement("driverPlateNumber")
-driverRatings = getElement("driverRatings")
-driverName.setContent("正在加载")
-driverPlateNumber.setContent("正在加载")
-driverRatings.setContent("正在加载")
-# 运行到这里，你会看到页面出现`正在加载`，直到服务器回了消息，myCallback 被调用，然后页面更新。
-# 通常，从服务器拿消息，需要用去几十毫秒的时间，但是运行到这里，可能一毫秒都用不到。
+// 发送数据到V社服务器
+mm.send();
 ```
-<br>
+`send()`的实现大致如下
+> Note: 都在`MatchMaking`这个类下
+```java
+// 一般来说你都是应该自行封装一个JSON通用函数的
+public JSON toJSON() {
+    // 我们假设matchmaking这个类只有这5个参数，所以直接封成JSON
+    // 此外，一般来说 绝大多数的JSON库只处理变量不处理函数
+    return JSON.toJSON(this);
+}
 
-注意，这段代码里有蛮多重复的，这只是为了展示思路。开发中使用框架的话，不会是这样。  
-<br>
-
-## 后端
-我们这次，只讲前端开发时需要知道的后端运作原理。更深入的原理，会在后端开发的课程中涉及。  
-<br>
-
-还是刚才的打车场景。当后端收到向 `getExpress` 路径发来的 `POST` 请求时，会先把请求中包含的信息 (也就是之前的 `requestData`) 拿出来，从中拿出 `userLocation` 和 `userDestination` 两个字段。如果失败了（字段不存在），就会返回错误。  
-<br>
-
-接着，它会运行匹配算法，找到一辆车，然后把信息返回给你。**伪代码**如下：
-
-```python
-
-# 一般会在这里定义 HTTP 请求的路径和请求的种类
-@url('/getExpress', 'POST')
-def getExpress(requestData):
-    try:
-        # 解析字段
-        userLocation = requestData.data.userLocation
-        userDestination = requestData.data.userDestination
-
-        # 找一辆匹配的车
-        # 可能是打车软件的核心算法了
-        # 要读取数据库什么的
-        express = matchExpress(userLocation, userDestination)
-
-        # 生成回复
-        response = getNewResponse()
-        
-        # 把数据塞到回复消息里
-        response.setBody({
-            driverName: express.driverName
-            driverPlateNumber: express.driverPlateNumber
-            driverRatings: express.driverRatings
-        })
-
-        # 把回复发送给用户
-        # 用户的 ip 地址在用户发来的请求里有
-        response.send(requestData.senderIP)
-
-    catch:
-        # 一些异常处理
-
-```
-
-当然，打车软件不止这一个功能。一般，会把不同的功能放到不同的路径下。后台的代码可能看起来像这样：  
-
-```python
-# 一般会在这里定义 HTTP 请求的路径和请求的种类
-@url('/getExpress', 'POST')
-def getExpress(requestData):
-    # 给用户匹配一辆快车 
-
-@url('/getSuperior', 'POST')
-def getSuperior(requestData):
-    # 给用户匹配一辆优享车
-
-@url('/cancelOrder', 'POST')
-def cancelOrder(requestData):
-    # 用户取消订单
+// 假设我们使用WebSocket，且已经连接
+public void send() {
+    // 获取匹配服务器IP
+    String matchmakingServer = MatchMaking.GetServer();
     
-@url('/getOrderPrice', 'GET')
-def getOrderPrice(pathParameter):
-    # 获取订单价格
+    // JSON格式的编码字符串
+    String jsonRAW = toJSON().toString();
 
+    WebSocket.send(matchmakingServer, jsonRAW);
+}
 ```
 
-这里，每一个路径可以看作一个`接口`，你需要阅读文档，来查看每个接口需要哪些数据。
+然后，发送给V社匹配服务器(假设V社官方匹配服务器是统一的)，服务器解析你的数据以后开始根据你的匹配条件为你找队友，假设给你匹配到了一个服务器：
+```json
+{
+    "steamid": 76561154567867646,
+    "game": 730,
+    "ip": "123.123.111.236:27015"
+}
+```
+
+作为服务端，我们可以这样处理：
+> Note: 使用Java以方便理解，实际上V社用的是C++
+```java
+// Player类：通用玩家类
+// Server类：存放可用的房间，包含一个getIP函数用于获取IP
+// Steam 64位ID
+String steamID = player.GetSteamID64();
+// List<Server> unAvailableServerList; // 已知变量：可用服务器列表
+// List<Server> serverList; // 已知变量：全部服务器列表
+// game已知：由客户端传递
+for (var i : serverList)
+{
+    // 如果在不可用的服务器里找到的这玩意 过滤掉
+    if (unAvailableServerList.contains(i)) continue;
+
+    JSON json;
+    json["steamid"] = steamID;
+    json["game"] = game;
+    json["ip"] = i.getIP();
+    // 假设这里存在另一个websocket相关函数，参数是用户的Steam ID和JSON类
+    ws.send(steamID, json);
+}
+```
+
+并发送回客户端。
+
+客户端收到了这个包，并通知你匹配到了服务器，并将你领进特定的服务器：`connect 123.123.111.236:27015`
+
+> Note: connect 是V社游戏连接服务器的指令。
+
+> 这块通用使用Java以方便理解
+```java
+JSON result = Matchmaking.Receive();
+MatchmakingResult res = MatchmakingResult(result);
+if (res.getGame() != 730 || Client.getSteamID() != res.getSteamID()) return;
+Client.ClientCommand("connect" + res.getIP());
+```
+
+于是乎，你就可以尽情刚枪了。
+
+## 小结
+
+- 服务端：服务提供者
+- 客户端：服务使用者
+- 服务端-客户端：需要方法通信，通信的手段取决于团队的技术选型和实际考虑。

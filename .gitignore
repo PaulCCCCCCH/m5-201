@@ -4,3 +4,8 @@ docs/content/source
 .DS_Store
 *.swp
 m5-201/*
+
+# Ignore cache
+.vs/
+.idea/
+.vscode/
