@@ -252,9 +252,9 @@
       <br>
       <a href="../content/database_use">2. 数据库-使用 </a>
     </td>
-<!--     <td class="tg-svo0">
+    <td class="tg-svo0">
       <a href="../content/spring-boot-practice-1">SpringBoot 引入</a>
-    </td> -->
+    </td>
     <td class="tg-svo0" rowspan="8">
       <a href="../content/project-2">Project 3: 企业项目后端</a>
     </td>
@@ -269,8 +269,6 @@
     <td class="tg-c3ow">PMB<br>309</td>
     
     <td class="tg-c3ow">
-      <a href="../content/spring-boot-practice-1">SpringBoot 引入</a>
-      <br>
       <a href="../content/spring-boot-and-database">1. SpringBoot 使用</a>
       <br>
     </td>
