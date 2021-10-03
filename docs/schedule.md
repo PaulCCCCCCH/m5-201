@@ -248,12 +248,12 @@
     <td class="tg-svo0">Wed<br>5/5<br>20:00-22:00</td>
     <td class="tg-svo0">PMB<br>309</td>
     <td class="tg-svo0">
-      <a href="../content/spring-boot">1. SpringBoot</a>
+      <a href="../content/database_guidance">1. 数据库-引入</a>
       <br>
-      <a href="../content/deployment">2. 服务部署 </a>
+      <a href="../content/database_use">2. 数据库-使用 </a>
     </td>
     <td class="tg-svo0">
-      <a href="../content/spring-boot-practice-1">SpringBoot 练习 1</a>
+      <a href="../content/spring-boot-practice-1">SpringBoot 引入</a>
     </td>
     <td class="tg-svo0" rowspan="8">
       <a href="../content/project-2">Project 3: 企业项目后端</a>
@@ -268,11 +268,11 @@
     <td class="tg-c3ow">Sun<br>5/9<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
     <td class="tg-c3ow">
-      <a href="../content/spring-boot-and-database">1. SpringBoot 与数据库</a>
+      <a href="../content/spring-boot-and-database">1. SpringBoot 使用</a>
       <br>
     </td>
     <td class="tg-c3ow">
-      <a href="../content/spring-boot-practice-2">SpringBoot 练习 2</a>
+      <a href="../content/spring-boot-practice-2">SpringBoot+Mybatis练习 </a>
     </td>
     <td class="tg-c3ow">
       <a href="https://www.cnblogs.com/ityouknow/p/6037431.html">1. 不错的 Mybatis 配置 Checklist</a>
