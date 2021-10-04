@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/database_deployment/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>数据库_使用 - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../schedule/">Schedule</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/database_deployment.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#_">数据库_使用</a></li>
+            <li class="second-level"><a href="#_1">本节课学习的内容</a></li>
+                
+            <li class="second-level"><a href="#_2">数据库以及管理系统的安装</a></li>
+                
+                <li class="third-level"><a href="#mysql">MySQL</a></li>
+                <li class="third-level"><a href="#mysql-workbench">MySQL Workbench</a></li>
+                <li class="third-level"><a href="#mysql_1">安装完mysql后创建新用户（之后要用到）</a></li>
+                <li class="third-level"><a href="#_3">给新用户赋予权限</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="_">数据库_使用</h1>
+<p>数据库 + MyBatis + 增删改查</p>
+<h2 id="_1">本节课学习的内容</h2>
+<ol>
+<li>使用 <code>MySQL Workbench</code> 创建一个数据库，用来保存 <code>student_info</code> 。需要考虑每个值用哪种数据类型保存。</li>
+<li>在本地打开 <code>MySQL</code> 服务。</li>
+</ol>
+<h2 id="_2">数据库以及管理系统的安装</h2>
+<h3 id="mysql">MySQL</h3>
+<p><a href="https://www.runoob.com/mysql/mysql-install.html">Windows安装MySQL</a></p>
+<p><a href="https://www.jianshu.com/p/07a9826898c0#:~:text=mac">Mac安装MySQL</a></p>
+<h3 id="mysql-workbench">MySQL Workbench</h3>
+<p>MySQL Workbench可以让我们以可视的方式对数据库进行配置、修改等操作，可以更方便的管理用户，更加方便直观。</p>
+<p><a href="https://jingyan.baidu.com/article/64d05a0299582c9f54f73b25.html#:~:text=点击“MySQL%20Installer%20for,Windows”%2C再点击拓展名为msi的下载程序，也可以点击Archives，进入历史版本下载界面%E3%80%82%20双击下载完成的安装程序，选择“Full”，这样就能把MySQL%20Workbench一并安装%E3%80%82">Windows安装MySQL Workbench</a></p>
+<p><a href="https://jingyan.baidu.com/article/0964eca2409e9a8285f5369d.html#:~:text=在Win安装MySQL的时候，可视化图形界面操作MySQL的Workbench会一起安装，而Mac则需要另外安装，本节介绍，Mac下载安装%20MySQL%20Worbench,的方法，具体如下%20在百度上打开%20MySQL官网，找到Workbench下载安装即可，官网：https%3A%2F%2Fdev.mysql.com%2Fdownloads%2Fworkbench%2F，点击下载安装包，具体如下图">Mac安装MySQL Workbench</a></p>
+<h3 id="mysql_1">安装完mysql后创建新用户（之后要用到）</h3>
+<p>打开终端</p>
+<p>Windows输入</p>
+<pre><code class="language-jsx">    mysql -u root -p
+</code></pre>
+<p>Mac输入</p>
+<pre><code class="language-sql">    /usr/local/mysql/bin/mysql -u root -p
+</code></pre>
+<p>输入密码</p>
+<p>进入到mysql</p>
+<pre><code class="language-sql">CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'password';
+</code></pre>
+<p>创建了名为‘testuser’的用户，此账户可以用testuser登陆</p>
+<p>这边不一定要取testuser，想取啥名字取啥名字。</p>
+<p>一定一定要记住密码！！！</p>
+<h3 id="_3">给新用户赋予权限</h3>
+<pre><code class="language-sql">grant all on **.** to 'testuser'@'localhost';
+</code></pre>
+<p>此时testuser拥有了对此数据库操作的一切权限。</p>
+<p>打开MySQL Workbench，点击MySQL connections左边的➕，创建新的连接。</p>
+<p><img alt="database_deployment_01" src="../images/database_deployment_01.png" /></p>
+<p>点击ok后回到开始界面，点击你刚刚创建的连接，并输入testuser的密码，进入到此连接</p>
+<p><img alt="database_deployment_02.png" src="../images/database_deployment_02.png" /></p>
+<p>点击上方创建新的schema，创建新的数据库空间，并命名为任意名称。</p>
+<p><img alt="database_deployment_03.png" src="../images/database_deployment_03.png" /></p>
+<p>点击apply，此时，我们可以看到左边schema表中已经出现了我们刚刚新建的schema，此时，schema中还不包含任何的数据表</p>
+<p><img alt="database_deployment_04.png" src="../images/database_deployment_04.png" /></p>
+<p>于是我们右键点击Create Table创建数据表，并输入数据表中所包含的项目以及其类型。</p>
+<p>VARCHAR是可变长度的字符串。</p>
+<p>Char是固定长度的字符串。</p>
+<p>INT为整型。</p>
+<p><a href="https://www.runoob.com/mysql/mysql-data-types.html">更多数据类型</a>可参考</p>
+<p><img alt="database_deployment_05.png" src="../images/database_deployment_05.png" /></p>
+<p>点击Apply创建刚刚定义的数据表。</p>
+<p><img alt="database_deployment_06.png" src="../images/database_deployment_06.png" /></p>
+<p>我们可以看到左边schema栏中已经出现了我们新建的数据表</p>
+<p>在Query界面输入以下代码，并点击上方⚡️execute按钮</p>
+<pre><code class="language-sql">use student_info;      --  选取student_info这个schema
+show tables;           --  显示当前schema中的数据表
+select * from student; --  显示student这个数据表中所有的数据
+</code></pre>
+<p><img alt="database_deployment_07.png" src="../images/database_deployment_07.png" /></p>
+<p>下方Result栏会返回我们每一行执行命令的Result Grid，我们可以通过action output区域判断我们命令是否被正确的执行。</p>
+<p>因为当前我们没有向student表中加入任何记录，所以我们查询到一个全空的表。</p>
+<p>我们可以选择直接在result grid中输入你想要加入的记录，点击apply来添加记录</p>
+<p><img alt="database_deployment_08.png" src="../images/database_deployment_08.png" /></p>
+<p>也可以选择在Query中输入insert命令来增加记录</p>
+<pre><code class="language-sql">INSERT INTO student_info.student (id, major, year_of_study, gender, name) VALUES ('20215560', 'CS', '3', 'male', 'JiahuaPan');
+</code></pre>
+<p>点击⚡️运行后，再输入以下命令显示student表中内容可以发现，新的记录已经被添加到该表了。</p>
+<p><img alt="database_deployment_09.png" src="../images/database_deployment_09.png" /></p>
+<p>如果要修改表内的信息的话，例如将id为20215560的记录的major由CS改为CSAI，在query中输入upadte命令。</p>
+<pre><code class="language-sql">UPDATE student_info.student SET major = 'CSAI' WHERE (id = '20215560');
+</code></pre>
+<p><img alt="database_deployment_10.png" src="../images/database_deployment_10.png" /></p>
+<p>可以看到修改成功。</p>
+<p>大家自己尝试添加修改几项。</p>
+<p><img alt="database_deployment_11.png" src="../images/database_deployment_11.png" /></p>
+<p>要对特定符合某个条件的记录进行搜索的话，我们会使用 where 来添加限制条件。例如</p>
+<pre><code class="language-sql">select * from student_info.student where id='20215561';
+</code></pre>
+<p>可以搜索出该表中id为20215560的项。</p>
+<p><img alt="database_deployment_12.png" src="../images/database_deployment_12.png" /></p>
+<p>如果要进行删除记录操作的话，例如删除最后一条记录。</p>
+<pre><code class="language-sql">**DELETE FROM student_info.student WHERE (id = '20215562');**
+</code></pre>
+<p><img alt="database_deployment_13.png" src="../images/database_deployment_13.png" /></p>
+<p>此时我们可以看到最后一条记录已经被删除掉了。</p>
+<p>大家可以自己尝试一下增删改查的用法</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

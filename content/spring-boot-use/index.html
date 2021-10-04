@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/spring-boot-use/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>springboot_使用 - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../schedule/">Schedule</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/spring-boot-use.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#springboot_">springboot_使用</a></li>
+            <li class="second-level"><a href="#_1">本节课的学习内容</a></li>
+                
+        <li class="first-level "><a href="#_2">准备工作</a></li>
+            <li class="second-level"><a href="#springboot">SpringBoot该如何配置</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="springboot_">springboot_使用</h1>
+<h2 id="_1">本节课的学习内容</h2>
+<p>在这个教程中，我们会带大家intelij来编写一个简单的后端。</p>
+<h1 id="_2"><strong>准备工作</strong></h1>
+<p>首先，强烈推荐 <a href="https://www.jetbrains.com/idea/">IntelliJ</a>。注意，请下载 <code>Ultimate</code> 版，这样才能获得 <code>Spring</code> 的完整支持！下载的同时，请从<a href="https://www.jetbrains.com/shop/eform/students">这里</a>用学校邮箱申请免费使用，<strong>白嫖yyds</strong>！</p>
+<p>~~如果你有生产力需求的话，也可以选择花个1000多买个全家桶~~</p>
+<h2 id="springboot">SpringBoot该如何配置</h2>
+<p>使用<a href="https://start.spring.io">spring initializer</a>可以简化你配置的步骤</p>
+<p>按如下图片进行设置</p>
+<p>用<code>Maven</code>架构来管理包，下面group地方就把自己域名反一反写上去，<code>Spring Boot</code>提供了http集成，<code>My Batis</code>是用来连接数据库的，<code>MySQL Driver</code>是用来对数据库中内容进行操作的。</p>
+<p>完成后点击generate</p>
+<p><img alt="spring-boot-use-01.png" src="../images/spring-boot-use-01.png" /></p>
+<p>会下载一个zip文件，解压后拖动到Intelij IDEA<code>Intelij IDEA</code>中打开，等待它自动下载所需文件</p>
+<p><code>Resource</code>文件夹中的static和templates是有关网页显示的，</p>
+<p>此时点<code>aDemoApplication</code>右侧的运行按钮，会报出fail to configure a datasource.我们暂时还没有连接数据库所以会报出这样的错误。</p>
+<p><img alt="spring-boot-use-02.png" src="../images/spring-boot-use-02.png" /></p>
+<p>此时注释掉如下几行，并且点击右上方的刷新按钮，maven会自动将mybatis给忽略（mybatis是连接数据库的包）</p>
+<p>此时再点击运行，一切正常</p>
+<p><img alt="spring-boot-use-03.png" src="../images/spring-boot-use-03.png" /></p>
+<p>观看下方运行信息，发现本服务在8080端口跑，访问<a href="http://localhost:8080">http://localhost:8080</a> ，因为你未在其中添加任何内容，所以出现空白页面错误。</p>
+<p><img alt="spring-boot-use-04.png" src="../images/spring-boot-use-04.png" /></p>
+<p>添加如下代码到<code>DemoApplication</code>文件中，点击运行</p>
+<p><code>@RestController</code> 等价于</p>
+<p><code>@GetMapping</code>等价于<code>@RequestMapping(value=“/”,method=RequestMethod.GET)</code>,</p>
+<p>相当于面对用户发送的面向“/”的get请求，他会返回一个字符串类型，内容是“Hello World”</p>
+<p><img alt="spring-boot-use-05.png" src="../images/spring-boot-use-05.png" /></p>
+<p>此时再访问<a href="http://localhost:8080">http://localhost:8080</a>，则显示出hello world</p>
+<p><img alt="spring-boot-use-06.png" src="../images/spring-boot-use-06.png" /></p>
+<p>如果我们要让<a href="https://localhost:8080/list/">localhost:8080/list/</a>这个网站返回一个列表该怎么办呢。大家可以先自己写一写。</p>
+<p>再输入以下内容,点击运行</p>
+<p><code>@GetMapping("/list"）</code>等价<code>@RequestMapping(value="/list",method=RequestMethod.GET)</code>,</p>
+<p>相当于面对用户发送的面向"/list"的get请求，他会返回一个列表类型，内容["Hello","World"]</p>
+<p><img alt="spring-boot-use-07.png" src="../images/spring-boot-use-07.png" /></p>
+<p>此时再访问<a href="http://localhost:8080/list">http://localhost:8080/list</a>，则显示出["Hello","World"]</p>
+<p><img alt="截spring-boot-use-08.png" src="../images/spring-boot-use-08.png" /></p>
+<p>返回其他任何类型的数据也是同理。</p>
+<p>若要能随着用户输入信息发生变化时，则要用到<code>@RequestParam</code>来获取用户输入，添加以下代码到<code>DemoApplication</code>，参数中的<code>value</code>就是参数名，<code>defaultValue</code>就是没有输入情况下默认的输入值。</p>
+<pre><code class="language-java">@GetMapping(&quot;/hello&quot;)
+public String Hello(@RequestParam(value = &quot;username&quot;, defaultValue = &quot;UnknowUser&quot;) String user_name){
+
+   return &quot;Hello, &quot;+user_name;
+
+}
+</code></pre>
+<p>运行再访问<a href="http://localhost:8080/hello?username=your_name">localhost:8080/hello?username=your_name</a>，此时可以看到页面上出现了刚刚输入的内容。</p>
+<p><img alt="spring-boot-use-09.png" src="../images/spring-boot-use-09.png" /></p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
