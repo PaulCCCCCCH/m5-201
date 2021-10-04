@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="IceWould Training Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/bootstrap/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>CSS 和 Bootstrap - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../schedule/">Schedule</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/bootstrap.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#css-bootstrap">CSS 和 Bootstrap</a></li>
+            <li class="second-level"><a href="#bootstrap">Bootstrap何许人也</a></li>
+                
+            <li class="second-level"><a href="#bootstrap_1">Bootstrap能做什么</a></li>
+                
+            <li class="second-level"><a href="#bootstrap_2">Bootstrap的布局方式</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="css-bootstrap">CSS 和 Bootstrap</h1>
+<h2 id="bootstrap">Bootstrap何许人也</h2>
+<p>既然这节课都叫<strong>CSS 和 Bootstrap</strong>了，那这个<strong>Bootstrap</strong>想必和<strong>CSS</strong>有些关系：</p>
+<p>事实上，<strong>Bootstrap</strong>是一套<strong>现成</strong>的<strong>CSS样式集合</strong>，是<strong>Twitter</strong>于2011年8月在<strong>Github</strong>上发布的一个<strong>开源项目</strong>。起初这只是几个推特工程师为了提高他们内部的分析和管理能力，用业余时间构建的一套<strong>前端工具集</strong>，但在<strong>Github</strong>上开源之后，逐渐成为了目前最受欢迎的<strong>HTML</strong>、<strong>CSS</strong>和<strong>JS</strong><span style="color:red;"><strong>框架</strong></span>。</p>
+<p>这边有两个概念大家可能相对来说比较陌生：</p>
+<p>其一是<strong>Github</strong>，这个在我们接下来的课程中很快会讲到，但是为了更好地理解，大家在这里可以简单地将其视作一个<strong>共享资源</strong>的网站，其中的资源就是一个一个<strong>项目工程</strong>（里面是代码和一些相关的文档）。而其中有一些项目的工程师们<strong>同意让他人使用、复制或是修改自己的项目</strong>，这些项目也就被称为<strong>开源项目</strong>。</p>
+<p>另外一个是<span style="color:red;"><strong>框架</strong></span>，它是为<strong>解决一个（一类）问题</strong>而开发的<strong>集成的代码</strong>。大家可能觉得这跟之前学的<strong>C</strong>语言在开头通过<code>#include&lt;xxx&gt;</code>调的<span style="color:red;"><strong>库</strong></span>是一样的，都是代码的集合，但其实这两者是不同的。简单地来讲，程序员在使用<span style="color:red;"><strong>库</strong></span>时有<strong>更高的自由度</strong>，可以根据自己的意愿<strong>决定在什么时候什么地方调用</strong><span style="color:red;"><strong>库</strong></span>中的<span style="color:red;"><strong>库</strong></span><strong>函数</strong>，也就是<strong>程序员决定了程序的流程</strong>；而使用<span style="color:red;"><strong>框架</strong></span>时，<strong>自由度相对较低</strong>，<strong>程序的流程由框架定义</strong>，程序员更像是在填表一样，在<span style="color:red;"><strong>框架</strong></span><strong>规定的位置插入自定义的代码</strong>来实现定制的程序。</p>
+<p>上面的这两个概念大家如果读完还不是特别清楚其实问题也不大，目前对它们有一个感性的认知即可，因为今天我们的主角还是<strong>Bootstrap</strong>。</p>
+<h2 id="bootstrap_1"><span id="effect">Bootstrap能做什么</span></h2>
+<p>在看别的资料怎么描述<strong>Bootstrap</strong>能做什么前，我们不如看看<strong>Bootstrap</strong>自己的<a href="https://v3.bootcss.com/">官方文档</a>是如何定义自己的:</p>
+<p><i>Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。</i></p>
+<p>也就是说，首先它是一个<strong>前端框架</strong>，其次它可以开发<span style="color:red;"><strong>响应式布局</strong></span>、<span style="color:red;"><strong>移动设备优先</strong></span>的<strong>WEB项目</strong>（好像是废话QAQ）。</p>
+<p>做为前端框架，它封装了很多的<strong>CSS样式</strong>以及各式各样的<strong>组件</strong>以及<strong>JavaScript插件</strong>，这些往往可以通过设定原生<strong>HTML</strong>元素的<code>class</code>来使用。比方说，如果我们觉得原生<strong>HTML</strong>中定义的<strong>button</strong>很丑，但我们又不想自己设计一个样式，那我们就可以上<strong>Bootstrap</strong>的<a href="https://v3.bootcss.com/">官方文档</a>，找到导航栏的“全局CSS样式”，然后在里面找到按钮的版块，从它提供的EXAMPLE里找到我们想要样式的按钮，大喊一声“拿来吧你”就可以了——才怪。为了能够使用<strong>Bootstrap</strong>提供的样式以及丰富的组件和插件，我们除了需要设置对应的<code>class</code>以及其他一些可能需要的属性之外（也就是之前讲框架时所说的填空），还需要正确地引入相关的<strong>CSS文件</strong>和<strong>JavaScript文件</strong>（还记得之前Web三件套讲的外部引入的方式吗），不然谁知道我们这空往哪道题填，对吧？当然这些实操部分的细节我们在<strong>Practice</strong>中再给大家细讲。</p>
+<p>除开上面所述的做为前端框架最基本的功能外，<strong>Bootstrap</strong>还支持<span style="color:red;"><strong>移动设备优先</strong></span>（<strong>mobile-first</strong>）。这指的是<strong>Bootstrap</strong>的设计目标<strong>首先是移动设备</strong>，<strong>然后是桌面设备</strong>。什么意思呢？这就要追溯到<strong>Bootstrap</strong>诞生的时间了（2011年8月，据史料记载彼时iPhone4s还有两个月就问世了）：那时<strong>WEB</strong>还是在<strong>桌面设备</strong>上用的比较多，因此在<strong>Bootstrap3</strong>之前的版本中都需要手动引入另外的<strong>CSS</strong>才能让项目<strong>支持移动设备</strong>，而随着近些年来移动端的快速发展，大势所趋之下，<strong>Bootstrap</strong>从第三代开始便默认支持移动端的<strong>CSS</strong>，也就是设计目标成了<span style="color:red;"><strong>移动设备优先</strong></span>。当然这里大家了解一下就可以了。By the way，现在<strong>Bootstrap</strong>已经发展到了第五代。</p>
+<p>而在定义中提到的另一个词——<span style="color:red;"><strong>响应式布局</strong></span>（<strong>responsive design</strong>）就比较重要了，它是<strong>Bootstrap</strong>的一个灵魂特性。</p>
+<p>什么叫<span style="color:red;"><strong>响应式布局</strong></span>呢？从这个名字大家应该就能猜出一些端倪——它大概是一个<strong>会根据某些环境因素的变化而变化的布局</strong>。那么是什么环境因素呢？其实也很好猜，就是呈现网页的<strong>屏幕分辨率</strong>。也就是说<strong><span style="color:red;">响应式布局</span>就是一个能够随着屏幕不同分辨率而     改变布局    的布局</strong>（有一点点绕orz）。这样的好处也显而易见，<strong>一个网站就能够兼容不同类型的终端</strong>（小到手机大到荧幕），而不需要程序员们苦逼地去为每一种终端都定制一个网页。事实上，这个<span style="color:red;"><strong>响应式布局</strong></span>是通过<strong>CSS</strong>的<code>@media</code>查询实现的。关于<code>@media</code>大家可以理解为一组关于屏幕分辨率的<strong>If Statement</strong>：</p>
+<pre><code>if(970px &lt; 屏幕宽度 &lt; 1170px):
+    ...
+else if(...):
+    ...
+</code></pre>
+<p>同样地，大家也是对它有个感性的认知即可，因为正如我们之前在<span style="color:red;"><strong>框架</strong></span>中所介绍的那样，在使用<span style="color:red;"><strong>框架</strong></span>的时候，我们只需要当作填空就好了，背后的复杂流程一般来说是不需要我们操心的。<code>@media</code>查询会由<strong>Bootstrap</strong>帮我们完成的，我们只需要针对不同情况定义不同的布局就能和<span style="color:red;"><strong>框架</strong></span>配合着完成整个的<span style="color:red;"><strong>响应式布局</strong></span>了。</p>
+<p>光靠上面的文字描述大家可能还不能对什么叫<span style="color:red;"><strong>响应式布局</strong></span>有一个非常直观的概念，那么接下来我们上点具体的，就拿<a href="https://v3.bootcss.com/getting-started/">Bootstrap的下载页面</a>作为例子好了。</p>
+<p>在电脑上看，这个页面长这样子：</p>
+<p><img alt="bootstrap-1" src="../images/bootstrap-1.png" /></p>
+<p>而在手机上，它长这样：</p>
+<p><img alt="bootstrap-2" src="../images/bootstrap-2.png" /></p>
+<p>可以很明显地看到，本来三种不同的下载：“用于生产环境的Bootstrap”、“Bootstrap源码”和“Sass”在电脑上是呈水平方向排布的，而到了手机上，便成了竖直方向排布。这也就是一个很典型的<span style="color:red;"><strong>响应式布局</strong></span>的例子。</p>
+<h2 id="bootstrap_2">Bootstrap的布局方式</h2>
+<p>上面讲了<strong>Bootstrap</strong>具有<span style="color:red;"><strong>响应式布局</strong></span>的特性，而这样的特性正是由它的<strong>布局方式</strong>所决定的。</p>
+<p>为了使用<strong>Bootstrap</strong>的<strong>布局系统</strong>，我们需要将<strong>要布局的内容</strong>放在<strong>Bootstrap</strong>所定义的<strong>布局容器</strong>内。这样的<strong>布局容器</strong>有两种，<code>&lt;div class="container"&gt;......&lt;/div&gt;</code>以及<code>&lt;div class="container-fluid"&gt;......&lt;/div&gt;</code>,简单来说，前一种容器不占据整个屏幕的宽度，两边有一定留白，而后一种占据100%的宽度（两种<strong>布局容器</strong>不可以嵌套使用）。通常来说，前一种我们用的多一点，就比如大家常逛的淘宝京东等等：</p>
+<p><img alt="bootstrap-3" src="../images/bootstrap-3.png" /></p>
+<p>很明显白色的大块<code>&lt;div&gt;</code>并没有占据100%的宽度，而是两侧有留白。</p>
+<p>而满足了前提条件后，我们便可以使用<strong>Bootstrap</strong>的<strong>布局系统</strong>进行布局了。</p>
+<p><strong>Bootstrap</strong>的<strong>布局系统</strong>是<span style="color:red;"><strong>栅格系统</strong></span>（Grid system）。<span style="color:red;"><strong>栅格系统</strong></span>，顾名思义，就是通过<strong>行</strong>和<strong>列</strong>来把页面分成一个个小格子，从而进行定位。在<strong>Bootstrap</strong>中，我们往往先在<strong>容器</strong>中定义<strong>行</strong>（<code>&lt;div class="row"&gt;......&lt;/div&gt;</code>），然后再在<strong>行元素</strong>中创建<strong>列元素</strong>。与在原生的<strong>CSS</strong>中定义<span style="color:red;"><strong>栅格系统</strong></span>不同，<strong>Bootstrap</strong>做为<span style="color:red;"><strong>框架</strong></span>会通过计算自动地帮我们将一行分为<strong>12</strong>份（有时也会分为24份或36份，但一般都是12份），所以在做粗略布局的时候，我们可以直接<strong>通过指定一个列元素所占份数来改变其的宽度</strong>（当然也是通过指定<code>&lt;div&gt;</code>元素的<code>class</code>实现），就像下图这样：</p>
+<p><img alt="bootstrap-3" src="../images/bootstrap-4.png" /></p>
+<p>显而易见，每一行的所有<strong>列元素</strong>所对应的<code>class</code>最后的数字相加都等于12，这也正符合了我们上面所说的一行被分为12份。除开这些数字，大家也许会对每个<code>class</code>名前半部分的<code>col-md</code>感到疑惑，可能<code>col</code>的含义还好猜一点，毕竟本身“<strong>列</strong>”的英文就叫<strong>column</strong>，那<code>md</code>又代表了什么意思呢（反正肯定不是在骂人）？这就又要说回到我们在上面讲的<span style="color:red;"><strong>响应式布局</strong></span>了。</p>
+<p>我们在<a href="#effect">Bootstrap能做什么</a>里只说了<span style="color:red;"><strong>响应式布局</strong></span>能<strong>随着屏幕分辨率的改变而改变布局</strong>，但具体变成什么样的布局，还是要由我们提起去定义好的。所以整个<span style="color:red;"><strong>响应式布局</strong></span>的流程其实是这样的：<strong>Bootstrap</strong>先通过<code>@media</code>查询得到屏幕分辨率，然后再<strong>根据分辨率所在的范围</strong>执行<strong>对应的布局代码</strong>。为了<strong>区分</strong>不同分辨率范围对应的布局，<strong>Bootstrap</strong>在<strong>列元素</strong>类名的<code>col</code>和<strong>数字</strong>中间加入了两位字母，分别为<code>xs</code>（extra small）、<code>sm</code>（small）、<code>md</code>（medium）和<code>lg</code>（large），而它们对应的分辨率范围如下表：</p>
+<p><img alt="bootstrap-5" src="../images/bootstrap-5.png" /></p>
+<p>对于具体的数值，大家并不需要背下来，只要有一个大概的印象即可——<code>xs</code>对应<strong>手机</strong>，<code>sm</code>对应平板，<code>md</code>对应一<strong>桌面显示器</strong>，<code>lg</code>对应<strong>大桌面显示器</strong>。真要是不确定，再查一下表格，也是很方便的。</p>
+<p>那么到此为止，<strong>Bootstrap</strong>最为基础与最为核心的部分我们也就讲完了，当然除了那些讲不完的样式、插件和组件之外，还有一些基础的部分，比如列偏移、列排序、列嵌套等等也没有涉及到。但其实这些都不难，只要大家愿意去<a href="https://v3.bootcss.com/">官方文档</a>读一读，看一看对应的示例代码，想必这些对大家来讲都没什么难度。即使有时候真的不懂原理，其实也只要把示例代码复制下来，改一改对应的地方，也就是把别人填的空改成你填的空，问题也就解决了。而我想框架给我们带来的便利正是在于此。</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
