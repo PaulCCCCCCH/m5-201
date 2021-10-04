@@ -1,4 +1,5 @@
 # Announcements
+
 ### 4 月 30 日
 - 五一假期，**没有 Lab（请看时间表）**，不要空跑了呀！项目的 meeting 怎么安排，请和自己的 Leader 商量哦！
 - 虽然没有 Lab，但是有问题还是可以随时在微信问的！
@@ -250,16 +251,16 @@
     <td class="tg-svo0">
       <a href="../content/database_guidance">1. 数据库-引入</a>
       <br>
-      <a href="../content/database_use">2. 数据库-使用 </a>
+      <a href="../content/database_deployment">2. 数据库-使用</a>
     </td>
     <td class="tg-svo0">
-      <a href="../content/spring-boot-practice-1">SpringBoot 引入</a>
+    <!--  <a href="../content/spring-boot-practice-1">数据库-练习</a>  -->
     </td>
     <td class="tg-svo0" rowspan="8">
       <a href="../content/project-2">Project 3: 企业项目后端</a>
     </td>
     <td class="tg-svo0">
-    	<a href="https://maven.apache.org/guides/getting-started/">1. Maven 入门</a>
+     <a href="https://maven.apache.org/guides/getting-started/">1. Maven 入门</a>
         <br>
         <a href="https://www.bilibili.com/video/BV1ra4y1t7rs?from=search&seid=1215952686030783862">2. 服务器软件大科普</a>
     </td>
@@ -267,13 +268,14 @@
   <tr>
     <td class="tg-c3ow">Sun<br>5/9<br>20:00-22:00</td>
     <td class="tg-c3ow">PMB<br>309</td>
-    
     <td class="tg-c3ow">
-      <a href="../content/spring-boot-and-database">1. SpringBoot 使用</a>
+      <a href="../content/spring-boot-guidance">SpringBoot-引入</a>
       <br>
     </td>
     <td class="tg-c3ow">
-      <a href="../content/spring-boot-practice-2">SpringBoot+Mybatis练习 </a>
+      <a href="../content/spring-boot-use">SpringBoot-使用1</a>
+      <br>
+      <a href="../content/spring-boot-mybatis">SpringBoot+MyBatis</a>
     </td>
     <td class="tg-c3ow">
       <a href="https://www.cnblogs.com/ityouknow/p/6037431.html">1. 不错的 Mybatis 配置 Checklist</a>
@@ -338,7 +340,6 @@
   </tr>
 <tr><td class="tg-c3ow" colspan="7">The End</td></tr>
 <!--
-
   <tr>
     <td class="tg-svo0" rowspan="2">Week 5</td>
     <td class="tg-svo0">Placeholder</td>
@@ -402,4 +403,6 @@
 -->
 </tbody>
 </table>
+
+
 
