@@ -41,7 +41,7 @@ public class Student {
 
 **注意：请为全部五个字段加入 `getter` 和 `setter`**，否则会造成无法正常读取或者写入信息。用 `IntelliJ` 的话，可以在 `.java` 文件里按下 `Alt + Insert`(Windows)、`Command+N`(Mac)选择 `Getter and setter`，按住 `Shift` 选中所有的类，自动添加。
 
-<img src="./images/spring-boot-mybatis-02.png" alt="spring-boot-mybatis-02.png" style="zoom: 33%;" />
+![spring-boot-mybatis-02.png](./images/spring-boot-mybatis-02.png)
 
 添加完成后的结果是这样。
 
