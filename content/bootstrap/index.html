@@ -136,21 +136,21 @@ else if(...):
 <p>同样地，大家也是对它有个感性的认知即可，因为正如我们之前在<span style="color:red;"><strong>框架</strong></span>中所介绍的那样，在使用<span style="color:red;"><strong>框架</strong></span>的时候，我们只需要当作填空就好了，背后的复杂流程一般来说是不需要我们操心的。<code>@media</code>查询会由<strong>Bootstrap</strong>帮我们完成的，我们只需要针对不同情况定义不同的布局就能和<span style="color:red;"><strong>框架</strong></span>配合着完成整个的<span style="color:red;"><strong>响应式布局</strong></span>了。</p>
 <p>光靠上面的文字描述大家可能还不能对什么叫<span style="color:red;"><strong>响应式布局</strong></span>有一个非常直观的概念，那么接下来我们上点具体的，就拿<a href="https://v3.bootcss.com/getting-started/">Bootstrap的下载页面</a>作为例子好了。</p>
 <p>在电脑上看，这个页面长这样子：</p>
-<p><img alt="bootstrap-1" src="../images/bootstrap-1.png" /></p>
+<p><img alt="bootstrap-1" src=".\images\bootstrap-1.png" /></p>
 <p>而在手机上，它长这样：</p>
-<p><img alt="bootstrap-2" src="../images/bootstrap-2.png" /></p>
+<p><img alt="bootstrap-2" src=".\images\bootstrap-2.png" /></p>
 <p>可以很明显地看到，本来三种不同的下载：“用于生产环境的Bootstrap”、“Bootstrap源码”和“Sass”在电脑上是呈水平方向排布的，而到了手机上，便成了竖直方向排布。这也就是一个很典型的<span style="color:red;"><strong>响应式布局</strong></span>的例子。</p>
 <h2 id="bootstrap_2">Bootstrap的布局方式</h2>
 <p>上面讲了<strong>Bootstrap</strong>具有<span style="color:red;"><strong>响应式布局</strong></span>的特性，而这样的特性正是由它的<strong>布局方式</strong>所决定的。</p>
 <p>为了使用<strong>Bootstrap</strong>的<strong>布局系统</strong>，我们需要将<strong>要布局的内容</strong>放在<strong>Bootstrap</strong>所定义的<strong>布局容器</strong>内。这样的<strong>布局容器</strong>有两种，<code>&lt;div class="container"&gt;......&lt;/div&gt;</code>以及<code>&lt;div class="container-fluid"&gt;......&lt;/div&gt;</code>,简单来说，前一种容器不占据整个屏幕的宽度，两边有一定留白，而后一种占据100%的宽度（两种<strong>布局容器</strong>不可以嵌套使用）。通常来说，前一种我们用的多一点，就比如大家常逛的淘宝京东等等：</p>
-<p><img alt="bootstrap-3" src="../images/bootstrap-3.png" /></p>
+<p><img alt="bootstrap-3" src=".\images\bootstrap-3.png" /></p>
 <p>很明显白色的大块<code>&lt;div&gt;</code>并没有占据100%的宽度，而是两侧有留白。</p>
 <p>而满足了前提条件后，我们便可以使用<strong>Bootstrap</strong>的<strong>布局系统</strong>进行布局了。</p>
 <p><strong>Bootstrap</strong>的<strong>布局系统</strong>是<span style="color:red;"><strong>栅格系统</strong></span>（Grid system）。<span style="color:red;"><strong>栅格系统</strong></span>，顾名思义，就是通过<strong>行</strong>和<strong>列</strong>来把页面分成一个个小格子，从而进行定位。在<strong>Bootstrap</strong>中，我们往往先在<strong>容器</strong>中定义<strong>行</strong>（<code>&lt;div class="row"&gt;......&lt;/div&gt;</code>），然后再在<strong>行元素</strong>中创建<strong>列元素</strong>。与在原生的<strong>CSS</strong>中定义<span style="color:red;"><strong>栅格系统</strong></span>不同，<strong>Bootstrap</strong>做为<span style="color:red;"><strong>框架</strong></span>会通过计算自动地帮我们将一行分为<strong>12</strong>份（有时也会分为24份或36份，但一般都是12份），所以在做粗略布局的时候，我们可以直接<strong>通过指定一个列元素所占份数来改变其的宽度</strong>（当然也是通过指定<code>&lt;div&gt;</code>元素的<code>class</code>实现），就像下图这样：</p>
-<p><img alt="bootstrap-3" src="../images/bootstrap-4.png" /></p>
+<p><img alt="bootstrap-3" src=".\images\bootstrap-4.png" /></p>
 <p>显而易见，每一行的所有<strong>列元素</strong>所对应的<code>class</code>最后的数字相加都等于12，这也正符合了我们上面所说的一行被分为12份。除开这些数字，大家也许会对每个<code>class</code>名前半部分的<code>col-md</code>感到疑惑，可能<code>col</code>的含义还好猜一点，毕竟本身“<strong>列</strong>”的英文就叫<strong>column</strong>，那<code>md</code>又代表了什么意思呢（反正肯定不是在骂人）？这就又要说回到我们在上面讲的<span style="color:red;"><strong>响应式布局</strong></span>了。</p>
 <p>我们在<a href="#effect">Bootstrap能做什么</a>里只说了<span style="color:red;"><strong>响应式布局</strong></span>能<strong>随着屏幕分辨率的改变而改变布局</strong>，但具体变成什么样的布局，还是要由我们提起去定义好的。所以整个<span style="color:red;"><strong>响应式布局</strong></span>的流程其实是这样的：<strong>Bootstrap</strong>先通过<code>@media</code>查询得到屏幕分辨率，然后再<strong>根据分辨率所在的范围</strong>执行<strong>对应的布局代码</strong>。为了<strong>区分</strong>不同分辨率范围对应的布局，<strong>Bootstrap</strong>在<strong>列元素</strong>类名的<code>col</code>和<strong>数字</strong>中间加入了两位字母，分别为<code>xs</code>（extra small）、<code>sm</code>（small）、<code>md</code>（medium）和<code>lg</code>（large），而它们对应的分辨率范围如下表：</p>
-<p><img alt="bootstrap-5" src="../images/bootstrap-5.png" /></p>
+<p><img alt="bootstrap-5" src=".\images\bootstrap-5.png" /></p>
 <p>对于具体的数值，大家并不需要背下来，只要有一个大概的印象即可——<code>xs</code>对应<strong>手机</strong>，<code>sm</code>对应平板，<code>md</code>对应一<strong>桌面显示器</strong>，<code>lg</code>对应<strong>大桌面显示器</strong>。真要是不确定，再查一下表格，也是很方便的。</p>
 <p>那么到此为止，<strong>Bootstrap</strong>最为基础与最为核心的部分我们也就讲完了，当然除了那些讲不完的样式、插件和组件之外，还有一些基础的部分，比如列偏移、列排序、列嵌套等等也没有涉及到。但其实这些都不难，只要大家愿意去<a href="https://v3.bootcss.com/">官方文档</a>读一读，看一看对应的示例代码，想必这些对大家来讲都没什么难度。即使有时候真的不懂原理，其实也只要把示例代码复制下来，改一改对应的地方，也就是把别人填的空改成你填的空，问题也就解决了。而我想框架给我们带来的便利正是在于此。</p></div>
         
