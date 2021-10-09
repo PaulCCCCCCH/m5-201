@@ -56,7 +56,7 @@
     <td class="tg-c3ow">Sat<br>10/16<br>19:00-21:00</td>
     <td class="tg-c3ow">DB<br>C 01</td>
     <td class="tg-c3ow">
-      <a href="../content/debugging">2. Debugging </a>
+      <a href="../content/debugging">1. Debugging </a>
       <br>
     </td>
     <td class="tg-c3ow"></td>
