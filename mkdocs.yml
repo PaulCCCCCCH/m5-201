@@ -1,6 +1,6 @@
 site_name: m5-201 
 site_url: https://paulcccccch.github.io/
-site_author: IceWould Training Team Led by Chonghan Chen
+site_author: DATA Course Team Led by Chonghan Chen
 site_description: IceWould Training Hub
 
 theme:
@@ -8,7 +8,8 @@ theme:
 
 nav:
   - Home: index.md
-  - Schedule: schedule.md
+  - Current Schedule: schedule.md
+  - Spring 2021 Version: schedule-21-spring.md
 
 repo_url: https://github.com/PaulCCCCCCH/m5-201
 site_dir: m5-201/
