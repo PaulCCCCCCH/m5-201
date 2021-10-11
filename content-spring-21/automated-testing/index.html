@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="DATA Course Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content-spring-21/automated-testing/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>自动化测试 - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../schedule/">Current Schedule</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../schedule-21-spring/">Spring 2021 Version</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content-spring-21/automated-testing.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#_1">自动化测试</a></li>
+            <li class="second-level"><a href="#_2">引言</a></li>
+                
+            <li class="second-level"><a href="#_3">基本方法</a></li>
+                
+            <li class="second-level"><a href="#_4">前端测试</a></li>
+                
+            <li class="second-level"><a href="#_5">持续集成测试</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="_1">自动化测试</h1>
+<h2 id="_2">引言</h2>
+<p>试想，你现在要上交你写好的俄罗斯方块，我们要给它打分。想必你一定会在上交之前，先“跑跑看”，确认没问题了才交吧。  </p>
+<p><br></p>
+<p>具体地，你可能有一个测试清单，包括移动、旋转、消除、游戏开始和结束等等。你花了1小时测试完毕后，正打算上交，突然来了一个新要求：你要加入一种新方块 (<code>piece</code>)，它只有三个单元 (block)，并且能穿过其它 <code>block</code>，在你按下<code>沉底</code>键时，停留在当前位置 (也就是可以补任意地方的洞)。  </p>
+<p><br></p>
+<p>由于不好在原来的框架上实现，你重写了 <code>layout</code> 的逻辑。因为改动可能会把原来的东西弄坏，所以你又花了一小时从头到尾测试了一遍。</p>
+<p><br></p>
+<p>正打算上交，又来了一个小需求，又得做出牵扯到其它功能的改动。不测试吧，万一其它功能坏了，但没发现，还不如不做这个小需求得分来得高；测试吧，又得花上好久，还不一定真的有问题。</p>
+<p><br></p>
+<p>于是，你开始头痛。</p>
+<p><br></p>
+<p>其实，你可以把你的测试清单用程序写出来，成为<code>自动化测试</code>，这样，你只需要实现一遍，之后可以随时重新测试，非常方便快捷。</p>
+<p><br></p>
+<p>对于规模比较大的开发项目，自动化测试是必不可少的。</p>
+<p><br></p>
+<p>写测试并不会对技术有太高的要求，但是要非常细心。于是你会看到，许多编程能力并不是很强，但是又喜欢编程且思维缜密的人选择在企业的测试岗就职。</p>
+<h2 id="_3">基本方法</h2>
+<p>所谓测试，本质就是检查执行某项操作后，结果是不是跟我们想的一样。一个测试脚本大概长这样：</p>
+<pre><code class="language-python">创建一个初始位置为(0, 5)的长条piece，名为initPiece
+
+运行一下下落函数
+判断initPiece的位置是不是在(1, 5)
+运行一下下落函数
+判断initPiece的位置是不是在(2, 5)
+运行一下向左函数
+判断initPiece的位置是不是在(2, 4)
+
+把initPiece的位置设置成(2, 0)
+运行一下向左函数
+判断initPiece的位置是不是在(2, 0)
+
+把occupationMatrix的最上面一行都填满
+运行一下generatePiece函数
+等待10秒
+判断游戏是否结束
+
+...更多测试
+</code></pre>
+<p>当然，不推荐用语言原生的 <code>if-else</code> 和 <code>assert</code> 语句写测试，尽量使用各语言的测试框架。比如，写 <code>Java</code> 的测试，就使用 <code>jUnit</code>。</p>
+<h2 id="_4">前端测试</h2>
+<p>对于纯粹的 <code>JavaScript</code> 逻辑测试，我们可以使用 <code>Jest</code>。请读<a href="https://www.jestjs.cn/">文档</a>。  </p>
+<p><br></p>
+<p><code>Jest</code> 可以让你调用自己写的 <code>js</code> 函数，然后跟期望值比较。可以把它理解为 <code>JavaScript</code> 版的 <code>jUnit</code>。  </p>
+<p><br></p>
+<p>但是，前端不只是程序控制的逻辑，不是光测试函数的输入、输出就行的。我们可能需要这样的测试：</p>
+<blockquote>
+<p>如果用户点击了这个按钮，那么页面会...</p>
+</blockquote>
+<p>这就要求把页面交互考虑在内。于是我们要引入另一个框架 <code>puppeteer</code>。它可以让我们用 <code>JavaScript</code> 模拟用户的交互。  </p>
+<p><br></p>
+<p>所以，要测试 <code>uni-app</code> 的前端项目， 我们要根据<a href="https://uniapp.dcloud.io/collocation/auto/quick-start">这个文档</a>进行初始化。</p>
+<h2 id="_5">持续集成测试</h2>
+<p>这个部分是给项目的 Leader 们参考的，暂时不想看的话可以跳过。  </p>
+<p><br></p>
+<p>为了确保大家对 <code>GitHub</code> 的 <code>push</code> 都是有效的，我们可以使用一些自动化集成（Continuous Integration，或 <code>CI</code>）工具。</p>
+<p><br></p>
+<p>逻辑是这样：</p>
+<ul>
+<li>首先，让使用的 <code>CI</code> 服务去和 <code>GitHub</code> 绑定，进行授权等操作</li>
+<li>然后，在代码根目录创建脚本文件，脚本里写的内容会告诉 <code>CI</code> 服务，如何运行你的测试</li>
+<li>每次 <code>push</code> 的时候，<code>CI</code> 服务会自动拉取你的代码，用你脚本里指定好的方式进行测试。</li>
+<li>如果测试不通过，<code>GitHub</code> 仓库会进行警告。</li>
+</ul>
+<p>各位可以先尝试使用 <code>Travis CI</code> 操作。进行以下步骤就行：</p>
+<ul>
+<li>
+<p>进入 <code>Travis CI</code> 官网并注册。
+<br></p>
+</li>
+<li>
+<p>根据它的提示，对 <code>GitHub</code> 进行授权。或者，点击右上角自己的头像，进入 <code>Settings</code> 下的 <code>Repositories</code> 页面，点击 <code>Manage repositories on GitHub</code> 进行授权。
+<br></p>
+</li>
+<li>
+<p>在自己的代码跟目录里加入 <code>.travis.yml</code>，并根据<a href="https://docs.travis-ci.com/">文档</a>写测试内容。比如，如果测试一个 <code>javascript</code> 项目，可以用以下内容</p>
+</li>
+</ul>
+<pre><code class="language-yaml">
+language: node_js
+node_js:
+ - &quot;12&quot;
+
+</code></pre>
+<p>并且在 <code>package.json</code> 里的 <code>scripts</code> 下加入一行</p>
+<pre><code>&quot;test&quot;: &quot;&lt;命令&gt;&quot;
+</code></pre>
+<p>其中，<code>&lt;命令&gt;</code> 就是你在本地终端进行测试时输入的命令，比如 <code>"cross-env UNI_PLATFORM=h5 jest -i"</code>。在你 <code>push</code> 的时候，<code>CI</code> 服务会跑 <code>npm test</code>，也就是把你的命令跑了一遍。<br />
+<br></p>
+<ul>
+<li><code>git push</code> 就行。你可以在 <code>GitHub</code> 仓库里看到上次测试的结果。你也可以上 <code>Travis CI</code> 上看之前测试的结果。</li>
+</ul></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

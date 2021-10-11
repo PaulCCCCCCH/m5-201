@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="DATA Course Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content-spring-21/project-1-tetris-in-js/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Tetris in JS - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../schedule/">Current Schedule</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../schedule-21-spring/">Spring 2021 Version</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content-spring-21/project-1-tetris-in-js.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#tetris-in-js">Tetris in JS</a></li>
+            <li class="second-level"><a href="#_1">引言</a></li>
+                
+            <li class="second-level"><a href="#_2">代码结构</a></li>
+                
+                <li class="third-level"><a href="#html">HTML 文件</a></li>
+                <li class="third-level"><a href="#css">CSS 文件</a></li>
+                <li class="third-level"><a href="#js">JS 文件</a></li>
+            <li class="second-level"><a href="#_3">需要做什么？</a></li>
+                
+            <li class="second-level"><a href="#_4">定义</a></li>
+                
+                <li class="third-level"><a href="#piece-block">Piece 和 Block</a></li>
+                <li class="third-level"><a href="#dom">DOM</a></li>
+                <li class="third-level"><a href="#dom_1">DOM 的属性</a></li>
+                <li class="third-level"><a href="#_5">各种方块</a></li>
+                <li class="third-level"><a href="#occupationmatrix">occupationMatrix</a></li>
+                <li class="third-level"><a href="#_6">关键的像素大小</a></li>
+            <li class="second-level"><a href="#_7">指引</a></li>
+                
+                <li class="third-level"><a href="#_8">定义方块</a></li>
+                <li class="third-level"><a href="#_9">生成方块</a></li>
+                <li class="third-level"><a href="#_10">方块的移动</a></li>
+                <li class="third-level"><a href="#_11">方块的旋转</a></li>
+                <li class="third-level"><a href="#_12">方块的消除、游戏结束以及其它</a></li>
+            <li class="second-level"><a href="#_13">部署</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="tetris-in-js">Tetris in JS</h1>
+<h2 id="_1">引言</h2>
+<p>在这个项目里，我们会实现一个俄罗斯方块小游戏。<br />
+<br></p>
+<p>一般情况下，这样的游戏应该使用 <code>canvas</code>，或者更先进的 JavaScript 游戏引擎，如 <code>Egret</code> 和 <code>cocos2d-js</code>。<br />
+<br></p>
+<p>在这个项目中，为了让<s>玩家</s>学员，掌握熟练使用最最基础的 <code>HTML</code>， <code>JavaScript</code> 和 <code>CSS</code>，我们会让大家直接操作 <code>DOM</code> 来实现游戏。虽然很老土，但是还记得小时候火遍大江南北的 QQ 空间游戏么（还是说两三年已经一代沟了...）？那上面的游戏，实现方式是直接操作 <code>DOM</code> 的游戏比例是最高的。<br />
+<br></p>
+<p>顺带说一下，我们的团队里有使用 <code>Canvas</code> 的大神，大家感兴趣的话我们可以把他拉来～  </p>
+<h2 id="_2">代码结构</h2>
+<p>请先<a href="../code/tetris-in-js.zip" download="tetris-in-js.zip">下载初始代码</a>。<br />
+<br></p>
+<p>将压缩包解压，你会得到以下三个文件：<br />
+- <code>tetris-in-js.html</code><br />
+- <code>tetris-in-js.css</code><br />
+- <code>tetris-in-js.js</code><br />
+我们游戏的画面和控制按钮定义在 <code>.html</code> 文件中，画面和控制按钮的样式定义在 <code>.css</code> 文件中，游戏的逻辑定义在 <code>.js</code> 文件中。<br />
+<br></p>
+<h3 id="html">HTML 文件</h3>
+<p>HTML 文件定义了我们的游戏框和按钮，并且将 JS 文件中的函数绑定到对应的地方（如按钮）。</p>
+<h3 id="css">CSS 文件</h3>
+<p>CSS 文件定义了我们在 HTML 文件中绘制的游戏框的样子。本项目提供的 CSS 文件定义了按钮和游戏框的长相。</p>
+<h3 id="js">JS 文件</h3>
+<p>JS 文件是所有逻辑和运算发生的地方，它控制着游戏的开始、结束，方块的移动和消除等等。</p>
+<h2 id="_3">需要做什么？</h2>
+<p>本项目提供的这份不完全的俄罗斯方块代码，包含了一些需要填补的代码框架。其中标注 <code>YOUR CODE STARTS</code> 和 <code>YOUR CODE ENDS</code> 中间的部分，是需要完善的部分。<br />
+<br></p>
+<p>在现实的开发场景中，合作几乎是不可避免。经常性地，你的合作者也会像这样给你一份代码框架，需要你去填补其中的逻辑。这可能也是成长最快的方法（不过，若是遇到不写注释或是思路清奇的工友，那当我没说）。<br />
+<br></p>
+<p>在这个项目中，我们需要做的，是实现以下游戏逻辑：<br />
+- 游戏开始 (Game Start)<br />
+- 方块自动下落<br />
+- 控制方块移动 (左、右) 和加速下落 (down)<br />
+- 方块坠底 (drop)<br />
+- 当一行被填满时消去<br />
+- 当方块在上方超出屏幕时游戏结束。<br />
+<br></p>
+<p>在完成了这些逻辑之后，大家可以尝试修改这个游戏的外观，或是增加新的逻辑。<br />
+<br></p>
+<p>关于外观，大家根据自己的审美，怎么漂亮怎么来。<br />
+<br></p>
+<p>同样，关于逻辑，怎么好玩儿怎么来。下面给大家举几个例子：<br />
+- 显示当前得分<br />
+- 调整游戏难度<br />
+- 闯关机制<br />
+- 新的方块<br />
+  - 可以穿过方块，一直落到最底下的补缝小方块<br />
+  - 落到底时可以消去一圈方块的炸弹方块<br />
+  - 所有方块都能落到最下面，无需保持原来形状的雨滴方块  </p>
+<h2 id="_4">定义</h2>
+<p>在书写程序之前，我们要先搞清楚定义和用语，这样沟通成本会比较低，写起来也方便。
+<br></p>
+<h3 id="piece-block">Piece 和 Block</h3>
+<p>程序中的 <code>piece</code> 指的是一种方块，而 <code>block</code> 指的是一个小单元。
+<br></p>
+<p>在基础版本中，一个 <code>piece</code> 由四个 <code>block</code> 通过一定排列而成。<br />
+比如，一个长条的 <code>piece</code> 由四个 <code>block</code> 水平（或垂直）首尾相接而成。</p>
+<h3 id="dom"><code>DOM</code></h3>
+<p>一个 <code>HTML</code> 页面是由一堆节点（叫做 <code>DOM</code>，全称是 <code>Document Object Model</code>，或 <code>文档对象模型</code>）组成的，好比你的餐桌、餐桌上的盘子以及盘子里的水果拼盘（橙子、番茄和西瓜），每一个都可以被当作一个节点。当你把餐桌向北移动一米，它上面的所有东西都会向北移动一米，而相对位置不变;当你移动盘子，盘子里的水果品盘的形状不会被破坏，餐桌也不会移动，但水果的位置确实都改变了。在这里，餐桌是盘子的 <code>母节点</code>，盘子的 <code>子节点</code> 是盘子里的所有水果。类比到俄罗斯方块里，一个 <code>piece</code> 就是四个 <code>block</code> 的母节点，它们的位置是相对 <code>piece</code> 的位置确定的（就好比水果的位置是相对盘子确定的，而不是桌子）。这一点非常重要。<br />
+<br></p>
+<h3 id="dom_1"><code>DOM</code> 的属性</h3>
+<p>每个 <code>DOM</code> 都有一大堆的属性。假设对一个名字为 <code>block</code> 的 <code>DOM</code> 变量，以下是设置的示例：</p>
+<pre><code class="language-javascript">block.className = 'myblock'; // 相当于给它打上了一个叫作 myblock 的标签。在 CSS 文件中，我们会声明，所有带 myblock 标签的 DOM 都会被染成某种颜色。
+block.style.width = '10px'; // block 的宽度为 10 像素
+block.style.height = '15px'; // block 的高度
+block.style.top = '20px'; // block 的顶上要空出 20 像素的空间（相当把 block 从原来的位置往下移动 20 像素）
+block.style.left = '20px'; // block 的左边要空出 20 像素的空间（相当把 block 从原来的位置往右移动 20 像素）
+</code></pre>
+<h3 id="_5">各种方块</h3>
+<p>基础版本的俄罗斯方块有七种不同的 <code>piece</code>:<br />
+请看图片。<br />
+<img alt="" src="../images/tetris-piece-demo.jpeg" /><br />
+从左到右，第一行的名字分别是:<br />
+- <code>bar</code><br />
+- <code>sevenShapeReversed</code><br />
+- <code>sevenShape</code><br />
+- <code>square</code><br />
+第二行的名字分别是：<br />
+- <code>zShape</code><br />
+- <code>hump</code><br />
+- <code>zShapeReversed</code></p>
+<h3 id="occupationmatrix"><code>occupationMatrix</code></h3>
+<p>这是一个二维数组，每个元素都是要么是 <code>null</code>（没有被 <code>block</code> 占据的时候），要么是一个 <code>DOM</code> 元素（被 <code>block</code> 占据的时候）。<code>occupationMatrix[0]</code> 对应的是画面的最上面那一行，<code>occupationMatrix[0][0]</code> 对应的是画面最上面一行的最左边那一个格子。<code>occupationMatrix[19][9]</code>就是画面的最右下角那一格。所以，往下和往右是加，往上和往左是减。</p>
+<h3 id="_6">关键的像素大小</h3>
+<p>我们的游戏画面宽度是 200 像素，高度是 400 像素。我们定义了一个 <code>block</code> 是长宽都为 20 像素的方块。在设置的时候，需要把这个设置好。</p>
+<h2 id="_7">指引</h2>
+<p>我们强烈建议学生自己通读代码和文档后，直接开始编写程序。<br />
+但如果觉得需要一些引导，可以按照以下流程来进行：</p>
+<h3 id="_8">定义方块</h3>
+<p>在第一个 <code>YOUR CODE HERE</code> 的地方，仿照已经给的例子，完成全部七种 <code>piece</code> 的定义。<br />
+推荐拿纸和比稍微计算一下哦。<br />
+<strong>完成后，点击不停点击开始游戏按钮，应该可以看到所有不同方块随机生成。</strong>  </p>
+<h3 id="_9">生成方块</h3>
+<ul>
+<li>通读并理解 <code>generatePiece</code>，<code>setPosition</code>和<code>getPiece</code> 函数。  </li>
+</ul>
+<h3 id="_10">方块的移动</h3>
+<ul>
+<li>完成 <code>fall</code>，<code>moveLeft</code> 和 <code>moveRight</code> 函数。  </li>
+<li><strong>如果实现正确，你就可以通过控制面板控制方块了。</strong>  </li>
+<li>在 <code>play</code> 中找到 <code>setInterval</code> 这个函数，改变后面 <code>1000</code> 的值，可以调节下落速度。  </li>
+</ul>
+<h3 id="_11">方块的旋转</h3>
+<ul>
+<li>完成 <code>rotate</code> 函数。要注意的是，在角落里旋转的时候，处理是有一点点复杂的。  </li>
+<li><strong>如果实现正确，你就可以通过控制面板旋转方块了。</strong>  </li>
+<li>可能会有一点难度，请务必多寻求帮助！</li>
+</ul>
+<h3 id="_12">方块的消除、游戏结束以及其它</h3>
+<p>补充剩余的逻辑，完善你的俄罗斯方块！</p>
+<h2 id="_13">部署</h2>
+<p>完成你的俄罗斯方块之后，我们会教你怎样把它放到你的个人网站上，开放给大家玩。<br />
+<br></p>
+<p>所以，你可以试着多加一些功能，并且把它做得好看一点，也许大家会对你做的东西爱不释手！ <br />
+<br></p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
