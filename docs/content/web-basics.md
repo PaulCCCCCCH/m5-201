@@ -62,7 +62,7 @@ a form of URI (*Uniform Resource Identifier*), provide a path to, or location of
 
 **Formats**
 
-- 一般格式: ***Scheme**(protocol, e.g. http/https)://**DomianName/path:Port***
+- 一般格式: *Scheme*(protocol, e.g. http/https)://*DomianName/path*:*Port*
 - 特殊格式: *file://path-to-document* (“file” indicates the documents resides on the machine running the browser)
 
 The text *http://* indicates that HTTP should be used to obtain the resource. Next in the URL is the server’s fully qualified **hostname** (e.g. [www.deitel.com](http://www.deitel.com/)) — the name of the web-server computer on which the resource resides. The hostname [www.deitel.com](http://www.deitel.com/) is translated into an **IP** address — a numerical value that uniquely identifies the server on the Internet. An Internet Domain Name System (**DNS**) server maintains a database of hostnames and their corresponding IP addresses and performs the translations automatically.
