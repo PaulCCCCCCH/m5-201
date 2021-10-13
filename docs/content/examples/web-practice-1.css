@@ -1,0 +1,9 @@
+#run{
+	background-image: url('./run.gif');
+	width: 100px;
+	height: 100px;
+	background-size: 100% 100%;
+	border: 0px;
+	position: absolute;
+	background-color: transparent;
+}
