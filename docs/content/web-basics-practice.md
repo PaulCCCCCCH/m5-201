@@ -2,7 +2,7 @@
 
 
 ## 实例
-预览<a href="../examples/example-web-1.html">页面</a>
+预览<a href="../examples/web-practice-1.html">页面</a>
 
 下载<a href="../examples/example-web-1.zip">页面</a>，解压后用浏览器和编辑器同时打开。
 
