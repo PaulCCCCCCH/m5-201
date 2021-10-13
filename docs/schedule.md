@@ -4,6 +4,8 @@
 欢迎大家来到这里，本页面发布的announcement和schedule可能会更新，请随时留意。
 希望大家能够在这里能够找到收获的路径，我们一起加油。
 
+目前课程更新到Week2。
+
 
 # Schedule
 
@@ -40,7 +42,7 @@
       <br>
       <a href="../content/web-toolkit">3. Web 三件套</a>
     </td>
-    <td class="tg-svo0" rowspan="2"> <a href="../content/web-toolkit-practice"> Web 练习</a></td>
+    <td class="tg-svo0"> <a href="../content/web-basics-practice"> Web 练习1</a></td>
     <td class="tg-svo0" rowspan="6"> <a href="../content/project-1-tetris-in-js">Project 1: Tetris in JS</a></td>
     <td class="tg-svo0">
       <a href="https://www.runoob.com/html/html5-intro.html">1. 菜鸟 HTML 教程</a>
@@ -56,13 +58,12 @@
     <td class="tg-c3ow">Sat<br>10/16<br>19:00-21:00</td>
     <td class="tg-c3ow">DB<br>C 01</td>
     <td class="tg-c3ow">
-      <a href="../content/dev-setup">1. 开发环境搭建</a>
+      <a href="../content/web-basics/#hyper-text-transfer-protocol-http">1. Web 基本原理 Vol.2</a>
       <br>
-      <a href="../content/web-basics/#hyper-text-transfer-protocol-http">2. Web 基本原理 Vol.2</a>
-      <br>
-      <a href="../content/debugging">3. Debugging with Console</a>
+      <a href="../content/debugging">2. Debugging with Console</a>
       <br>
     </td>
+    <td class="tg-svo0"> <a href="../content/web-toolkit-practice"> Web 练习2</a></td>
     <td class="tg-c3ow"></td>
   </tr>
   <tr>
@@ -78,22 +79,25 @@
     </td>
     <td class="tg-svo0"><a href="../content/cracking-a-website-practice">Web 逆向练习</a></td>
     <td class="tg-svo0">
-      <a href="https://angrytools.com/css-generator/border/">1. CSS 特效生成器</a>
-      <br>
-      <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">2. Bootstrap 官方文档</a>
-      <br>
-      <a href="https://developer.chrome.com/docs/devtools/">3. Chrome DevTools</a>
+      <a href="https://developer.chrome.com/docs/devtools/">1. Chrome DevTools</a>
     </td>
   </tr>
   <tr>
     <td class="tg-c3ow">Sat<br>10/23<br>19:00-21:00</td>
     <td class="tg-c3ow">DB<br>C 01</td>
     <td class="tg-c3ow">
-        <a href="../content/bootstrap">1. Bootstrap</a>
+        1. Web 逆向练习review
+        <br>
+        <a href="../content/bootstrap">2. Bootstrap</a>
         <br>
     </td>
     <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">
+        <a href="https://angrytools.com/css-generator/border/">1. Bootstrap 官方文档</a>
+      <br>
+      <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">2. CSS 特效生成器</a>
+      <br>
+     </td>
   </tr>
   <tr>
     <td class="tg-svo0" rowspan="2">Week 3</td>
@@ -392,5 +396,6 @@
 -->
 </tbody>
 </table>
+
 
 
