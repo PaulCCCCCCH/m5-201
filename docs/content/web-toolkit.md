@@ -46,7 +46,7 @@
 
 #### HTML
 
-首先，我们需要通过**HTML**定义两个按钮以及他们的位置（代码看不懂没关系，下面会进行讲解）：
+首先，我们需要通过**HTML**定义两个按钮（代码看不懂没关系，下面会进行讲解）：
 
 ![HTML](./images/web-toolkit-3.gif)
 
@@ -66,7 +66,7 @@
 </html>
 ```
 
-跳脱代码表达的具体意思，一眼看去，我们很容易发现，**HTML**是由普通的文本以及很多```<xxx>```这样形式的标注组成的，而这种形式的标注我们称之为**HTML**的**标签**，也就是**tag**。通过这些标签，我们得以标记原本普通的文本内容，决定它们在网页中的基础呈现形式（比如做为按钮）以及位置等等。这也就是为什么**HTML**被称为**超文本标记语言**。而这些标签通常成对出现，像```<html>```和```</html>```这样，以```<xxx>```开始，```</xxx>```结束。当然也有少数的标签比较“坚强”，一个人就能完成任务，像```<br>```这样。这里需要注意的是代码第一行的```<!DOCTYPE html>```并不是一个标签，它是指示Web浏览器关于页面使用哪个**HTML**版本的指令，所以必须写在所有标签的前面。
+跳脱代码表达的具体意思，一眼看去，我们很容易发现，**HTML**是由普通的文本以及很多```<xxx>```这样形式的标注组成的，而这种形式的标注我们称之为**HTML**的**标签**，也就是**tag**。通过这些标签，我们得以标记原本普通的文本内容，决定它们在网页中的基础呈现形式（比如做为按钮）。这也就是为什么**HTML**被称为**超文本标记语言**。而这些标签通常成对出现，像```<html>```和```</html>```这样，以```<xxx>```开始，```</xxx>```结束。当然也有少数的标签比较“坚强”，一个人就能完成任务，像```<br>```这样。这里需要注意的是代码第一行的```<!DOCTYPE html>```并不是一个标签，它是指示Web浏览器关于页面使用哪个**HTML**版本的指令，所以必须写在所有标签的前面。
 
 进一步观察代码，通过缩进，我们可以发现**HTML**的基础是由一对```<html>```标签、一对```<head>```标签以及一对```<body>```标签构建而成的。其中```<html>```标签标志着**文档的开始与结束**；```<head>```标签标志着**文档的头部**，我们通常会在里面指定**整个文档的公共信息**，比如用```<title>```标签指定网页的名字，或者指定文档引用的外部**CSS**、**JS**文件等的链接；```<body>```标签则标志着**文档的正文部分**，网页中能看到的元素都在这里定义。
 
@@ -106,9 +106,10 @@ button{
 </head>
 
 <body>
-    <button>Welcome</button><br>
-    <button class="different_color_button">Change Color</button>
+    <button id="welcome">Welcome</button><br>
+    <button class="different_color_button" id="change_color">Change Color</button>
 </body>
+
 
 </html>
 ```
@@ -165,13 +166,12 @@ button{
 ![JS](./images/web-toolkit-2.gif)
 
 ```js
-var welcome_btn = document.getElementById("welcome");
-welcome_btn.onclick = function(){
-	alert("hello");
+function welcome(){
+    alert("hello");
 }
 
-var change_btn = document.getElementById("change_color");
-change_btn.onclick = function(){
+function change(){
+    var change_btn = document.getElementById("change_color");
     change_btn.style.backgroundColor = "plum";
 }
 ```
@@ -185,14 +185,14 @@ change_btn.onclick = function(){
 <head>
     <title>Button Example</title>
     <link rel="stylesheet" type="text/css" href="Button_Example.css">
+    <script type="text/javascript" src="Button_Example.js"></script>
 </head>
 
 <body>
-    <button id="welcome">Welcome</button><br>
-    <button class="different_color_button" id="change_color">Change Color</button>
+    <button id="welcome" onclick="welcome()">Welcome</button><br>
+    <button class="different_color_button" id="change_color" onclick="change()">Change Color</button>
 </body>
 
-<script type="text/javascript" src="Button_Example.js"></script>
 
 </html>
 ```
@@ -202,13 +202,12 @@ change_btn.onclick = function(){
 看回**JavaScript**的代码：
 
 ```javascript
-var welcome_btn = document.getElementById("welcome");
-welcome_btn.onclick = function(){
-	alert("hello");
+function welcome(){
+    alert("hello");
 }
 
-var change_btn = document.getElementById("change_color");
-change_btn.onclick = function(){
+function change(){
+    var change_btn = document.getElementById("change_color");
     change_btn.style.backgroundColor = "plum";
 }
 ```
