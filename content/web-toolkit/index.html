@@ -141,7 +141,7 @@
 <p>写有 <strong><em>Welcome</em></strong> 的按钮在被点击后会弹出写有 <em>hello</em> 的提示框，而写有 <strong><em>Change Color</em></strong> 的按钮在被点击后则会改变颜色（注意：点击按钮时出现的黄色的圆只是录屏时候显示的左键点击，不是网页的效果哦）。</p>
 <p>那么接下来就让我们通过三件套，一步一步地实现这个简单的网页。</p>
 <h4 id="html">HTML</h4>
-<p>首先，我们需要通过<strong>HTML</strong>定义两个按钮以及他们的位置（代码看不懂没关系，下面会进行讲解）：</p>
+<p>首先，我们需要通过<strong>HTML</strong>定义两个按钮（代码看不懂没关系，下面会进行讲解）：</p>
 <p><img alt="HTML" src="../images/web-toolkit-3.gif" /></p>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -157,7 +157,7 @@
 
 &lt;/html&gt;
 </code></pre>
-<p>跳脱代码表达的具体意思，一眼看去，我们很容易发现，<strong>HTML</strong>是由普通的文本以及很多<code>&lt;xxx&gt;</code>这样形式的标注组成的，而这种形式的标注我们称之为<strong>HTML</strong>的<strong>标签</strong>，也就是<strong>tag</strong>。通过这些标签，我们得以标记原本普通的文本内容，决定它们在网页中的基础呈现形式（比如做为按钮）以及位置等等。这也就是为什么<strong>HTML</strong>被称为<strong>超文本标记语言</strong>。而这些标签通常成对出现，像<code>&lt;html&gt;</code>和<code>&lt;/html&gt;</code>这样，以<code>&lt;xxx&gt;</code>开始，<code>&lt;/xxx&gt;</code>结束。当然也有少数的标签比较“坚强”，一个人就能完成任务，像<code>&lt;br&gt;</code>这样。这里需要注意的是代码第一行的<code>&lt;!DOCTYPE html&gt;</code>并不是一个标签，它是指示Web浏览器关于页面使用哪个<strong>HTML</strong>版本的指令，所以必须写在所有标签的前面。</p>
+<p>跳脱代码表达的具体意思，一眼看去，我们很容易发现，<strong>HTML</strong>是由普通的文本以及很多<code>&lt;xxx&gt;</code>这样形式的标注组成的，而这种形式的标注我们称之为<strong>HTML</strong>的<strong>标签</strong>，也就是<strong>tag</strong>。通过这些标签，我们得以标记原本普通的文本内容，决定它们在网页中的基础呈现形式（比如做为按钮）。这也就是为什么<strong>HTML</strong>被称为<strong>超文本标记语言</strong>。而这些标签通常成对出现，像<code>&lt;html&gt;</code>和<code>&lt;/html&gt;</code>这样，以<code>&lt;xxx&gt;</code>开始，<code>&lt;/xxx&gt;</code>结束。当然也有少数的标签比较“坚强”，一个人就能完成任务，像<code>&lt;br&gt;</code>这样。这里需要注意的是代码第一行的<code>&lt;!DOCTYPE html&gt;</code>并不是一个标签，它是指示Web浏览器关于页面使用哪个<strong>HTML</strong>版本的指令，所以必须写在所有标签的前面。</p>
 <p>进一步观察代码，通过缩进，我们可以发现<strong>HTML</strong>的基础是由一对<code>&lt;html&gt;</code>标签、一对<code>&lt;head&gt;</code>标签以及一对<code>&lt;body&gt;</code>标签构建而成的。其中<code>&lt;html&gt;</code>标签标志着<strong>文档的开始与结束</strong>；<code>&lt;head&gt;</code>标签标志着<strong>文档的头部</strong>，我们通常会在里面指定<strong>整个文档的公共信息</strong>，比如用<code>&lt;title&gt;</code>标签指定网页的名字，或者指定文档引用的外部<strong>CSS</strong>、<strong>JS</strong>文件等的链接；<code>&lt;body&gt;</code>标签则标志着<strong>文档的正文部分</strong>，网页中能看到的元素都在这里定义。</p>
 <p>在上面的代码中，我们先是在文档头部指定了这个网页的名字叫<strong><em>Button Example</em></strong>，然后在文档的正文部分分别声明了写有<strong><em>Welcome</em></strong>以及写有<strong><em>Change Color</em></strong>的按钮。如果只是做单纯的声明，那么两个按钮将会出现在同一行。但是我们知道<strong>HTML</strong>可以指定网页元素的位置，所以我们这里用了<code>&lt;br&gt;</code>来进行换行，使得两个按钮出现在了两行。</p>
 <p>当然，<strong>HTML</strong>的功能远不止于此，标签的种类也是千千万万，一下子全部学完是不现实也不必要的。所以我们只要了解<strong>HTML</strong>基本的思想，碰到不会的标签等等，面向谷歌编程就可以了。</p>
@@ -183,9 +183,10 @@
 &lt;/head&gt;
 
 &lt;body&gt;
-    &lt;button&gt;Welcome&lt;/button&gt;&lt;br&gt;
-    &lt;button class=&quot;different_color_button&quot;&gt;Change Color&lt;/button&gt;
+    &lt;button id=&quot;welcome&quot;&gt;Welcome&lt;/button&gt;&lt;br&gt;
+    &lt;button class=&quot;different_color_button&quot; id=&quot;change_color&quot;&gt;Change Color&lt;/button&gt;
 &lt;/body&gt;
+
 
 &lt;/html&gt;
 </code></pre>
@@ -220,13 +221,12 @@
 <h4 id="javascript">JavaScript</h4>
 <p>最后，我们通过JacaScript定义按钮被点击后的行为：</p>
 <p><img alt="JS" src="../images/web-toolkit-2.gif" /></p>
-<pre><code class="language-js">var welcome_btn = document.getElementById(&quot;welcome&quot;);
-welcome_btn.onclick = function(){
+<pre><code class="language-js">function welcome(){
     alert(&quot;hello&quot;);
 }
 
-var change_btn = document.getElementById(&quot;change_color&quot;);
-change_btn.onclick = function(){
+function change(){
+    var change_btn = document.getElementById(&quot;change_color&quot;);
     change_btn.style.backgroundColor = &quot;plum&quot;;
 }
 </code></pre>
@@ -237,26 +237,25 @@ change_btn.onclick = function(){
 &lt;head&gt;
     &lt;title&gt;Button Example&lt;/title&gt;
     &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;Button_Example.css&quot;&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;Button_Example.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
-    &lt;button id=&quot;welcome&quot;&gt;Welcome&lt;/button&gt;&lt;br&gt;
-    &lt;button class=&quot;different_color_button&quot; id=&quot;change_color&quot;&gt;Change Color&lt;/button&gt;
+    &lt;button id=&quot;welcome&quot; onclick=&quot;welcome()&quot;&gt;Welcome&lt;/button&gt;&lt;br&gt;
+    &lt;button class=&quot;different_color_button&quot; id=&quot;change_color&quot; onclick=&quot;change()&quot;&gt;Change Color&lt;/button&gt;
 &lt;/body&gt;
 
-&lt;script type=&quot;text/javascript&quot; src=&quot;Button_Example.js&quot;&gt;&lt;/script&gt;
 
 &lt;/html&gt;
 </code></pre>
 <p>与前面讲引用外部的<strong>CSS</strong>文件类似，对于不同的外部<strong>JavaScript</strong>文件，只要改动<code>src</code>后的对应路径即可。</p>
 <p>看回<strong>JavaScript</strong>的代码：</p>
-<pre><code class="language-javascript">var welcome_btn = document.getElementById(&quot;welcome&quot;);
-welcome_btn.onclick = function(){
+<pre><code class="language-javascript">function welcome(){
     alert(&quot;hello&quot;);
 }
 
-var change_btn = document.getElementById(&quot;change_color&quot;);
-change_btn.onclick = function(){
+function change(){
+    var change_btn = document.getElementById(&quot;change_color&quot;);
     change_btn.style.backgroundColor = &quot;plum&quot;;
 }
 </code></pre>
