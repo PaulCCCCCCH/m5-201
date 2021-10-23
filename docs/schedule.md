@@ -1,5 +1,13 @@
 # Announcements
 
+### 10月23日
+
+不好意思，陈学长借楼打个广告：我们在 CMU 这边做深度学习模型的 robustness 相关的 research，其中一个部分是使用`Vue.js`和`PyTorch`搭一个数据标注 + 模型训练的 pipeline，现在我们人手不是很够。内容比较有挑战性，但是机会极为难得，并且可以学到很多东西。详情请移步 Week 4 的前端开发项目 `Option 1: Robustar`。
+
+如果感兴趣的话，请提前联系一下陈学长（在群里），需要准备一下 background knowledge 并且在 m5-201 好好学习！
+
+
+
 ### 10 月 10 日
 欢迎大家来到这里，本页面发布的announcement和schedule可能会更新，请随时留意。
 希望大家能够在这里能够找到收获的路径，我们一起加油。
@@ -148,12 +156,13 @@
     </td>
     <td class="tg-svo0"></td>
     <td class="tg-svo0" rowspan="6">
-      <a href="../content/project-2">Project 2: 企业项目前端</a>
+      <a href="../content/project-2">Project 2: 前端开发项目</a>
+      <br>
+
+      <br>
+      <a href="../content/project-2-1-robustar">Option 1: Robustar</a>
       <br>
       <!-- <br>
-      <a href="../content/project-2-1-mirror">Option 1: 智能化妆镜交互</a>
-      <br>
-      <br>
       <a href="../content/project-2-2-forum">Option 2: m5-201 平台前端</a>
       <br>
       <br>
