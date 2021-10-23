@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="IceWould Training Hub">
     <meta name="author" content="DATA Course Team Led by Chonghan Chen">
-    <link rel="canonical" href="https://paulcccccch.github.io/content/project-2-4-tree-hole/">
-    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/solutions/tetris/FAQ/">
+    <link rel="shortcut icon" href="../../../../img/favicon.ico">
 
     
-    <title>树洞 app - m5-201</title>
+    <title>FAQ - m5-201</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
     <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="../../css/base.min.css" rel="stylesheet">
-    <link href="../../css/cinder.min.css" rel="stylesheet">
+    <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../../css/base.min.css" rel="stylesheet">
+    <link href="../../../../css/cinder.min.css" rel="stylesheet">
 
     
         
@@ -59,7 +59,7 @@
             <!-- Main title -->
 
             
-              <a class="navbar-brand" href="../..">m5-201</a>
+              <a class="navbar-brand" href="../../../..">m5-201</a>
             
         </div>
 
@@ -70,19 +70,19 @@
                 
                 
                     <li >
-                        <a href="../..">Home</a>
+                        <a href="../../../..">Home</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="../../schedule/">Current Schedule</a>
+                        <a href="../../../../schedule/">Current Schedule</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="../../schedule-21-spring/">Spring 2021 Version</a>
+                        <a href="../../../../schedule-21-spring/">Spring 2021 Version</a>
                     </li>
                 
                 
@@ -95,7 +95,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/project-2-4-tree-hole.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/solutions/tetris/FAQ.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -107,37 +107,147 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#app">树洞 app</a></li>
-            <li class="second-level"><a href="#_1">项目提供方</a></li>
-                
-            <li class="second-level"><a href="#_2">负责人</a></li>
-                
-            <li class="second-level"><a href="#_3">项目预览</a></li>
-                
-            <li class="second-level"><a href="#_4">涉及技术</a></li>
-                
-            <li class="second-level"><a href="#_5">额外收获</a></li>
-                
+        <li class="first-level active"><a href="#faq">FAQ</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="app">树洞 app</h1>
-<h2 id="_1">项目提供方</h2>
-<p>宁波聚像网络科技有限公司</p>
-<h2 id="_2">负责人</h2>
-<p>楼远志</p>
-<h2 id="_3">项目预览</h2>
-<p>请阅读<a href="../resources/tree-hole.docx">项目文档</a></p>
-<h2 id="_4">涉及技术</h2>
+<!-- 
+@ author: Kobe Norris (KobeNorrisWu@gmail.com)
+@ date: 2021/03/24 18/32/22 pm
+@ 
+ -->
+
+<h1 id="faq"><strong>FAQ</strong></h1>
+<ol>
+<li>
+<p><code>Game Board</code> 结构</p>
 <ul>
-<li><code>uni-app</code></li>
-<li>微信接口的使用</li>
+<li><code>Game Board</code><ul>
+<li><code>piece</code> 1<ul>
+<li><code>block</code> 1-1</li>
+<li><code>block</code> 1-2</li>
+<li><code>block</code> 1-3</li>
+<li><code>block</code> 1-4</li>
 </ul>
-<h2 id="_5">额外收获</h2>
+</li>
+<li><code>piece</code> 2<ul>
+<li><code>block</code> 2-1</li>
+<li><code>block</code> 2-2</li>
+<li><code>block</code> 2-3</li>
+<li><code>block</code> 2-4</li>
+</ul>
+</li>
+<li><code>piece</code> 3<ul>
+<li><code>block</code> 3-1</li>
+<li><code>block</code> 3-2</li>
+<li><code>block</code> 3-3</li>
+<li><code>block</code> 3-4</li>
+</ul>
+</li>
+<li>....</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>piece</code> 结构</p>
 <ul>
-<li>了解互联网平台舆论监管相关政策 </li>
-</ul></div>
+<li><code>piece</code><ul>
+<li>rowPos</li>
+<li>colPos</li>
+<li>style<ul>
+<li>top</li>
+<li>left</li>
+</ul>
+</li>
+<li><code>block</code> 1-1</li>
+<li><code>block</code> 1-2</li>
+<li><code>block</code> 1-3</li>
+<li><code>block</code> 1-4</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>block</code> 结构</p>
+<ul>
+<li><code>block</code> 1-1<ul>
+<li>style<ul>
+<li>top</li>
+<li>left</li>
+<li>width</li>
+<li>height</li>
+<li>background</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>game 运行流程</p>
+<ol>
+<li>
+<p><code>play()</code></p>
+</li>
+<li>
+<p><code>cleanBoard()</code></p>
+</li>
+<li>
+<p>Gaming</p>
+<ol>
+<li>
+<p><code>generatePiece()</code></p>
+<ol>
+<li><code>initializePiece()</code></li>
+</ol>
+</li>
+<li>
+<p>Manipulation</p>
+<ol>
+<li>
+<p><code>moveLeft(piece)</code></p>
+</li>
+<li>
+<p><code>moveRight(piece)</code></p>
+</li>
+<li>
+<p><code>rotateClock(piece)</code></p>
+</li>
+<li>
+<p><code>rotateAntiClock(piece)</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p><code>pieceMoveDown()</code></p>
+<ol>
+<li>
+<p><code>check()</code></p>
+</li>
+<li>
+<p><code>rowFull(rowIdx)</code></p>
+</li>
+<li>
+<p><code>clearRow(rowIdx)</code></p>
+</li>
+<li>
+<p><code>rowDown(rowIdx)</code></p>
+</li>
+<li>
+<p><code>gameOver();</code></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><code>gameOver()</code></p>
+</li>
+</ol>
+</li>
+</ol></div>
         
         
     </div>
@@ -157,7 +267,7 @@
       </footer>
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../../../js/bootstrap-3.0.3.min.js"></script>
 
     
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
@@ -165,10 +275,10 @@
     <script>hljs.initHighlightingOnLoad();</script>
     
 
-    <script>var base_url = "../.."</script>
+    <script>var base_url = "../../../.."</script>
     
-    <script src="../../js/base.js"></script>
-    <script src="../../search/main.js"></script>
+    <script src="../../../../js/base.js"></script>
+    <script src="../../../../search/main.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

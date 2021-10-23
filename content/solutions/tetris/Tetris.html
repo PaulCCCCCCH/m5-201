@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style type="text/css">
+		/*define the interface*/
+		#playground {
+			margin-left: 100px;
+			border: 1px solid black;
+			height: 400px;
+			width: 200px;
+			position:relative;
+			overflow: hidden;
+		}
+
+		.block {
+			border: 1px solid silver;
+			border-style: groove;
+		}
+
+		.control {
+			border: 3px;
+			font-family: sans-serif;
+			background-color: silver;
+			border-style: groove;
+			width:50px;
+			height: 30px;
+		}
+	
+	</style>
+</head>
+
+<script type="text/javascript">
+	// Some constants
+	var BLOCKSIZE = 20;	//in pixel
+	var ROW_NUM = 20;
+	var COL_NUM = 10;
+	var PIECE_NUM = 6;
+	var sevenReversed = [[0, 0], [0, 1], [1, 0], [2, 0]];
+	var bar = [[0, 0], [-1, 0], [1, 0], [2, 0]];
+	var seven = [[0, -1], [0, 0], [1, 0], [2, 0]];
+	var hump = [[0, 0], [-1, 0], [0, -1], [0, 1]];
+	var zShape = [[0, 0], [0, -1], [1, 0], [1, 1]];
+	var square = [[0, 0], [1, 0], [0, 1], [1, 1]]
+	var LAYOUTS = [sevenReversed, bar, seven, hump, zShape, square];
+	var COLORS = ['red', 'blue', 'pink', 'purple', 'silver', 'orange'];
+	// Setup occupation matrix
+	var occupationMatrix = new Array(20);
+	for(var i = 0; i < ROW_NUM; i++) {
+		occupationMatrix[i] = new Array(COL_NUM);
+	}
+
+	// Generate a new piece and put it to the screen.
+	generatePiece = function() {
+		var el = document.getElementById('blocks');
+		pieceId = Math.floor(PIECE_NUM * Math.random())
+		var newPiece = getPiece(pieceId);
+		newPiece.id = "currentPiece";
+		el.appendChild(newPiece);
+	}
+
+	// Private. Return a piece (a div element).
+	getPiece = function(pieceId) {
+		var newPiece = document.createElement('div');
+		newPiece.rowPos = 0;
+		newPiece.colPos = 5; 
+		newPiece.layout = LAYOUTS[pieceId];
+		var newBlocks = new Array(4);
+		for(var i = 0; i < 4; i++) {
+			var newBlock = document.createElement('div');
+			newBlocks[i] = newBlock; 
+			newBlock.style.width = BLOCKSIZE + 'px';
+			newBlock.style.height = BLOCKSIZE + 'px';
+			newBlock.style.backgroundColor = COLORS[pieceId];
+			newBlock.style.position = 'absolute';
+			newBlock.className = 'block';
+			newPiece.appendChild(newBlock);
+
+		}
+		setBlocks(newPiece);
+		return newPiece;
+	}
+
+	// Set the shape of a piece according to piece.layout. 
+	setBlocks = function(piece, oldLayout) {
+		var blocks = piece.children;
+		var layout = piece.layout;
+		if(!oldLayout) {
+			oldLayout = layout;
+		}
+		for(var i = 0; i < 4; i++) {
+			var block = blocks[i];
+			block.rowPos = piece.rowPos + layout[i][0];
+			block.colPos = piece.colPos + layout[i][1];
+			block.style.top = (block.rowPos) * BLOCKSIZE + 'px';
+			block.style.left = (block.colPos) * BLOCKSIZE + 'px';
+		}
+		if(!valid(piece)) {
+			if(leftValid(piece)) {
+				moveLeft(piece);
+			} else if (rightValid(piece)) {
+				moveRight(piece);
+			} else {
+				piece.layout = oldLayout;
+				setBlocks(piece);
+			}
+		}
+	}	
+
+	fall = function() {
+		var piece = document.getElementById("currentPiece");
+		var blocks = piece.children;
+		for(var i = 0; i < 4; i++) {
+			var block = blocks[i];
+			if (!downValid(piece)) {
+				settle(piece);
+				return;
+			}
+		}
+		piece.rowPos += 1;
+		setBlocks(piece);
+
+	}
+
+	downValid = function(piece) {
+		var blocks = piece.children;
+		for(var i = 0; i < 4; i++) {
+			var block = blocks[i];
+			if (block.rowPos == -2) {
+				return true;
+			}
+			if (block.rowPos == ROW_NUM - 1 || occupationMatrix[block.rowPos + 1][block.colPos]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+
+	fallToBottom = function(piece) {
+		while(downValid(piece)) {
+			fall();
+		}
+		fall();
+	}
+
+	settle = function(piece) {
+		var blocks = piece.children; 
+		for(var i = 0; i < 4; i++) {
+			var block = blocks[i];
+			occupationMatrix[block.rowPos][block.colPos] = block;
+		}
+		check();
+		piece.id = "";
+		generatePiece();
+	}
+
+	rotate = function(piece) {
+		var oldLayout = piece.layout;
+		for(var i = 0; i < 4; i++) {
+			var newRow = (-1)*piece.layout[i][1];
+			var newCol = piece.layout[i][0];
+			piece.layout[i][0] = newRow;
+			piece.layout[i][1] = newCol;
+		} 
+
+		setBlocks(piece, oldLayout);
+	}
+	leftValid = function(piece) {
+		var blocks = piece.children;
+		for(var i = 0; i < 4; i++) {
+			var block = blocks[i];
+			if (block.colPos == 0 || occupationMatrix[block.rowPos][block.colPos - 1]) {
+				return false;
+			}
+		}
+		return true;
+	}
+	rightValid = function(piece) {
+		var blocks = piece.children;
+		for(var i = 0; i < 4; i++) {
+			var block = blocks[i];
+			if (block.colPos == COL_NUM - 1 || occupationMatrix[block.rowPos][block.colPos + 1]) {
+				return false;
+			}
+		}
+		return true;
+	}
+	valid = function(piece) {
+		var blocks = piece.children;
+		for(var i = 0; i < 4; i++) {
+			var block = blocks[i];
+			if (block.rowPos <= 0) {
+				return true;
+			}
+			if (block.colPos < 0 || block.colPos >= COL_NUM || block.rowPos >= ROW_NUM || occupationMatrix[block.rowPos][block.colPos]) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+
+	moveLeft = function(piece) {
+		if (leftValid(piece)) {
+			piece.colPos -= 1;
+			setBlocks(piece);
+		}
+	}
+	moveRight = function(piece) {
+		if (rightValid(piece)) {
+			piece.colPos += 1;
+			setBlocks(piece);
+		}
+	}
+
+	check = function() {
+		var flag = 0
+		for(var i = 0; i < COL_NUM; i++) {
+			if(occupationMatrix[0][i]) {
+				gameOver();
+			}
+		}
+		for(var i = ROW_NUM - 1; i >= 0; i--) {
+			if(rowFull(i)) {
+				flag = 1;
+				cleanRow(i);
+				goDown(i);
+			}
+		}
+		if(flag == 1) {
+			show();
+			check();
+		}
+	}
+	rowFull = function(rowNumber) {
+		for(var i = 0; i < COL_NUM; i++) {
+			if(!occupationMatrix[rowNumber][i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	cleanRow = function(rowNumber) {
+		for(var i = 0; i < COL_NUM; i++) {
+			if(occupationMatrix[rowNumber][i]) {
+				var block = occupationMatrix[rowNumber][i];
+				var parent = block.parentNode;
+				parent.removeChild(block);
+				occupationMatrix[rowNumber][i] = null;
+			}
+		}
+	}
+
+	show = function() {
+		var all = document.getElementById('blocks');
+		var len = all.children.length;
+
+		for(var i = 0; i < len; i++) {
+			var piece = all.children[i];
+			var len2 = piece.children.length;
+			for(var j = 0; j < len2; j++) {
+				var block = piece.children[j];
+				block.style.top = (block.rowPos) * BLOCKSIZE + 'px';
+				block.style.left = (block.colPos) * BLOCKSIZE + 'px';
+			}
+		}
+	}
+
+	/* Decide not to use it.*/
+	freeFall = function() {
+		for(var row = ROW_NUM - 2; row >= 0; row--) {
+			for(var col = 0; col < COL_NUM; col++) {
+				if (!occupationMatrix[row + 1][col] && occupationMatrix[row][col]) {
+					var block = occupationMatrix[row][col];
+					while(block.rowPos != ROW_NUM - 1 && !occupationMatrix[block.rowPos + 1][block.colPos]) {
+						block.rowPos += 1;
+					}
+					occupationMatrix[row][col] = null;
+					occupationMatrix[block.rowPos][block.colPos] = block;
+				}
+			}
+		}
+	}
+
+	goDown = function(rowNumber) {
+		for(var row = rowNumber - 1; row >= 0; row--) {
+			for(var col = 0; col < COL_NUM; col++) {
+				if(occupationMatrix[row][col]) {
+					var block = occupationMatrix[row][col];
+					block.rowPos += 1;
+					occupationMatrix[row][col] = null;
+					occupationMatrix[block.rowPos][block.colPos] = block;
+				}
+			}
+		}
+	}
+
+	document.onkeydown = function(event) {
+		var piece = document.getElementById("currentPiece");
+		var b = event.keyCode;
+		switch(b) {
+			case 70:
+				fallToBottom(piece);
+				break;
+			case 83:
+				fall();
+				break;
+			case 68:
+				moveRight(piece);
+				break;
+			case 87:
+				rotate(piece);
+				break;
+			case 65:
+				moveLeft(piece);
+				break;
+		}
+		return;
+	}
+
+
+
+	play = function() {
+		for(var i = 0; i < ROW_NUM; i++) {
+			cleanRow(i);
+		}
+		generatePiece();
+		window.a = setInterval(function() { fall();}, 50);
+	}
+
+	gameOver = function() {
+		alert("gameOver");
+		clearInterval(window.a);
+	} 
+
+</script>
+
+<body>
+	<!-- <button onclick="generatePiece()">test generate piece</button>
+	<button onclick="fall()"> test fall </button>
+	<button onclick="rotate()"> test rotate </button>
+	<button onclick="play()"> play </button> -->
+
+	<button onclick="play()" style="width:50px;height:50px;margin-left:200px">Click to start</button>
+	<div id="playground"> 
+		<div id="blocks">
+
+		</div>
+	</div>
+
+	<div id="controlPanel">
+		<button onclick="moveLeft(getElementById('currentPiece'))" style="margin-left:50px" class='control'>left</botton>
+		<button class='control' onclick="moveRight(getElementById('currentPiece'))">right</botton>
+		<button class='control' onclick="fallToBottom(getElementById('currentPiece'))">drop</button>
+		<button class='control' onclick="fall()">down</button>
+		<button class='control' onclick="rotate(getElementById('currentPiece'))">rotate</button>
+	</div>
+</body>
+</html>
