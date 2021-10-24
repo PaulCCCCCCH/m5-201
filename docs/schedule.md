@@ -112,23 +112,23 @@
     <td class="tg-svo0">Wed<br>10/27<br>19:00-21:00</td>
     <td class="tg-svo0">DB<br>C 01</td>
     <td class="tg-svo0">
-      <a href="../content/git">1. Git 的概念</a>
-      <br>
-      <a href="../content/git-guidance">2. Git 的使用</a>
-      <br>
-      <a href="../content/gh-hosting">3. 公布你的网页</a>
+      <a href="../content/Uni-app_guidance">1.Uni-app_引入</a>
       <br>
     </td>
     <td class="tg-svo0">
-      <a href='../content/git-practice'>1. Git 练习</a>
+      <a href='../content/Uni-app/Uni-app_use.md'>1. Uni-app_使用及调试</a>
       <br>
-      <a href="../content/github-practice">2. Github 练习</a>
+      <a href="../content/Uni-app/Uni-app_Vue_js.md">2. Uni-app 及 Vue.js 的结构</a>
+      <br>
+      <a href='../content/Uni-app/Vue_model.md'>3. Vue 模板语法</a>
+      <br>
+      <a href='../content/Uni-app/Uni-app_use.md'>4. Assignment</a>
       <br>
     </td>
     <td class="tg-svo0">
-      <a href="https://blog.csdn.net/qq_26787115/article/details/52133008"> 1. 为开源项目贡献内容</span>
+
       <br>
-      <a href="https://pages.github.com/"> 2. GitHub Pages 官方文档</span>
+
     </td>
   </tr>
   <tr>
