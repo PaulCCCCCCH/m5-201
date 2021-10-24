@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="DATA Course Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/Uni-app/Vue_model/">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+    
+    <title>Vue 模板语法 - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../css/base.min.css" rel="stylesheet">
+    <link href="../../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../schedule/">Current Schedule</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../schedule-21-spring/">Spring 2021 Version</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/Uni-app/Vue_model.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#vue">Vue 模板语法</a></li>
+            <li class="second-level"><a href="#_1">插值</a></li>
+                
+            <li class="second-level"><a href="#_2">指令</a></li>
+                
+            <li class="second-level"><a href="#_3">条件渲染和列表渲染</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="vue">Vue 模板语法</h1>
+<p>最后，让我们了解下 Vue 的语法 : 插值 和 指令</p>
+<h2 id="_1">插值</h2>
+<p>望文生义，即插入（绑定）变量的方法</p>
+<ol>
+<li>
+<p><strong>文本</strong></p>
+<p>使用“Mustache”语法 (双大括号) 进行文本插值 <code>{{ ... }}</code></p>
+<p><code>html
+&lt;span&gt;Message: {{ msg }}&lt;/span&gt;</code></p>
+<p><code>{{ msg }}</code> 标签将会被替代为对应组件实例中 msg property 的值,无论何时，绑定的组件实例上 msg property 发生了改变，插值处的内容都会更新。</p>
+</li>
+<li>
+<p><strong>原始 HTML</strong></p>
+<p>双大括号会将数据解释为普通文本，而非 HTML 代码，可以使用 <code>v-html</code> 指令输出 HTML 代码</p>
+<p><code>html
+&lt;p&gt;Using mustaches: {{ rawHtml }}&lt;/p&gt;&lt;p&gt;
+Using v-html directive: &lt;span v-html="rawHtml"&gt;&lt;/span&gt;&lt;/p&gt;</code></p>
+<p>这个 <code>span</code> 的内容将会被替换成为 property 值 <code>rawHtml</code>，直接作为 HTML，但同时会忽略解析 property 值中的数据绑定</p>
+</li>
+<li>
+<p><strong>Attribute</strong></p>
+<p>Mustache 语法不能在 HTML attribute 中使用，然而，可以使用 <code>v-bind</code> 指令</p>
+<p><code>html
+&lt;div v-bind:id="dynamicId"&gt;&lt;/div&gt;</code></p>
+<p>如果绑定的值是 <code>null</code> 或 <code>undefined</code>，那么该 attribute 将不会被包含在渲染的元素上。</p>
+</li>
+</ol>
+<h2 id="_2">指令</h2>
+<p>指令 (Directives) 是带有 v- 前缀的特殊 attribute，其职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM</p>
+<ol>
+<li>
+<p><strong>参数</strong></p>
+<p>一些指令能够接收一个“参数”，在指令名称之后以冒号表示</p>
+<ol>
+<li>
+<p><code>v-bind</code></p>
+<p>用于响应式地更新 HTML attribute :  伴随 实例 属性值变化，更新绑定的 HTML 属性值</p>
+<p>格式 : <code>v-bind :</code><strong>HTML Attribute 名 <code>= "</code>实例属性名<code>"</code></strong></p>
+<p><code>html
+&lt;a v-bind:href="url"&gt; ... &lt;/a&gt;</code></p>
+</li>
+<li>
+<p><code>v-on</code></p>
+<p>用于监听 DOM 事件 ：</p>
+<p>格式 : <code>v-on :</code><strong>事件名</strong> <code>= "</code><strong>函数名<code>"</code></strong></p>
+<p><code>html
+&lt;a v-on:click="doSomething"&gt; ... &lt;/a&gt;</code></p>
+<p>若需访问原始的 DOM 事件，可用 <code>$event</code> 传入原始DOM事件 </p>
+<p><code>html
+&lt;input v-on:input="message = $event.target.value"&gt;</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>动态参数</strong></p>
+<p>Vue 也支持在指令参数中使用 JS 表达式</p>
+<p>格式 : <code>v-bind :[</code> <strong>JS 表达式</strong><code>] =**"</code>实例属性名<code>"</code>**</p>
+<p><code>html
+&lt;a v-bind:[attributeName]="url"&gt; ... &lt;/a&gt;
+&lt;a v-on:[eventName]="doSomething"&gt; ... &lt;/a&gt;</code></p>
+<p>若在 data property 中有 <code>attributeName</code>，其值为 <code>"href"</code>，那么这个绑定将等价于 <code>v-bind:href</code> ，同时可以改变 <code>attributeName</code> 的值进行动态绑定</p>
+</li>
+<li>
+<p><strong>修饰符</strong></p>
+<p>修饰符 (modifier) 是以半角句号 <code>.</code> 指明的特殊后缀，用于指出一个指令应该以<strong>特殊方式绑定</strong></p>
+<p>格式 : <strong>指令名</strong><code>:</code><strong>指令参数</strong><code>.</code><strong>修饰符</strong> <code>=**"</code>对应表达式<code>"</code>**</p>
+<p><code>html
+&lt;form v-on:submit.prevent="onSubmit"&gt;...&lt;/form&gt;</code></p>
+<p><code>.prevent</code> 修饰符告诉 <code>v-on</code> 指令不触发 submit 的默认操作</p>
+<p>修饰符也可以串联</p>
+<p><code>html
+&lt;a v-on:click.stop.prevent="doThat"&gt;&lt;/a&gt;</code></p>
+</li>
+</ol>
+<h2 id="_3">条件渲染和列表渲染</h2>
+<p>既然 Vue 不允许直接操作 DOM 那我应该如何通过操作 Vue 暴露给我们的接口，动态调整我们网页的主体结构呢？</p>
+<ol>
+<li>
+<p>条件渲染 <code>v-if</code></p>
+<p>望文生义，用于条件性渲染内容，该内容只在指令的表达式返回 <code>truthy</code> 值时被渲染。</p>
+<p><code>html
+&lt;h1 v-if="awesome"&gt;Vue is awesome!&lt;/h1&gt;</code></p>
+<p>也可以用 <code>v-else</code> 和 <code>v-else-if</code> 添加一个“else 块”：</p>
+<p><code>html
+&lt;h1 v-if="awesome"&gt;Vue is awesome!&lt;/h1&gt;
+&lt;h1 v-else-if="notBad"&gt;Ok ...&lt;/h1&gt;
+&lt;h1 v-else&gt;Oh no 😢&lt;/h1&gt;</code></p>
+<p>vs <code>v-show</code>? 有什么好处？【高效，去重复渲染】</p>
+<p>More to go...</p>
+<p><a href="https://cn.vuejs.org/v2/guide/conditional.html">条件渲染 - Vue.js</a></p>
+</li>
+<li>
+<p>列表渲染 <code>v-for</code></p>
+<p><code>v-for</code> 指令基于一个数组来渲染一个列表。<code>v-for</code> 指令需要使用 <code>item in items</code> 形式的特殊语法，其中 <code>items</code> 是源数据数组，而 <code>item</code> 则是被迭代的数组元素的别名</p>
+<p><code>html
+&lt;ul id="example-1"&gt;
+  &lt;li v-for="item in items" :key="item.message"&gt;
+    {{ item.message }}
+  &lt;/li&gt;
+&lt;/ul&gt;</code></p>
+<p><code>jsx
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
+  }
+})</code></p>
+<p>More to go...</p>
+<p><a href="https://cn.vuejs.org/v2/guide/list.html">列表渲染 - Vue.js</a></p>
+<pre><code>                                                                                                                                 By KobeNorris
+</code></pre>
+</li>
+</ol></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../../.."</script>
+    
+    <script src="../../../js/base.js"></script>
+    <script src="../../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

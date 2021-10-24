@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="DATA Course Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/Uni-app/Uni-app_use/">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+    
+    <title>Uni-app_使用及调试 - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../css/base.min.css" rel="stylesheet">
+    <link href="../../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../schedule/">Current Schedule</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../schedule-21-spring/">Spring 2021 Version</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/Uni-app/Uni-app_use.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#uni-app_">Uni-app_使用及调试</a></li>
+            <li class="second-level"><a href="#_1">开始之前</a></li>
+                
+            <li class="second-level"><a href="#uni-app">新建一个 uni-app 项目</a></li>
+                
+            <li class="second-level"><a href="#uni-app_1">运行一个 uni-app 项目</a></li>
+                
+            <li class="second-level"><a href="#uni-app-vue">看到这里，让我们正式开始我们的 uni-app ( VUE ) 探索之旅吧！</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="uni-app_">Uni-app_使用及调试</h1>
+<h2 id="_1">开始之前</h2>
+<p>首先，我们需要做一些准备工作，想必大家都简单便捷地开始我们对 uni-app 的探索，因此我们将会使用一款 IDE （HBuilderX）。HBuilderX 内置相关环境，开箱即用，无需配置 node.js 可以节省大家的宝贵时间。 </p>
+<p>HBuilderX：<a href="https://www.dcloud.io/hbuilderx.html">官方IDE下载地址</a></p>
+<h2 id="uni-app">新建一个 uni-app 项目</h2>
+<ol>
+<li>
+<p>通过 文件 → 新建 → 1.项目 在 HBuilder X 中尝试新建一个项目</p>
+<p><img alt="uniapp-1.png" src="uniapp-1.png" /></p>
+</li>
+<li>
+<p>选择 HBuilder X 提供的项目模板，我们默认选择 uni-app → 默认模板 → 将项目命名为 Demo → 最后点击 创建</p>
+<p><img alt="uniapp-2.png" src="uniapp-2.png" /></p>
+</li>
+<li>
+<p>太棒了！我创建出了我们的第一个 uni-app codebase!</p>
+<p><img alt="uniapp-3.png" src="uniapp-3.png" /></p>
+</li>
+</ol>
+<h2 id="uni-app_1">运行一个 uni-app 项目</h2>
+<ol>
+<li>首先为避免 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS">CORS 跨域机制</a> 影响本地调试，我们需要屏蔽 Chrome 的跨域检测机制<ol>
+<li>在桌面上新建文件夹Access-Control-Allow-Origin</li>
+<li>找到桌面上的chrome快捷图标，右键 属性 ，找到目标输入框那里</li>
+<li>在目录输入框后加上 “–disable-web-security --user-data-dir=<strong>【 'Access-Control-Allow-Origin' 文件的路径】(e.g. –disable-web-security --user-data-dir=C:\Users\Kobe超帅\Desktop\Access-Control-Allow-Origin)</strong>” </li>
+<li>以管理员身份打开，搞定</li>
+</ol>
+</li>
+<li>
+<p>通过 运行 → 运行到浏览器 → Chrome 将 uni-app 程序运行到 Chrome</p>
+<p>(命令行运行形式需要环境配置，较为复杂，在此暂不做赘述)</p>
+<p><img alt="Untitled" src="Untitled.png" /></p>
+</li>
+<li>
+<p>此时若未进行跨域操作，则 Chrome 会自动跳转并渲染页面</p>
+<p><img alt="Untitled" src="Uni-app_use/Untitled%201.png" /></p>
+</li>
+<li>
+<p>如出现此类报错，尝试在屏蔽检测的 Chrome 内打开对应路径即可</p>
+<p><img alt="Untitled" src="Uni-app_use/Untitled%202.png" /></p>
+</li>
+</ol>
+<h2 id="uni-app-vue">看到这里，让我们正式开始我们的 uni-app ( VUE ) 探索之旅吧！</h2>
+<pre><code>                                                                                                                                    By KobeNorris
+</code></pre></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../../.."</script>
+    
+    <script src="../../../js/base.js"></script>
+    <script src="../../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IceWould Training Hub">
+    <meta name="author" content="DATA Course Team Led by Chonghan Chen">
+    <link rel="canonical" href="https://paulcccccch.github.io/content/Uni-app/Uni-app_Vue_js/">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+    
+    <title>Uni-app 及 Vue.js 的结构 - m5-201</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../css/base.min.css" rel="stylesheet">
+    <link href="../../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../../..">m5-201</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../schedule/">Current Schedule</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../schedule-21-spring/">Spring 2021 Version</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PaulCCCCCCH/m5-201/edit/master/docs/content/Uni-app/Uni-app_Vue_js.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#uni-app-vuejs">Uni-app 及 Vue.js 的结构</a></li>
+            <li class="second-level"><a href="#1-uni-app">1. Uni-app 项目结构</a></li>
+                
+            <li class="second-level"><a href="#2-vue">2. Vue 框架结构</a></li>
+                
+            <li class="second-level"><a href="#3-vue">3. Vue 实例的生命周期</a></li>
+                
+                <li class="third-level"><a href="#eg-created">E.g. Created</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="uni-app-vuejs">Uni-app 及 Vue.js 的结构</h1>
+<h2 id="1-uni-app">1. Uni-app 项目结构</h2>
+<p>这是我们刚刚创建的 Uni-app 项目 :</p>
+<p><img alt="figure1.PNG" src="figure1.png" /></p>
+<ol>
+<li><code>.hbuilderx</code> 是 IDE 自己的生成的启动文件，主要用于修改及定义启动项目的具体类型和方式</li>
+<li><code>pages</code> 用于存放 Uni-app 的网页文件，你所有的 <strong>主页面</strong>（不包括导航栏设置）以及 <strong>组件</strong> （我们下一节课会涉及）都应按各自职能放在 pages 下的不同文件夹内</li>
+<li><code>static</code> 用于存放 uni-app 的网页静态文件，包括但不限于 <strong>图片</strong> ， <strong>音乐</strong> ， <strong>测试数据包</strong> 等 非动态文件，亦可理解为 resource 文件</li>
+<li><code>App.vue</code> <strong>Vue 项目的入口文件</strong>，管理页面的切换，因而可用于定义所有页面中共同需要的动画或者样式</li>
+<li><code>main.js</code> <strong>Uni-app 项目的入口文件</strong>，主要用于初始化 Vue实例 ，定义全局组件</li>
+<li><code>manifest.json</code> 管理 app 的基础配置，包括但不限于 <strong>图标</strong> ， <strong>界面</strong> ， <strong>模块</strong> 及 <strong>权限 配置</strong> 等</li>
+<li><code>pages.json</code> 用于对 uni-app 进行<strong>全局配置</strong>，决定<strong>页面文件的路径</strong> ，<strong>窗口样式</strong> ，原生的<strong>导航栏</strong> ，底部的原生<strong>tabbar</strong> 等</li>
+<li><code>uni.scss</code> 定义 uni-app 内置的常用样式变量</li>
+</ol>
+<h2 id="2-vue">2. Vue 框架结构</h2>
+<p>以我们刚刚创建的 <code>Demo/pages/index/index.vue</code> 为例，Vue 文件多由三部分组成</p>
+<ol>
+<li>
+<p><code>&lt;template&gt;</code> <strong>→</strong> HTML内容模板元素</p>
+<p><img alt="temp.PNG" src="temp.png" /></p>
+<ol>
+<li>可以暂时理解为页面文件，类似 HTML；</li>
+<li><code>&lt;template&gt;</code> 内部有且只能有一个 Root 元素，可以是 <code>&lt;view&gt;...&lt;/view&gt;</code> 也可以是 <code>&lt;div&gt;...&lt;/div&gt;</code> </li>
+<li>在 Vue 框架下不推荐直接操作 DOM ，因为 <strong>高耦合</strong> + <strong>不可预测</strong> + <strong>低性能</strong></li>
+<li><code>&lt;script&gt;</code> <strong>→</strong> JS</li>
+</ol>
+<p><img alt="script.PNG" src="script.png" /></p>
+<ol>
+<li>在 <code>data() { ... }</code> 中定义了该组件的属性<ol>
+<li>为什么是个函数 : 因为在渲染过程中生成的是 Vue 实例，因而每个属性都需要是新生成的属性，而不是所有模块共用一套属性；</li>
+<li><code>data() { ... }</code> 中 <code>this</code> 指向当前实例</li>
+</ol>
+</li>
+<li>Vue 的每个模块都有自己的 <strong>生命周期</strong> ， 我们会在之后讨论</li>
+<li>在 <code>methods: { ... }</code> 中可以加入自定义的 JS 函数</li>
+<li><code>&lt;style&gt;</code> <strong>→</strong> CSS</li>
+</ol>
+<p><img alt="style.PNG" src="style.png" /></p>
+<ol>
+<li>类似 CSS，再次略过不做赘述</li>
+</ol>
+</li>
+</ol>
+<h2 id="3-vue">3. Vue 实例的生命周期</h2>
+<p>每个 Vue 应用都是通过用 <code>createApp</code> 函数创建一个新的应用实例开始的，而每一个实例被创建时都要经过一系列的初始化过程。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会 ：</p>
+<p><img alt="lifecycle.svg" src="lifecycle.svg" /></p>
+<ol>
+<li>beforeCreated</li>
+<li>created</li>
+<li>beforeMount</li>
+<li>mounted</li>
+<li>updated</li>
+<li>activated</li>
+<li>deactivated</li>
+<li>beforeUnmount</li>
+<li>unmounted</li>
+<li>errorCaptured</li>
+<li>renderTracked</li>
+<li>renderTriggered</li>
+</ol>
+<h3 id="eg-created">E.g. Created</h3>
+<pre><code class="language-jsx">Vue.createApp({
+  data() {
+    return { count: 1}
+  },
+  created() {
+    // `this` 指向 vm 实例
+    console.log('count is: ' + this.count) // =&gt; &quot;count is: 1&quot;
+  }
+})
+</code></pre>
+<ol>
+<li>生命周期钩子的 <code>this</code> 指向调用它的当前活动实例，因此你可以访问当前实例下的 <code>data</code> ，<code>computed</code> 和 <code>methods</code> ；</li>
+<li>不同生命周期钩子调用时实例处于不同状态，如 <code>created</code> 数据侦听、计算属性、方法、事件/侦听器的回调函数已被配置完毕。然而，挂载阶段还没开始，且 <code>$el property</code> 目前尚不可用；</li>
+<li>
+<p>更多详见 </p>
+<p><a href="https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html">生命周期钩子 | Vue.js</a></p>
+<pre><code>                                                                                                                                By KobeNorris
+</code></pre>
+</li>
+</ol></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../../.."</script>
+    
+    <script src="../../../js/base.js"></script>
+    <script src="../../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
