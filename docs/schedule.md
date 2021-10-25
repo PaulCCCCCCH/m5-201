@@ -336,20 +336,24 @@
     </td>
   </tr>
   <tr>
-    <td class="tg-svo0" rowspan="2">Week 10</td>
+    <td class="tg-svo0">Week 10</td>
     <td class="tg-svo0">Wed<br>5/26<br>19:00-21:00</td>
     <td class="tg-svo0">DB<br>C 01</td>
     <td class="tg-svo0">答疑＋结课</td>
     <td class="tg-svo0"></td>
     <td class="tg-svo0"></td>
   </tr>
-  <tr>
+
+ <!-- <tr>
     <td class="tg-c3ow">TBD</td>
     <td class="tg-c3ow">待定</td>
     <td class="tg-c3ow"><b>团建！！！</b></td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"></td>
   </tr>
+
+-->
+
 <tr><td class="tg-c3ow" colspan="7">The End</td></tr>
 <!--
   <tr>
