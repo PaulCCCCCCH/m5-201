@@ -36,11 +36,11 @@ HBuilderX：[官方IDE下载地址](https://www.dcloud.io/hbuilderx.html)
     
 3. 此时若未进行跨域操作，则 Chrome 会自动跳转并渲染页面
    
-    ![Untitled](Uni-app_use/Untitled%201.png)
+    ![Untitled](Uni-app_use/Untitled-1.png)
     
 4. 如出现此类报错，尝试在屏蔽检测的 Chrome 内打开对应路径即可
    
-    ![Untitled](Uni-app_use/Untitled%202.png)
+    ![Untitled](Uni-app_use/Untitled-2.png)
     
 
 ## 看到这里，让我们正式开始我们的 uni-app ( VUE ) 探索之旅吧！

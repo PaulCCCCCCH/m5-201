@@ -47,21 +47,21 @@ Vue 模板语法
 
 1. 使用 `v-on` 将 data property 中的一个属性值与该 `button` 的 `click event` 进行绑定，每点击一次，该值 increment 一次
    
-    ![1.png](Assignment/1%201.png)
+    ![1.png](Assignment/1-1.png)
     
 2. 使用 **插值** 将该值打印在你的页面中，响应式地更新该值，并使用 `v-if` 在未点击 `button` 前不显示这一句话
    
-    ![2.png](Assignment/2%201.png)
+    ![2.png](Assignment/2-1.png)
     
-    ![2.png](Assignment/2%202.png)
+    ![2.png](Assignment/2-2.png)
     
 3. 使用 `v-on` 和 `input` 元素将页面内的值 **反向绑定** 到 data property 内对应的属性上 （具体方法在课件中展示过）
    
-    ![3.png](Assignment/3%201.png)
+    ![3.png](Assignment/3-1.png)
     
 4. 将每次 data property 内对应属性值的变化记录下来，并使用 `v-for` 将其全部打印在页面上
    
-    ![4.png](Assignment/4%201.png)
+    ![4.png](Assignment/4-1.png)
     
 
 ## 4. 课后作业 1 - 4
@@ -73,11 +73,11 @@ Vue 模板语法
 1. 网站由两个模块组成
     1. 一个让用户输入 **单号** 的小窗口
        
-        ![1.png](Assignment/1%202.png)
+        ![1.png](Assignment/1-2.png)
         
     2. 展示物流 **信息** 的页面
        
-        ![2.png](Assignment/2%203.png)
+        ![2.png](Assignment/2-3.png)
     
 2. 网站的运行流程是
     1. 用户输入 **单号** 并从本地查询具体物流信息
