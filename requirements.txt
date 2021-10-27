@@ -1,4 +1,4 @@
-mkdocs==1.1.2
+mkdocs==1.2.3
 mkdocs-cinder==1.2.0
 mkdocs-jupyter==0.13.0
 python-markdown-math==0.8
