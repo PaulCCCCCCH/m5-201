@@ -50,7 +50,7 @@
       <br>
       <a href="../content/web-toolkit">3. Web 三件套</a>
     </td>
-    <td class="tg-svo0"> <a href="../content/web-basics-practice"> Web 练习1</a></td>
+    <td class="tg-svo0"> <a href="./content/web-basics-practice"> Web 练习1</a></td>
     <td class="tg-svo0" rowspan="6"> <a href="../content/project-1-tetris-in-js">Project 1: Tetris in JS</a></td>
     <td class="tg-svo0">
       <a href="https://www.runoob.com/html/html5-intro.html">1. 菜鸟 HTML 教程</a>
@@ -99,7 +99,7 @@
         <a href="../content/bootstrap">2. Bootstrap</a>
         <br>
     </td>
-    <td class="tg-c3ow"></td>
+    <td class="tg-svo0"> <a href="../content/bootstrap-practice"> Bootstrap 练习</a></td>
     <td class="tg-c3ow">
         <a href="https://angrytools.com/css-generator/border/">1. Bootstrap 官方文档</a>
       <br>
@@ -128,7 +128,7 @@
     <td class="tg-svo0">
 
       <br>
-
+    
     </td>
   </tr>
   <tr>
