@@ -2,7 +2,7 @@
 
 ### 1
 
-创建一个名为exercise201的目录（随便起的）。你可以把这个目录放在电脑的任何地方。
+创建一个名为exercise201的文件夹（随便起的）。你可以把这文件夹放在电脑的任何地方。
 
 ### 2
 
@@ -22,7 +22,7 @@
 
 ### 6
 
-在file1.txt中进行修改，将文件中的文本更改为:" file1 changed to version 2 "。
+在file1.txt中进行修改，将文件中的文本更改为:" file1 changed to version 22222222 "。
 
 ### 7
 
@@ -34,16 +34,14 @@
 
 此时，如果你输入git status和git log，应该会显示如下类似的信息：
 
-<img src="./images\git-guidance-1.png" alt="1" style="zoom:80%;" />
+![1](./images/git-guidance-1.png)
 
-<img src=".\images\git-guidance-2.png" alt="2" style="zoom:80%;" />
+![1](./images/git-guidance-2.png)
 
 ### 9
 
-这个时候你可以尝试使用git checkout将文件恢复到最早提交的版本
+接下来请尝试使用git checkout将文件恢复到最早提交的版本
 
-<img src=".\images\git-guidance-3.png" alt="3" style="zoom:80%;" />
+使文件回到第一次提交状态。
 
-此时文件回到第一次提交状态。
-
-<img src=".\images\git-guidance-4.png" alt="4" style="zoom:80%;" />
+![1](./images/git-guidance-4.png)
